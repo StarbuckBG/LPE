@@ -1,0 +1,409 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		19292E8B1CEB8384007B5B05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E8A1CEB8384007B5B05 /* main.m */; };
+		19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E8D1CEB8384007B5B05 /* AppDelegate.m */; };
+		19292E911CEB8384007B5B05 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E901CEB8384007B5B05 /* FirstViewController.m */; };
+		19292E941CEB8384007B5B05 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E931CEB8384007B5B05 /* SecondViewController.m */; };
+		19292E971CEB8384007B5B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19292E951CEB8384007B5B05 /* Main.storyboard */; };
+		19292E991CEB8384007B5B05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19292E981CEB8384007B5B05 /* Assets.xcassets */; };
+		19292E9C1CEB8384007B5B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19292E9A1CEB8384007B5B05 /* LaunchScreen.storyboard */; };
+		19292EAB1CEB8A15007B5B05 /* connect.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EA41CEB8A15007B5B05 /* connect.png */; };
+		19292EAC1CEB8A15007B5B05 /* exchange.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EA51CEB8A15007B5B05 /* exchange.png */; };
+		19292EAD1CEB8A15007B5B05 /* home.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EA61CEB8A15007B5B05 /* home.png */; };
+		19292EAE1CEB8A15007B5B05 /* map.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EA71CEB8A15007B5B05 /* map.png */; };
+		19292EAF1CEB8A15007B5B05 /* map2.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EA81CEB8A15007B5B05 /* map2.png */; };
+		19292EB01CEB8A15007B5B05 /* profile.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EA91CEB8A15007B5B05 /* profile.png */; };
+		19292EB11CEB8A15007B5B05 /* profile2.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EAA1CEB8A15007B5B05 /* profile2.png */; };
+		19292EB91CEB8A1C007B5B05 /* connect@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EB21CEB8A1C007B5B05 /* connect@2x.png */; };
+		19292EBA1CEB8A1C007B5B05 /* exchange@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EB31CEB8A1C007B5B05 /* exchange@2x.png */; };
+		19292EBB1CEB8A1C007B5B05 /* home@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EB41CEB8A1C007B5B05 /* home@2x.png */; };
+		19292EBC1CEB8A1C007B5B05 /* map@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EB51CEB8A1C007B5B05 /* map@2x.png */; };
+		19292EBD1CEB8A1C007B5B05 /* map2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EB61CEB8A1C007B5B05 /* map2@2x.png */; };
+		19292EBE1CEB8A1C007B5B05 /* profile@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EB71CEB8A1C007B5B05 /* profile@2x.png */; };
+		19292EBF1CEB8A1C007B5B05 /* profile2@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EB81CEB8A1C007B5B05 /* profile2@2x.png */; };
+		19292EC71CEB8A23007B5B05 /* connect@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC01CEB8A23007B5B05 /* connect@3x.png */; };
+		19292EC81CEB8A23007B5B05 /* exchange@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC11CEB8A23007B5B05 /* exchange@3x.png */; };
+		19292EC91CEB8A23007B5B05 /* home@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC21CEB8A23007B5B05 /* home@3x.png */; };
+		19292ECA1CEB8A23007B5B05 /* map@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC31CEB8A23007B5B05 /* map@3x.png */; };
+		19292ECB1CEB8A23007B5B05 /* map2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC41CEB8A23007B5B05 /* map2@3x.png */; };
+		19292ECC1CEB8A23007B5B05 /* profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC51CEB8A23007B5B05 /* profile@3x.png */; };
+		19292ECD1CEB8A23007B5B05 /* profile2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC61CEB8A23007B5B05 /* profile2@3x.png */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		19292E861CEB8384007B5B05 /* Lumi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lumi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19292E8A1CEB8384007B5B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		19292E8C1CEB8384007B5B05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		19292E8D1CEB8384007B5B05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		19292E8F1CEB8384007B5B05 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
+		19292E901CEB8384007B5B05 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
+		19292E921CEB8384007B5B05 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
+		19292E931CEB8384007B5B05 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		19292E961CEB8384007B5B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		19292E981CEB8384007B5B05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		19292E9B1CEB8384007B5B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		19292E9D1CEB8384007B5B05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		19292EA41CEB8A15007B5B05 /* connect.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = connect.png; sourceTree = "<group>"; };
+		19292EA51CEB8A15007B5B05 /* exchange.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = exchange.png; sourceTree = "<group>"; };
+		19292EA61CEB8A15007B5B05 /* home.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = home.png; sourceTree = "<group>"; };
+		19292EA71CEB8A15007B5B05 /* map.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map.png; sourceTree = "<group>"; };
+		19292EA81CEB8A15007B5B05 /* map2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = map2.png; sourceTree = "<group>"; };
+		19292EA91CEB8A15007B5B05 /* profile.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile.png; sourceTree = "<group>"; };
+		19292EAA1CEB8A15007B5B05 /* profile2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = profile2.png; sourceTree = "<group>"; };
+		19292EB21CEB8A1C007B5B05 /* connect@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect@2x.png"; sourceTree = "<group>"; };
+		19292EB31CEB8A1C007B5B05 /* exchange@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exchange@2x.png"; sourceTree = "<group>"; };
+		19292EB41CEB8A1C007B5B05 /* home@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@2x.png"; sourceTree = "<group>"; };
+		19292EB51CEB8A1C007B5B05 /* map@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map@2x.png"; sourceTree = "<group>"; };
+		19292EB61CEB8A1C007B5B05 /* map2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map2@2x.png"; sourceTree = "<group>"; };
+		19292EB71CEB8A1C007B5B05 /* profile@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@2x.png"; sourceTree = "<group>"; };
+		19292EB81CEB8A1C007B5B05 /* profile2@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile2@2x.png"; sourceTree = "<group>"; };
+		19292EC01CEB8A23007B5B05 /* connect@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "connect@3x.png"; sourceTree = "<group>"; };
+		19292EC11CEB8A23007B5B05 /* exchange@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "exchange@3x.png"; sourceTree = "<group>"; };
+		19292EC21CEB8A23007B5B05 /* home@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "home@3x.png"; sourceTree = "<group>"; };
+		19292EC31CEB8A23007B5B05 /* map@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map@3x.png"; sourceTree = "<group>"; };
+		19292EC41CEB8A23007B5B05 /* map2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map2@3x.png"; sourceTree = "<group>"; };
+		19292EC51CEB8A23007B5B05 /* profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@3x.png"; sourceTree = "<group>"; };
+		19292EC61CEB8A23007B5B05 /* profile2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile2@3x.png"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		19292E831CEB8384007B5B05 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		19292E7D1CEB8384007B5B05 = {
+			isa = PBXGroup;
+			children = (
+				19292E881CEB8384007B5B05 /* Lumi-iOS */,
+				19292E871CEB8384007B5B05 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		19292E871CEB8384007B5B05 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				19292E861CEB8384007B5B05 /* Lumi-iOS.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		19292E881CEB8384007B5B05 /* Lumi-iOS */ = {
+			isa = PBXGroup;
+			children = (
+				19292EA31CEB8A05007B5B05 /* Resources */,
+				19292E8C1CEB8384007B5B05 /* AppDelegate.h */,
+				19292E8D1CEB8384007B5B05 /* AppDelegate.m */,
+				19292E8F1CEB8384007B5B05 /* FirstViewController.h */,
+				19292E901CEB8384007B5B05 /* FirstViewController.m */,
+				19292E921CEB8384007B5B05 /* SecondViewController.h */,
+				19292E931CEB8384007B5B05 /* SecondViewController.m */,
+				19292E951CEB8384007B5B05 /* Main.storyboard */,
+				19292E981CEB8384007B5B05 /* Assets.xcassets */,
+				19292E9A1CEB8384007B5B05 /* LaunchScreen.storyboard */,
+				19292E9D1CEB8384007B5B05 /* Info.plist */,
+				19292E891CEB8384007B5B05 /* Supporting Files */,
+			);
+			path = "Lumi-iOS";
+			sourceTree = "<group>";
+		};
+		19292E891CEB8384007B5B05 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				19292E8A1CEB8384007B5B05 /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		19292EA31CEB8A05007B5B05 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				19292EC01CEB8A23007B5B05 /* connect@3x.png */,
+				19292EC11CEB8A23007B5B05 /* exchange@3x.png */,
+				19292EC21CEB8A23007B5B05 /* home@3x.png */,
+				19292EC31CEB8A23007B5B05 /* map@3x.png */,
+				19292EC41CEB8A23007B5B05 /* map2@3x.png */,
+				19292EC51CEB8A23007B5B05 /* profile@3x.png */,
+				19292EC61CEB8A23007B5B05 /* profile2@3x.png */,
+				19292EB21CEB8A1C007B5B05 /* connect@2x.png */,
+				19292EB31CEB8A1C007B5B05 /* exchange@2x.png */,
+				19292EB41CEB8A1C007B5B05 /* home@2x.png */,
+				19292EB51CEB8A1C007B5B05 /* map@2x.png */,
+				19292EB61CEB8A1C007B5B05 /* map2@2x.png */,
+				19292EB71CEB8A1C007B5B05 /* profile@2x.png */,
+				19292EB81CEB8A1C007B5B05 /* profile2@2x.png */,
+				19292EA41CEB8A15007B5B05 /* connect.png */,
+				19292EA51CEB8A15007B5B05 /* exchange.png */,
+				19292EA61CEB8A15007B5B05 /* home.png */,
+				19292EA71CEB8A15007B5B05 /* map.png */,
+				19292EA81CEB8A15007B5B05 /* map2.png */,
+				19292EA91CEB8A15007B5B05 /* profile.png */,
+				19292EAA1CEB8A15007B5B05 /* profile2.png */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		19292E851CEB8384007B5B05 /* Lumi-iOS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 19292EA01CEB8384007B5B05 /* Build configuration list for PBXNativeTarget "Lumi-iOS" */;
+			buildPhases = (
+				19292E821CEB8384007B5B05 /* Sources */,
+				19292E831CEB8384007B5B05 /* Frameworks */,
+				19292E841CEB8384007B5B05 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Lumi-iOS";
+			productName = "Lumi-iOS";
+			productReference = 19292E861CEB8384007B5B05 /* Lumi-iOS.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		19292E7E1CEB8384007B5B05 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = "Rapid Development Crew";
+				TargetAttributes = {
+					19292E851CEB8384007B5B05 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 19292E811CEB8384007B5B05 /* Build configuration list for PBXProject "Lumi-iOS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 19292E7D1CEB8384007B5B05;
+			productRefGroup = 19292E871CEB8384007B5B05 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				19292E851CEB8384007B5B05 /* Lumi-iOS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		19292E841CEB8384007B5B05 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19292ECD1CEB8A23007B5B05 /* profile2@3x.png in Resources */,
+				19292EBF1CEB8A1C007B5B05 /* profile2@2x.png in Resources */,
+				19292EAB1CEB8A15007B5B05 /* connect.png in Resources */,
+				19292ECC1CEB8A23007B5B05 /* profile@3x.png in Resources */,
+				19292EBC1CEB8A1C007B5B05 /* map@2x.png in Resources */,
+				19292ECA1CEB8A23007B5B05 /* map@3x.png in Resources */,
+				19292E9C1CEB8384007B5B05 /* LaunchScreen.storyboard in Resources */,
+				19292EAD1CEB8A15007B5B05 /* home.png in Resources */,
+				19292EAF1CEB8A15007B5B05 /* map2.png in Resources */,
+				19292EBB1CEB8A1C007B5B05 /* home@2x.png in Resources */,
+				19292EC81CEB8A23007B5B05 /* exchange@3x.png in Resources */,
+				19292ECB1CEB8A23007B5B05 /* map2@3x.png in Resources */,
+				19292EBD1CEB8A1C007B5B05 /* map2@2x.png in Resources */,
+				19292EC71CEB8A23007B5B05 /* connect@3x.png in Resources */,
+				19292EB01CEB8A15007B5B05 /* profile.png in Resources */,
+				19292EAC1CEB8A15007B5B05 /* exchange.png in Resources */,
+				19292EB91CEB8A1C007B5B05 /* connect@2x.png in Resources */,
+				19292EBA1CEB8A1C007B5B05 /* exchange@2x.png in Resources */,
+				19292EAE1CEB8A15007B5B05 /* map.png in Resources */,
+				19292EBE1CEB8A1C007B5B05 /* profile@2x.png in Resources */,
+				19292E991CEB8384007B5B05 /* Assets.xcassets in Resources */,
+				19292EB11CEB8A15007B5B05 /* profile2.png in Resources */,
+				19292EC91CEB8A23007B5B05 /* home@3x.png in Resources */,
+				19292E971CEB8384007B5B05 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		19292E821CEB8384007B5B05 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				19292E941CEB8384007B5B05 /* SecondViewController.m in Sources */,
+				19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */,
+				19292E911CEB8384007B5B05 /* FirstViewController.m in Sources */,
+				19292E8B1CEB8384007B5B05 /* main.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		19292E951CEB8384007B5B05 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19292E961CEB8384007B5B05 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		19292E9A1CEB8384007B5B05 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				19292E9B1CEB8384007B5B05 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		19292E9E1CEB8384007B5B05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		19292E9F1CEB8384007B5B05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		19292EA11CEB8384007B5B05 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Lumi-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "RDCrew.Lumi-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		19292EA21CEB8384007B5B05 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = "Lumi-iOS/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "RDCrew.Lumi-iOS";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		19292E811CEB8384007B5B05 /* Build configuration list for PBXProject "Lumi-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19292E9E1CEB8384007B5B05 /* Debug */,
+				19292E9F1CEB8384007B5B05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		19292EA01CEB8384007B5B05 /* Build configuration list for PBXNativeTarget "Lumi-iOS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				19292EA11CEB8384007B5B05 /* Debug */,
+				19292EA21CEB8384007B5B05 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 19292E7E1CEB8384007B5B05 /* Project object */;
+}
