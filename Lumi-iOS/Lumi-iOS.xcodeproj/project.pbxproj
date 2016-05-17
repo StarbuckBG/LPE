@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		19292E8B1CEB8384007B5B05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E8A1CEB8384007B5B05 /* main.m */; };
 		19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E8D1CEB8384007B5B05 /* AppDelegate.m */; };
-		19292E911CEB8384007B5B05 /* FirstViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E901CEB8384007B5B05 /* FirstViewController.m */; };
-		19292E941CEB8384007B5B05 /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E931CEB8384007B5B05 /* SecondViewController.m */; };
 		19292E971CEB8384007B5B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19292E951CEB8384007B5B05 /* Main.storyboard */; };
 		19292E991CEB8384007B5B05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19292E981CEB8384007B5B05 /* Assets.xcassets */; };
 		19292E9C1CEB8384007B5B05 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19292E9A1CEB8384007B5B05 /* LaunchScreen.storyboard */; };
@@ -35,6 +33,11 @@
 		19292ECB1CEB8A23007B5B05 /* map2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC41CEB8A23007B5B05 /* map2@3x.png */; };
 		19292ECC1CEB8A23007B5B05 /* profile@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC51CEB8A23007B5B05 /* profile@3x.png */; };
 		19292ECD1CEB8A23007B5B05 /* profile2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC61CEB8A23007B5B05 /* profile2@3x.png */; };
+		19292ED11CEB8B3D007B5B05 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED01CEB8B3D007B5B05 /* HomeViewController.m */; };
+		19292ED41CEB8B4B007B5B05 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED31CEB8B4B007B5B05 /* ConnectViewController.m */; };
+		19292ED71CEB8B57007B5B05 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED61CEB8B57007B5B05 /* ProfileViewController.m */; };
+		19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED91CEB8B69007B5B05 /* ExchangeViewController.m */; };
+		19292EDD1CEB8B75007B5B05 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292EDC1CEB8B75007B5B05 /* MapViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,10 +45,6 @@
 		19292E8A1CEB8384007B5B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19292E8C1CEB8384007B5B05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19292E8D1CEB8384007B5B05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		19292E8F1CEB8384007B5B05 /* FirstViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = FirstViewController.h; sourceTree = "<group>"; };
-		19292E901CEB8384007B5B05 /* FirstViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = FirstViewController.m; sourceTree = "<group>"; };
-		19292E921CEB8384007B5B05 /* SecondViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
-		19292E931CEB8384007B5B05 /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		19292E961CEB8384007B5B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19292E981CEB8384007B5B05 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		19292E9B1CEB8384007B5B05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -71,6 +70,16 @@
 		19292EC41CEB8A23007B5B05 /* map2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "map2@3x.png"; sourceTree = "<group>"; };
 		19292EC51CEB8A23007B5B05 /* profile@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile@3x.png"; sourceTree = "<group>"; };
 		19292EC61CEB8A23007B5B05 /* profile2@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "profile2@3x.png"; sourceTree = "<group>"; };
+		19292ECF1CEB8B3D007B5B05 /* HomeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HomeViewController.h; sourceTree = "<group>"; };
+		19292ED01CEB8B3D007B5B05 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
+		19292ED21CEB8B4B007B5B05 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
+		19292ED31CEB8B4B007B5B05 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
+		19292ED51CEB8B57007B5B05 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
+		19292ED61CEB8B57007B5B05 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
+		19292ED81CEB8B69007B5B05 /* ExchangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeViewController.h; sourceTree = "<group>"; };
+		19292ED91CEB8B69007B5B05 /* ExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewController.m; sourceTree = "<group>"; };
+		19292EDB1CEB8B75007B5B05 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
+		19292EDC1CEB8B75007B5B05 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +115,9 @@
 				19292EA31CEB8A05007B5B05 /* Resources */,
 				19292E8C1CEB8384007B5B05 /* AppDelegate.h */,
 				19292E8D1CEB8384007B5B05 /* AppDelegate.m */,
-				19292E8F1CEB8384007B5B05 /* FirstViewController.h */,
-				19292E901CEB8384007B5B05 /* FirstViewController.m */,
-				19292E921CEB8384007B5B05 /* SecondViewController.h */,
-				19292E931CEB8384007B5B05 /* SecondViewController.m */,
+				19292EE01CEB8BC9007B5B05 /* DatabaseLogic */,
+				19292EDE1CEB8BAC007B5B05 /* Views */,
+				19292ECE1CEB8B03007B5B05 /* ViewControllers */,
 				19292E951CEB8384007B5B05 /* Main.storyboard */,
 				19292E981CEB8384007B5B05 /* Assets.xcassets */,
 				19292E9A1CEB8384007B5B05 /* LaunchScreen.storyboard */,
@@ -155,6 +163,37 @@
 			name = Resources;
 			sourceTree = "<group>";
 		};
+		19292ECE1CEB8B03007B5B05 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				19292ECF1CEB8B3D007B5B05 /* HomeViewController.h */,
+				19292ED01CEB8B3D007B5B05 /* HomeViewController.m */,
+				19292ED21CEB8B4B007B5B05 /* ConnectViewController.h */,
+				19292ED31CEB8B4B007B5B05 /* ConnectViewController.m */,
+				19292ED51CEB8B57007B5B05 /* ProfileViewController.h */,
+				19292ED61CEB8B57007B5B05 /* ProfileViewController.m */,
+				19292ED81CEB8B69007B5B05 /* ExchangeViewController.h */,
+				19292ED91CEB8B69007B5B05 /* ExchangeViewController.m */,
+				19292EDB1CEB8B75007B5B05 /* MapViewController.h */,
+				19292EDC1CEB8B75007B5B05 /* MapViewController.m */,
+			);
+			name = ViewControllers;
+			sourceTree = "<group>";
+		};
+		19292EDE1CEB8BAC007B5B05 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		19292EE01CEB8BC9007B5B05 /* DatabaseLogic */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = DatabaseLogic;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -186,6 +225,7 @@
 				TargetAttributes = {
 					19292E851CEB8384007B5B05 = {
 						CreatedOnToolsVersion = 7.3.1;
+						DevelopmentTeam = P6Y2W9RQ54;
 					};
 				};
 			};
@@ -246,10 +286,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19292E941CEB8384007B5B05 /* SecondViewController.m in Sources */,
 				19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */,
-				19292E911CEB8384007B5B05 /* FirstViewController.m in Sources */,
+				19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */,
 				19292E8B1CEB8384007B5B05 /* main.m in Sources */,
+				19292ED11CEB8B3D007B5B05 /* HomeViewController.m in Sources */,
+				19292ED41CEB8B4B007B5B05 /* ConnectViewController.m in Sources */,
+				19292ED71CEB8B57007B5B05 /* ProfileViewController.m in Sources */,
+				19292EDD1CEB8B75007B5B05 /* MapViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,8 +406,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Lumi-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RDCrew.Lumi-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -375,8 +419,9 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Lumi-iOS/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RDCrew.Lumi-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -402,6 +447,7 @@
 				19292EA21CEB8384007B5B05 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

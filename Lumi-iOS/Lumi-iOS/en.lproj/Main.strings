@@ -1,0 +1,15 @@
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "acW-dT-cKf"; */
+"acW-dT-cKf.title" = "Home";
+
+/* Class = "UITabBarItem"; title = "Exchange"; ObjectID = "b2j-M3-2rO"; */
+"b2j-M3-2rO.title" = "Exchange";
+
+/* Class = "UITabBarItem"; title = "Connect"; ObjectID = "cPa-gy-q4n"; */
+"cPa-gy-q4n.title" = "Connect";
+
+/* Class = "UITabBarItem"; title = "Profile"; ObjectID = "cTj-LO-Z2F"; */
+"cTj-LO-Z2F.title" = "Profile";
+
+/* Class = "UITabBarItem"; title = "Map"; ObjectID = "goK-vl-Ea2"; */
+"goK-vl-Ea2.title" = "Map";

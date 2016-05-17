@@ -1,5 +1,5 @@
 //
-//  SecondViewController.h
+//  ExchangeViewController.h
 //  Lumi-iOS
 //
 //  Created by Martin Kuvandzhiev on 5/17/16.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
-
+@interface ExchangeViewController : UIViewController
 
 @end
-
