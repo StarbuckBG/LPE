@@ -39,6 +39,8 @@
 		19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED91CEB8B69007B5B05 /* ExchangeViewController.m */; };
 		19292EDD1CEB8B75007B5B05 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292EDC1CEB8B75007B5B05 /* MapViewController.m */; };
 		197C9E401D04AAD00017D46A /* DatabaseIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */; };
+		197C9E421D04BDC00017D46A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197C9E411D04BDC00017D46A /* MapKit.framework */; };
+		197C9E441D04BDCB0017D46A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197C9E431D04BDCB0017D46A /* AVFoundation.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -83,6 +85,8 @@
 		19292EDC1CEB8B75007B5B05 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
 		197C9E3E1D04AAD00017D46A /* DatabaseIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseIntegration.h; sourceTree = "<group>"; };
 		197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseIntegration.m; sourceTree = "<group>"; };
+		197C9E411D04BDC00017D46A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		197C9E431D04BDCB0017D46A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +94,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				197C9E441D04BDCB0017D46A /* AVFoundation.framework in Frameworks */,
+				197C9E421D04BDC00017D46A /* MapKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -99,6 +105,8 @@
 		19292E7D1CEB8384007B5B05 = {
 			isa = PBXGroup;
 			children = (
+				197C9E431D04BDCB0017D46A /* AVFoundation.framework */,
+				197C9E411D04BDC00017D46A /* MapKit.framework */,
 				19292E881CEB8384007B5B05 /* Lumi-iOS */,
 				19292E871CEB8384007B5B05 /* Products */,
 			);
