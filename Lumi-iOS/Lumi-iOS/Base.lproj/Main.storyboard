@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -36,9 +37,56 @@
                     <view key="view" contentMode="scaleToFill" id="QS5-Rx-YEW">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tfI-dA-BUl" customClass="RDCodeScannerView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="1cP-vO-qTF"/>
+                                    <constraint firstAttribute="width" constant="200" id="Hqb-WS-JdX"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="1cP-vO-qTF"/>
+                                        <exclude reference="Hqb-WS-JdX"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="1cP-vO-qTF"/>
+                                        <include reference="Hqb-WS-JdX"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="tfI-dA-BUl" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="20" id="mAs-ux-Ozi"/>
+                            <constraint firstItem="tfI-dA-BUl" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="xFc-b8-dUa"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="tfI-dA-BUl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="mAs-ux-Ozi"/>
+                                <exclude reference="xFc-b8-dUa"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="tfI-dA-BUl"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="mAs-ux-Ozi"/>
+                                <include reference="xFc-b8-dUa"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Connect" image="connect.png" id="cPa-gy-q4n"/>
+                    <connections>
+                        <outlet property="codeScannerView" destination="tfI-dA-BUl" id="4Mn-ty-Gta"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Nw-L8-lE0" sceneMemberID="firstResponder"/>
             </objects>
@@ -143,10 +191,10 @@
                                 <exclude reference="DBu-B5-Tph"/>
                             </mask>
                             <mask key="constraints">
+                                <exclude reference="LYR-V2-gPM"/>
                                 <exclude reference="5t9-dM-Txu"/>
                                 <exclude reference="KJo-HO-bZg"/>
                                 <exclude reference="RVD-cb-2bX"/>
-                                <exclude reference="LYR-V2-gPM"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -154,10 +202,10 @@
                                 <include reference="DBu-B5-Tph"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="LYR-V2-gPM"/>
                                 <include reference="5t9-dM-Txu"/>
                                 <include reference="KJo-HO-bZg"/>
                                 <include reference="RVD-cb-2bX"/>
-                                <include reference="LYR-V2-gPM"/>
                             </mask>
                         </variation>
                     </view>

@@ -41,6 +41,7 @@
 		197C9E401D04AAD00017D46A /* DatabaseIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */; };
 		197C9E421D04BDC00017D46A /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197C9E411D04BDC00017D46A /* MapKit.framework */; };
 		197C9E441D04BDCB0017D46A /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 197C9E431D04BDCB0017D46A /* AVFoundation.framework */; };
+		197C9E471D04C1F70017D46A /* RDCodeScannerView.m in Sources */ = {isa = PBXBuildFile; fileRef = 197C9E461D04C1F70017D46A /* RDCodeScannerView.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,8 @@
 		197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseIntegration.m; sourceTree = "<group>"; };
 		197C9E411D04BDC00017D46A /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		197C9E431D04BDCB0017D46A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		197C9E451D04C1F70017D46A /* RDCodeScannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDCodeScannerView.h; sourceTree = "<group>"; };
+		197C9E461D04C1F70017D46A /* RDCodeScannerView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDCodeScannerView.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,7 @@
 				19292EA31CEB8A05007B5B05 /* Resources */,
 				19292E8C1CEB8384007B5B05 /* AppDelegate.h */,
 				19292E8D1CEB8384007B5B05 /* AppDelegate.m */,
+				197C9E481D04C1FE0017D46A /* Rapid Development Crew */,
 				19292EE01CEB8BC9007B5B05 /* DatabaseLogic */,
 				19292EDE1CEB8BAC007B5B05 /* Views */,
 				19292ECE1CEB8B03007B5B05 /* ViewControllers */,
@@ -205,6 +209,15 @@
 				197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */,
 			);
 			name = DatabaseLogic;
+			sourceTree = "<group>";
+		};
+		197C9E481D04C1FE0017D46A /* Rapid Development Crew */ = {
+			isa = PBXGroup;
+			children = (
+				197C9E451D04C1F70017D46A /* RDCodeScannerView.h */,
+				197C9E461D04C1F70017D46A /* RDCodeScannerView.m */,
+			);
+			name = "Rapid Development Crew";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -305,6 +318,7 @@
 				19292E8B1CEB8384007B5B05 /* main.m in Sources */,
 				19292ED11CEB8B3D007B5B05 /* HomeViewController.m in Sources */,
 				19292ED41CEB8B4B007B5B05 /* ConnectViewController.m in Sources */,
+				197C9E471D04C1F70017D46A /* RDCodeScannerView.m in Sources */,
 				19292ED71CEB8B57007B5B05 /* ProfileViewController.m in Sources */,
 				19292EDD1CEB8B75007B5B05 /* MapViewController.m in Sources */,
 			);

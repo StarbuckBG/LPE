@@ -9,6 +9,7 @@
 #import "ConnectViewController.h"
 
 @interface ConnectViewController ()
+@property (weak, nonatomic) IBOutlet RDCodeScannerView * codeScannerView;
 
 @end
 
@@ -16,7 +17,13 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+   
+}
+
+- (void) viewWillAppear:(BOOL)animated
+{
+     self.codeScannerView.delegate = self;
+    [self.codeScannerView startReading];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +40,10 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void)codeScanned:(RDCodeScannerView *)object codeData:(NSString *)codeData
+{
+    NSLog(@"%@:",codeData);
+}
 
 @end
