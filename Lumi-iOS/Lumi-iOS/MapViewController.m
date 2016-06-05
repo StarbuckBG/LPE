@@ -33,6 +33,8 @@
     database = [DatabaseIntegration sharedInstance];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playgroundsUpdatedNotificationHandler:) name:PLAYGROUNDS_DATA_UPDATED object:nil];
+    
+    [database updatePlaygrounds];
 }
 
 - (void) viewWillAppear:(BOOL)animated
@@ -40,7 +42,7 @@
     [super viewWillAppear:animated];
     [self.locationManager startUpdatingLocation];
     self.mapView.showsUserLocation = YES;
-    
+    [database updatePlaygrounds];
     UIBarButtonItem * findMeButton = [[UIBarButtonItem alloc] initWithTitle:@"Find me" style:UIBarButtonItemStylePlain target:self action:@selector(findMeButtonTapped:)];
     self.parentViewController.navigationItem.rightBarButtonItem = findMeButton;
     
@@ -76,6 +78,81 @@
 {
     myLocation = userLocation;
 }
+
+
+-(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
+{
+    if ([annotation isKindOfClass:[MKUserLocation class]])
+        return nil;
+    
+    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
+    annotationView.canShowCallout = YES;
+    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+    
+    return annotationView;
+}
+
+
+- (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
+{
+    __block MKAnnotationView * blockAnnotationView = view;
+    
+    UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Navigation" message:@"Please select type of navigation to point" preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction * walkingOption = [UIAlertAction actionWithTitle:@"Walking"
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction * _Nonnull action) {
+                                                               [self initiateNavigationTo:blockAnnotationView walking:YES];
+                                                           }];
+    UIAlertAction * drivingOption = [UIAlertAction actionWithTitle:@"Driving"
+                                                             style:UIAlertActionStyleDefault
+                                                           handler:^(UIAlertAction * _Nonnull action) {
+                                                               [self initiateNavigationTo:blockAnnotationView walking:NO];
+                                                           }];
+    UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                            style:UIAlertActionStyleCancel
+                                                          handler:^(UIAlertAction * _Nonnull action) {
+                                                          }];
+    
+    [alertController addAction:walkingOption];
+    [alertController addAction:drivingOption];
+    [alertController addAction:cancelAction];
+    
+    [self presentViewController:alertController animated:YES completion:^{
+    }];
+    
+    
+}
+
+- (void) initiateNavigationTo: (MKAnnotationView *) annotation walking: (BOOL) walking
+{
+    Class mapItemClass = [MKMapItem class];
+    if (mapItemClass && [mapItemClass respondsToSelector:@selector(openMapsWithItems:launchOptions:)])
+    {
+        MKPlacemark *placemark = [[MKPlacemark alloc] initWithCoordinate:annotation.annotation.coordinate
+                                                       addressDictionary:nil];
+        MKMapItem *mapItem = [[MKMapItem alloc] initWithPlacemark:placemark];
+        [mapItem setName:annotation.annotation.title];
+        
+        NSDictionary *launchOptions;
+        if(walking == YES)
+        {
+            launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeWalking};
+        }
+        else
+        {
+            launchOptions = @{MKLaunchOptionsDirectionsModeKey : MKLaunchOptionsDirectionsModeDriving};
+        }
+        
+        
+        // Get the "Current User Location" MKMapItem
+        MKMapItem *currentLocationMapItem = [MKMapItem mapItemForCurrentLocation];
+        // Pass the current location and destination map items to the Maps app
+        // Set the direction mode in the launchOptions dictionary
+        [MKMapItem openMapsWithItems:@[currentLocationMapItem, mapItem]
+                       launchOptions:launchOptions];
+    }
+}
+
 
 - (void) addPointsToMap
 {
