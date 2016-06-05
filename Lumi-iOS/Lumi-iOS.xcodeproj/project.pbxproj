@@ -38,6 +38,7 @@
 		19292ED71CEB8B57007B5B05 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED61CEB8B57007B5B05 /* ProfileViewController.m */; };
 		19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED91CEB8B69007B5B05 /* ExchangeViewController.m */; };
 		19292EDD1CEB8B75007B5B05 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292EDC1CEB8B75007B5B05 /* MapViewController.m */; };
+		197C9E401D04AAD00017D46A /* DatabaseIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,6 +81,8 @@
 		19292ED91CEB8B69007B5B05 /* ExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewController.m; sourceTree = "<group>"; };
 		19292EDB1CEB8B75007B5B05 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
 		19292EDC1CEB8B75007B5B05 /* MapViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MapViewController.m; sourceTree = "<group>"; };
+		197C9E3E1D04AAD00017D46A /* DatabaseIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DatabaseIntegration.h; sourceTree = "<group>"; };
+		197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DatabaseIntegration.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -190,6 +193,8 @@
 		19292EE01CEB8BC9007B5B05 /* DatabaseLogic */ = {
 			isa = PBXGroup;
 			children = (
+				197C9E3E1D04AAD00017D46A /* DatabaseIntegration.h */,
+				197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */,
 			);
 			name = DatabaseLogic;
 			sourceTree = "<group>";
@@ -287,6 +292,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */,
+				197C9E401D04AAD00017D46A /* DatabaseIntegration.m in Sources */,
 				19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */,
 				19292E8B1CEB8384007B5B05 /* main.m in Sources */,
 				19292ED11CEB8B3D007B5B05 /* HomeViewController.m in Sources */,

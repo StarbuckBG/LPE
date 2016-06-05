@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "DatabaseIntegration.h"
 
 @interface HomeViewController : UIViewController
 

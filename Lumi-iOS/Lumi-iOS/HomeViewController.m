@@ -9,14 +9,18 @@
 #import "HomeViewController.h"
 
 @interface HomeViewController ()
-
+{
+    DatabaseIntegration * database;
+}
 @end
 
 @implementation HomeViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    database = [DatabaseIntegration sharedInstance];
+    [database loginWithUsername:@"starbuck" andPassword:@"12348765"];
+    [database registerUserWithUsername:@"lumiUser1" andPassword:@"12348765" andEmail:@"lumiUser1@playgroundenergy.com"];
 }
 
 - (void)didReceiveMemoryWarning {
