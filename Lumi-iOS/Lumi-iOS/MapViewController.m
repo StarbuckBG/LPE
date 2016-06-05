@@ -95,6 +95,9 @@
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
+   /*
+    // navigation to point
+    
     __block MKAnnotationView * blockAnnotationView = view;
     
     UIAlertController * alertController = [UIAlertController alertControllerWithTitle:@"Navigation" message:@"Please select type of navigation to point" preferredStyle:UIAlertControllerStyleActionSheet];
@@ -120,7 +123,7 @@
     [self presentViewController:alertController animated:YES completion:^{
     }];
     
-    
+    */
 }
 
 - (void) initiateNavigationTo: (MKAnnotationView *) annotation walking: (BOOL) walking
