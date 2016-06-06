@@ -54,31 +54,31 @@
 - (void) viewDidAppear:(BOOL)animated
 {
     
-    [UIView animateWithDuration:5.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse animations:^{
+    [UIView animateWithDuration:5.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
         self.centerBubbleView.center = CGPointMake(self.centerBubbleView.center.x, self.centerBubbleView.center.y - 30);
     } completion:^(BOOL finished) {
         ;
     }];
     
-    [UIView animateWithDuration:4.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse animations:^{
+    [UIView animateWithDuration:4.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
         self.topLeftBubbleView.center = CGPointMake(self.topLeftBubbleView.center.x, self.topLeftBubbleView.center.y - 30);
     } completion:^(BOOL finished) {
         ;
     }];
     
-    [UIView animateWithDuration:6.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse animations:^{
+    [UIView animateWithDuration:6.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
         self.topRightBubbleView.center = CGPointMake(self.topRightBubbleView.center.x, self.topRightBubbleView.center.y - 30);
     } completion:^(BOOL finished) {
         ;
     }];
     
-    [UIView animateWithDuration:5.5f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse animations:^{
+    [UIView animateWithDuration:5.5f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
         self.bottomLeftBubbleView.center = CGPointMake(self.bottomLeftBubbleView.center.x, self.bottomLeftBubbleView.center.y - 30);
     } completion:^(BOOL finished) {
         ;
     }];
     
-    [UIView animateWithDuration:4.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse animations:^{
+    [UIView animateWithDuration:4.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
         self.bottomRightBubbleView.center = CGPointMake(self.bottomRightBubbleView.center.x, self.bottomRightBubbleView.center.y - 30);
     } completion:^(BOOL finished) {
         ;
@@ -100,5 +100,25 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+#pragma mark - gestureRecognizers
+
+- (IBAction)topLeftTapGestureRegonized:(UITapGestureRecognizer *)sender {
+    self.tabBarController.selectedIndex = 1;
+}
+
+- (IBAction)topRightTapGestureRecognized:(UITapGestureRecognizer *)sender {
+    self.tabBarController.selectedIndex = 2;
+}
+
+- (IBAction)bottomRightTapGestureRecognized:(UITapGestureRecognizer *)sender {
+    self.tabBarController.selectedIndex = 3;
+}
+
+- (IBAction)bottomLeftTapGestureRecognized:(UITapGestureRecognizer *)sender {
+    self.tabBarController.selectedIndex = 4;
+}
+
+
 
 @end

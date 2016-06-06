@@ -50,6 +50,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b04-MC-SbF" customClass="BubbleView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="WG2-Zt-wEh">
                                         <variation key="widthClass=compact" constant="179"/>
@@ -70,10 +71,14 @@
                                         <include reference="wn9-4C-utR"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="E6Y-YZ-y4U" appends="YES" id="TPF-iB-mTF"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qv8-Uy-gz2" customClass="BubbleView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="J8j-67-HTP">
                                         <variation key="widthClass=compact" constant="180"/>
@@ -94,34 +99,14 @@
                                         <include reference="LXd-oD-yO4"/>
                                     </mask>
                                 </variation>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzL-wM-hbq" customClass="BubbleView">
-                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="QYi-LT-2xZ">
-                                        <variation key="widthClass=compact" constant="180"/>
-                                    </constraint>
-                                    <constraint firstAttribute="height" constant="160" id="xg1-nH-UOO">
-                                        <variation key="widthClass=compact" constant="180"/>
-                                    </constraint>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="QYi-LT-2xZ"/>
-                                        <exclude reference="xg1-nH-UOO"/>
-                                    </mask>
-                                </variation>
-                                <variation key="widthClass=compact">
-                                    <mask key="constraints">
-                                        <include reference="QYi-LT-2xZ"/>
-                                        <include reference="xg1-nH-UOO"/>
-                                    </mask>
-                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="4mr-Ee-qOh" appends="YES" id="JOW-Uq-ElQ"/>
+                                </connections>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0a0-IM-ifd" customClass="BubbleView">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="160" id="MPh-1B-YgJ">
                                         <variation key="widthClass=compact" constant="180"/>
@@ -142,9 +127,41 @@
                                         <include reference="apv-lk-kLZ"/>
                                     </mask>
                                 </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="OhK-4a-Efa" appends="YES" id="RAF-3M-zdj"/>
+                                </connections>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzL-wM-hbq" customClass="BubbleView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="QYi-LT-2xZ">
+                                        <variation key="widthClass=compact" constant="180"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="160" id="xg1-nH-UOO">
+                                        <variation key="widthClass=compact" constant="180"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QYi-LT-2xZ"/>
+                                        <exclude reference="xg1-nH-UOO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="QYi-LT-2xZ"/>
+                                        <include reference="xg1-nH-UOO"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="mYC-Jq-B8a" appends="YES" id="ogy-xC-VcO"/>
+                                </connections>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
                         <constraints>
                             <constraint firstItem="qv8-Uy-gz2" firstAttribute="top" secondItem="b04-MC-SbF" secondAttribute="bottom" constant="127" id="3P6-xf-jff">
                                 <variation key="widthClass=compact" constant="76"/>
@@ -176,22 +193,22 @@
                                 <exclude reference="8ha-3o-jAN"/>
                                 <exclude reference="b04-MC-SbF"/>
                                 <exclude reference="qv8-Uy-gz2"/>
-                                <exclude reference="bzL-wM-hbq"/>
                                 <exclude reference="0a0-IM-ifd"/>
+                                <exclude reference="bzL-wM-hbq"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="DoH-Jy-nXY"/>
-                                <exclude reference="Znt-Ng-MYS"/>
+                                <exclude reference="7u9-zv-IWx"/>
+                                <exclude reference="VGp-z3-fYc"/>
+                                <exclude reference="ylG-8E-5dl"/>
                                 <exclude reference="bkf-bA-jg3"/>
                                 <exclude reference="hDM-1K-V1e"/>
+                                <exclude reference="DoH-Jy-nXY"/>
+                                <exclude reference="Znt-Ng-MYS"/>
                                 <exclude reference="ecy-yJ-ZNb"/>
                                 <exclude reference="uma-Pf-upw"/>
                                 <exclude reference="3P6-xf-jff"/>
                                 <exclude reference="IZJ-OR-QF8"/>
                                 <exclude reference="uWa-hp-Bma"/>
-                                <exclude reference="7u9-zv-IWx"/>
-                                <exclude reference="VGp-z3-fYc"/>
-                                <exclude reference="ylG-8E-5dl"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -199,22 +216,22 @@
                                 <include reference="8ha-3o-jAN"/>
                                 <include reference="b04-MC-SbF"/>
                                 <include reference="qv8-Uy-gz2"/>
-                                <include reference="bzL-wM-hbq"/>
                                 <include reference="0a0-IM-ifd"/>
+                                <include reference="bzL-wM-hbq"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="DoH-Jy-nXY"/>
-                                <include reference="Znt-Ng-MYS"/>
+                                <include reference="7u9-zv-IWx"/>
+                                <include reference="VGp-z3-fYc"/>
+                                <include reference="ylG-8E-5dl"/>
                                 <include reference="bkf-bA-jg3"/>
                                 <include reference="hDM-1K-V1e"/>
+                                <include reference="DoH-Jy-nXY"/>
+                                <include reference="Znt-Ng-MYS"/>
                                 <include reference="ecy-yJ-ZNb"/>
                                 <include reference="uma-Pf-upw"/>
                                 <include reference="3P6-xf-jff"/>
                                 <include reference="IZJ-OR-QF8"/>
                                 <include reference="uWa-hp-Bma"/>
-                                <include reference="7u9-zv-IWx"/>
-                                <include reference="VGp-z3-fYc"/>
-                                <include reference="ylG-8E-5dl"/>
                             </mask>
                         </variation>
                     </view>
@@ -228,6 +245,26 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="E6Y-YZ-y4U">
+                    <connections>
+                        <action selector="topLeftTapGestureRegonized:" destination="9pv-A4-QxB" id="Mgv-wq-Boa"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="4mr-Ee-qOh">
+                    <connections>
+                        <action selector="bottomLeftTapGestureRecognized:" destination="9pv-A4-QxB" id="HJR-0U-1Zu"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="OhK-4a-Efa">
+                    <connections>
+                        <action selector="bottomRightTapGestureRecognized:" destination="9pv-A4-QxB" id="DlM-E9-lm4"/>
+                    </connections>
+                </tapGestureRecognizer>
+                <tapGestureRecognizer id="mYC-Jq-B8a">
+                    <connections>
+                        <action selector="topRightTapGestureRecognized:" destination="9pv-A4-QxB" id="A0B-Fd-aSV"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-205.5" y="-741"/>
         </scene>
@@ -507,6 +544,9 @@
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="13"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="296" y="43" width="84" height="18"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Username" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="35U-DR-FGu">
                                 <rect key="frame" x="246" y="15" width="109.5" height="31.5"/>
