@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F18b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Xg-7r-v82">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Xg-7r-v82">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
@@ -18,9 +19,213 @@
                     <view key="view" contentMode="scaleToFill" id="tsR-hK-woN">
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="8ha-3o-jAN" customClass="BubbleView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="8ha-3o-jAN" secondAttribute="height" multiplier="1:1" id="Zsd-CE-Vbj"/>
+                                    <constraint firstAttribute="width" constant="200" id="ZwY-R8-8uu">
+                                        <variation key="widthClass=compact" constant="240"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="200" id="oUi-jm-37Q">
+                                        <variation key="widthClass=compact" constant="240"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Zsd-CE-Vbj"/>
+                                        <exclude reference="ZwY-R8-8uu"/>
+                                        <exclude reference="oUi-jm-37Q"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Zsd-CE-Vbj"/>
+                                        <include reference="ZwY-R8-8uu"/>
+                                        <include reference="oUi-jm-37Q"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="b04-MC-SbF" customClass="BubbleView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="WG2-Zt-wEh">
+                                        <variation key="widthClass=compact" constant="179"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="160" id="wn9-4C-utR">
+                                        <variation key="widthClass=compact" constant="180"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="WG2-Zt-wEh"/>
+                                        <exclude reference="wn9-4C-utR"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="WG2-Zt-wEh"/>
+                                        <include reference="wn9-4C-utR"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qv8-Uy-gz2" customClass="BubbleView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="J8j-67-HTP">
+                                        <variation key="widthClass=compact" constant="180"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="160" id="LXd-oD-yO4">
+                                        <variation key="widthClass=compact" constant="180"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="J8j-67-HTP"/>
+                                        <exclude reference="LXd-oD-yO4"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="J8j-67-HTP"/>
+                                        <include reference="LXd-oD-yO4"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bzL-wM-hbq" customClass="BubbleView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="QYi-LT-2xZ">
+                                        <variation key="widthClass=compact" constant="180"/>
+                                    </constraint>
+                                    <constraint firstAttribute="height" constant="160" id="xg1-nH-UOO">
+                                        <variation key="widthClass=compact" constant="180"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="QYi-LT-2xZ"/>
+                                        <exclude reference="xg1-nH-UOO"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="QYi-LT-2xZ"/>
+                                        <include reference="xg1-nH-UOO"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0a0-IM-ifd" customClass="BubbleView">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="160" id="MPh-1B-YgJ">
+                                        <variation key="widthClass=compact" constant="180"/>
+                                    </constraint>
+                                    <constraint firstAttribute="width" constant="160" id="apv-lk-kLZ">
+                                        <variation key="widthClass=compact" constant="180"/>
+                                    </constraint>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="MPh-1B-YgJ"/>
+                                        <exclude reference="apv-lk-kLZ"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="MPh-1B-YgJ"/>
+                                        <include reference="apv-lk-kLZ"/>
+                                    </mask>
+                                </variation>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="qv8-Uy-gz2" firstAttribute="top" secondItem="b04-MC-SbF" secondAttribute="bottom" constant="127" id="3P6-xf-jff">
+                                <variation key="widthClass=compact" constant="76"/>
+                            </constraint>
+                            <constraint firstItem="0a0-IM-ifd" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="7u9-zv-IWx">
+                                <variation key="widthClass=compact" constant="162.5"/>
+                            </constraint>
+                            <constraint firstItem="b04-MC-SbF" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="DoH-Jy-nXY"/>
+                            <constraint firstItem="qv8-Uy-gz2" firstAttribute="leading" secondItem="tsR-hK-woN" secondAttribute="leadingMargin" constant="-20" id="IZJ-OR-QF8"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0a0-IM-ifd" secondAttribute="trailing" constant="-20" id="VGp-z3-fYc"/>
+                            <constraint firstItem="b04-MC-SbF" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="Znt-Ng-MYS">
+                                <variation key="widthClass=compact" constant="-116"/>
+                            </constraint>
+                            <constraint firstItem="8ha-3o-jAN" firstAttribute="centerX" secondItem="tsR-hK-woN" secondAttribute="centerX" id="bkf-bA-jg3"/>
+                            <constraint firstItem="bzL-wM-hbq" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="ecy-yJ-ZNb">
+                                <variation key="widthClass=compact" constant="-145.5"/>
+                            </constraint>
+                            <constraint firstItem="8ha-3o-jAN" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="hDM-1K-V1e"/>
+                            <constraint firstItem="qv8-Uy-gz2" firstAttribute="centerY" secondItem="tsR-hK-woN" secondAttribute="centerY" id="uWa-hp-Bma">
+                                <variation key="widthClass=compact" constant="139.5"/>
+                            </constraint>
+                            <constraint firstAttribute="trailingMargin" secondItem="bzL-wM-hbq" secondAttribute="trailing" constant="-20" id="uma-Pf-upw"/>
+                            <constraint firstItem="0a0-IM-ifd" firstAttribute="top" secondItem="bzL-wM-hbq" secondAttribute="bottom" constant="127" id="ylG-8E-5dl">
+                                <variation key="widthClass=compact" constant="128"/>
+                            </constraint>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="8ha-3o-jAN"/>
+                                <exclude reference="b04-MC-SbF"/>
+                                <exclude reference="qv8-Uy-gz2"/>
+                                <exclude reference="bzL-wM-hbq"/>
+                                <exclude reference="0a0-IM-ifd"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="DoH-Jy-nXY"/>
+                                <exclude reference="Znt-Ng-MYS"/>
+                                <exclude reference="bkf-bA-jg3"/>
+                                <exclude reference="hDM-1K-V1e"/>
+                                <exclude reference="ecy-yJ-ZNb"/>
+                                <exclude reference="uma-Pf-upw"/>
+                                <exclude reference="3P6-xf-jff"/>
+                                <exclude reference="IZJ-OR-QF8"/>
+                                <exclude reference="uWa-hp-Bma"/>
+                                <exclude reference="7u9-zv-IWx"/>
+                                <exclude reference="VGp-z3-fYc"/>
+                                <exclude reference="ylG-8E-5dl"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="8ha-3o-jAN"/>
+                                <include reference="b04-MC-SbF"/>
+                                <include reference="qv8-Uy-gz2"/>
+                                <include reference="bzL-wM-hbq"/>
+                                <include reference="0a0-IM-ifd"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="DoH-Jy-nXY"/>
+                                <include reference="Znt-Ng-MYS"/>
+                                <include reference="bkf-bA-jg3"/>
+                                <include reference="hDM-1K-V1e"/>
+                                <include reference="ecy-yJ-ZNb"/>
+                                <include reference="uma-Pf-upw"/>
+                                <include reference="3P6-xf-jff"/>
+                                <include reference="IZJ-OR-QF8"/>
+                                <include reference="uWa-hp-Bma"/>
+                                <include reference="7u9-zv-IWx"/>
+                                <include reference="VGp-z3-fYc"/>
+                                <include reference="ylG-8E-5dl"/>
+                            </mask>
+                        </variation>
                     </view>
                     <tabBarItem key="tabBarItem" title="Home" image="home.png" id="acW-dT-cKf"/>
+                    <connections>
+                        <outlet property="bottomLeftBubbleView" destination="qv8-Uy-gz2" id="sUb-iM-dXg"/>
+                        <outlet property="bottomRightBubbleView" destination="0a0-IM-ifd" id="ag0-5X-57H"/>
+                        <outlet property="centerBubbleView" destination="8ha-3o-jAN" id="OTL-DG-dCF"/>
+                        <outlet property="topLeftBubbleView" destination="b04-MC-SbF" id="9kk-WA-Rdb"/>
+                        <outlet property="topRightBubbleView" destination="bzL-wM-hbq" id="LqI-Xk-uQ8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
@@ -287,6 +492,9 @@
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="308" y="370" width="11" height="24"/>
+                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lumi's" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0i-j3-Vlx">
                                 <rect key="frame" x="526" y="342" width="54" height="25"/>
@@ -305,10 +513,16 @@
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="146" y="15" width="110" height="32"/>
+                                </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V9L-jC-wkD">
                                 <rect key="frame" x="20" y="61.5" width="560" height="243"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="61" width="360" height="244"/>
+                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
