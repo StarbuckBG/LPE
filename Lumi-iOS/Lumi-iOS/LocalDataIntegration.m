@@ -91,6 +91,9 @@
     [userDefaults setObject:savedUserdata forKey:@"savedUserdata"];
 }
 
-
+- (void) syncData
+{
+    [userDefaults synchronize];
+}
 
 @end

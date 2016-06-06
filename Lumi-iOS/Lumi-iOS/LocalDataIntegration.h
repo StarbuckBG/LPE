@@ -21,4 +21,6 @@
 
 @property (strong, nonatomic) NSMutableDictionary * savedUserdata;
 
+- (void) syncData;
+
 @end
