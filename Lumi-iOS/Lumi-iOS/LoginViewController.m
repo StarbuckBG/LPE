@@ -49,7 +49,20 @@
 //                                              cancelButtonTitle:@"OK"
 //                                              otherButtonTitles:nil];
 //        [alert show];
-//        
+    
+    
+    
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login unsuccessful"
+//                                                                   message:@"Username or/and password incorrect"
+//                                                            preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+//                                                            style:UIAlertActionStyleDefault
+//                                                          handler:^(UIAlertAction * action) {
+//                                                              NSLog(@"You pressed button OK");
+//                                                          }];
+//    [alert addAction:defaultAction];
+//    [self presentViewController:alert animated:YES completion:nil];
+    
 //    }
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event

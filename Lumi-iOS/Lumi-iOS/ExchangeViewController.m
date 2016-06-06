@@ -25,7 +25,7 @@ NSNumber * changeRate;
     [super viewDidLoad];
     
     [self getUserDetails];
-    DatabaseIntegration *database = [[DatabaseIntegration alloc]init];
+//    DatabaseIntegration *database = [[DatabaseIntegration alloc]init];
 //    data = [[userDataSaving alloc]init];
 //    points.text = [NSString stringWithFormat:@"%d",[database getPoints:[data currentUser] withPass:[data currentPassword]]];
     pointsValue = [totalPoints.text intValue];
@@ -78,8 +78,18 @@ NSNumber * changeRate;
     if([changeRate floatValue] <= 0)
     {
         NSString* string = [NSString stringWithFormat:@"Must select company to send points"];
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Error" message:string  delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-        [alert show];
+        
+        UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Error"
+                                                                       message:string
+                                                                preferredStyle:UIAlertControllerStyleAlert];
+        UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                style:UIAlertActionStyleDefault
+                                                              handler:^(UIAlertAction * action) {
+                                                                  NSLog(@"You pressed button OK");
+                                                              }];
+        [alert addAction:defaultAction];
+        [self presentViewController:alert animated:YES completion:nil];
+        
         return;
     }
     
@@ -90,8 +100,16 @@ NSNumber * changeRate;
     
     
     NSString* string = [NSString stringWithFormat:@"You just converted %@ points", pointsConversion.text];
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle: @"Announcement" message:string  delegate: nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
-    [alert show];
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Announcement"
+                                                                   message:string
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              NSLog(@"You pressed button OK");
+                                                          }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
     slider.value = 0;
     pointsConversion.text = [NSString stringWithFormat:@"0"];
     pointsCurency.text = [NSString stringWithFormat:@"0"];
