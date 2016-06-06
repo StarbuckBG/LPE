@@ -53,33 +53,65 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
+    if([[UIScreen mainScreen] bounds].size.width <= 320)
+    {
+        CGRect topLeftSmall = self.topLeftBubbleView.frame;
+        topLeftSmall.size.width = 150;
+        topLeftSmall.size.height = 150;
+        self.topLeftBubbleView.frame = topLeftSmall;
+        
+        
+        CGRect bottomLeft = self.bottomLeftBubbleView.frame;
+        bottomLeft.size.width = 150;
+        bottomLeft.size.height = 150;
+        self.bottomLeftBubbleView.frame = bottomLeft;
+        
+        
+        CGRect topRightSmall = self.topRightBubbleView.frame;
+        topRightSmall.size.width = 150;
+        topRightSmall.size.height = 150;
+        CGPoint topRightCenter = self.topRightBubbleView.center;
+        topRightCenter.x += (self.topRightBubbleView.frame.size.width - topRightSmall.size.width)/2;
+        self.topRightBubbleView.frame = topRightSmall;
+        self.topRightBubbleView.center = topRightCenter;
+        
+        CGRect bottomRight = self.bottomRightBubbleView.frame;
+        bottomRight.size.width = 150;
+        bottomRight.size.height = 150;
+        CGPoint bottomRightCenter = self.bottomRightBubbleView.center;
+        bottomRightCenter.x += (self.bottomRightBubbleView.frame.size.width - bottomRight.size.width)/2;
+        self.bottomRightBubbleView.frame = bottomRight;
+        self.bottomRightBubbleView.center = bottomRightCenter;
+        
+    }
+    
     
     [UIView animateWithDuration:5.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
-        self.centerBubbleView.center = CGPointMake(self.centerBubbleView.center.x, self.centerBubbleView.center.y - 30);
+        self.centerBubbleView.center = CGPointMake(self.centerBubbleView.center.x, self.centerBubbleView.center.y - 20);
     } completion:^(BOOL finished) {
         ;
     }];
     
     [UIView animateWithDuration:4.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
-        self.topLeftBubbleView.center = CGPointMake(self.topLeftBubbleView.center.x, self.topLeftBubbleView.center.y - 30);
+        self.topLeftBubbleView.center = CGPointMake(self.topLeftBubbleView.center.x, self.topLeftBubbleView.center.y - 20);
     } completion:^(BOOL finished) {
         ;
     }];
     
     [UIView animateWithDuration:6.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
-        self.topRightBubbleView.center = CGPointMake(self.topRightBubbleView.center.x, self.topRightBubbleView.center.y - 30);
+        self.topRightBubbleView.center = CGPointMake(self.topRightBubbleView.center.x, self.topRightBubbleView.center.y - 20);
     } completion:^(BOOL finished) {
         ;
     }];
     
     [UIView animateWithDuration:5.5f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
-        self.bottomLeftBubbleView.center = CGPointMake(self.bottomLeftBubbleView.center.x, self.bottomLeftBubbleView.center.y - 30);
+        self.bottomLeftBubbleView.center = CGPointMake(self.bottomLeftBubbleView.center.x, self.bottomLeftBubbleView.center.y - 20);
     } completion:^(BOOL finished) {
         ;
     }];
     
     [UIView animateWithDuration:4.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
-        self.bottomRightBubbleView.center = CGPointMake(self.bottomRightBubbleView.center.x, self.bottomRightBubbleView.center.y - 30);
+        self.bottomRightBubbleView.center = CGPointMake(self.bottomRightBubbleView.center.x, self.bottomRightBubbleView.center.y - 20);
     } completion:^(BOOL finished) {
         ;
     }];
