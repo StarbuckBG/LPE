@@ -43,6 +43,7 @@
 - (void) updateAppliancesForPlaygroundId: (NSString *) playgroundId;
 - (void) addToLogPoints: (NSString *) points onApplianceId: (NSString *) applicanceId withIntensity: (NSString *) intensity fromTime: (NSDate *) startTime toTime: (NSDate *) endTime;
 - (void) getLogs;
+- (void) updateCompaniesAndRates;
 
 
 

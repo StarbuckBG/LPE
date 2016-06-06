@@ -35,7 +35,7 @@
     
     self.topRightBubbleView.innerColor = [BubbleStyleKit cyanInner];
     self.topRightBubbleView.outerColor = [BubbleStyleKit cyanOuter];
-    self.topRightBubbleView.text = @"Profile";
+    self.topRightBubbleView.text = @"Share";
     
     self.centerBubbleView.innerColor = [BubbleStyleKit blueInner];
     self.centerBubbleView.outerColor = [BubbleStyleKit blueOuter];
@@ -140,7 +140,7 @@
 }
 
 - (IBAction)topRightTapGestureRecognized:(UITapGestureRecognizer *)sender {
-    self.tabBarController.selectedIndex = 2;
+    //self.tabBarController.selectedIndex = 2;
 }
 
 - (IBAction)bottomRightTapGestureRecognized:(UITapGestureRecognizer *)sender {

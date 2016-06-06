@@ -29,7 +29,6 @@
 
 // Drawing Methods
 + (void)drawLumiViewWithInnerCircleColor: (UIColor*)innerCircleColor outerCircleColor: (UIColor*)outerCircleColor innerTextString: (NSString*)innerTextString viewFrame: (CGRect)viewFrame;
-+ (void)drawMainScreen;
 
 @end
 
