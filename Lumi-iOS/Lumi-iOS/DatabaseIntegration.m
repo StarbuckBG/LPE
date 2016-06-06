@@ -58,10 +58,12 @@
             if((((NSHTTPURLResponse*)response).statusCode) == 200)
             {
                 [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_SUCCESSFUL object:self];
+                NSLog(@"Succesful login");
             }
             else
             {
                 [[NSNotificationCenter defaultCenter] postNotificationName:LOGIN_NOT_SUCCESSFUL object:self];
+                NSLog(@"Not succesful login");
             }
         }
         else {

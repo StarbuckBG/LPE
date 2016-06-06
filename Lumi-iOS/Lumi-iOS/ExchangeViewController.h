@@ -8,6 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ExchangeViewController : UIViewController
+@interface ExchangeViewController : UIViewController<UITableViewDelegate, UITableViewDataSource>{
+    
+    IBOutlet UISlider *slider;
+    IBOutlet UILabel *totalPoints;
+    IBOutlet UILabel *pointsConversion;
+    IBOutlet UILabel *pointsCurency;
+    IBOutlet UILabel *username;
+}
+@property NSString* FBusername, *FBuserid;
+- (IBAction) slider:(id)sender;
+@property (weak, nonatomic) IBOutlet UITableView *tableView;
 
 @end
