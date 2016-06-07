@@ -141,6 +141,8 @@
 
 - (IBAction)topRightTapGestureRecognized:(UITapGestureRecognizer *)sender {
     //self.tabBarController.selectedIndex = 2;
+    [self performSegueWithIdentifier:@"shareImageSegue" sender:nil];
+
 }
 
 - (IBAction)bottomRightTapGestureRecognized:(UITapGestureRecognizer *)sender {

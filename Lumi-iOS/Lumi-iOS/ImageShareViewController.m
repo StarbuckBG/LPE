@@ -22,16 +22,16 @@
 
 -(void)doUpload
 {
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Upload a photo"
-                                                                   message:nil
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"Dismiss"
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {
-                                                              NSLog(@"You pressed button Dismiss");
-                                                          }];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload a photo" message:nil delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Take a photo", @"Choose existing", nil];
+    
+    alert.alertViewStyle = UIAlertActionStyleDefault;
+    [alert show];
+}
+- (IBAction)chooseNew:(id)sender {
+    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload a photo" message:nil delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Take a photo", @"Choose existing", nil];
+    
+    alert.alertViewStyle = UIAlertActionStyleDefault;
+    [alert show];
 }
 
 
@@ -41,7 +41,7 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (void) alertView:(UIAlertController *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
 {
     if (buttonIndex == 1) {
         UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
