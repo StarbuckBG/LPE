@@ -8,6 +8,7 @@
 
 #import "LoginViewController.h"
 #import "DatabaseIntegration.h"
+#import "LocalDataIntegration.h"
 
 @interface LoginViewController ()
 
@@ -18,52 +19,71 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(successfull)
+                                                 name:LOGIN_SUCCESSFUL
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notSuccessefull)
+                                                 name:LOGIN_NOT_SUCCESSFUL
+                                               object:nil];
+    LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
+    if ([data rememberPassword]) {
+        self.Username.text = [data username];
+        self.Password.text = [data password];
+    }
 }
+
+-(void) successfull {
+    dispatch_async(dispatch_get_main_queue(), ^{
+    LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
+    [data setUsername:self.Username.text];
+    [data setPassword:self.Password.text];
+    [data setAutoLogin:self.rememberMeSwitch.on];
+    
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+    
+//    if (self.rememberMeSwitch.on) {
+//        NSMutableDictionary* dic = [NSMutableDictionary new];
+//        [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"dictionaryNotFilled"];
+//        USAFormPartOneViewController *viewController = (USAFormPartOneViewController *)[storyboard instantiateViewControllerWithIdentifier:@"usa1"];
+//        [self.navigationController pushViewController:viewController animated:YES];
+//        
+//    } else {
+//        PasswordViewController *viewController1 = (PasswordViewController *)[storyboard instantiateViewControllerWithIdentifier:@"pass"];
+//        [self.navigationController pushViewController:viewController1 animated:YES];
+//    }
+//
+//    
+}
+-(void) notSuccessefull {
+    dispatch_async(dispatch_get_main_queue(), ^{
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login unsuccessful"
+                                                                   message:@"Username or/and password incorrect"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              NSLog(@"You pressed button OK");
+                                                          }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+    });
+}
+
+- (IBAction)rememberMeSwitch:(id)sender {
+}
+
+- (IBAction)registerButton:(id)sender {
+    [self performSegueWithIdentifier:@"registerSegue" sender:nil];
+}
+
 - (IBAction)LoginButton:(UIButton *)sender {
     
     DatabaseIntegration *database = [[DatabaseIntegration alloc]init];
     [database loginWithUsername:self.Username.text andPassword:self.Password.text];
-//    if(loginReturn == true)
-//    {
-//        userDataSaving * data = [[userDataSaving alloc]init];
-//        [data setCurrentUser:self.Username.text];
-//        [data setCurrentPassword:self.Password.text];
-//        if(self.rememberMeState == true)
-//        {
-//            [data setRememberMeState:true];
-//        }
-//        
-//        [self appearLoggedInScreen];
-//        [self loaddata];
-//        
-//        
-//        
-//        //        LoggedViewController *mainViewController = (LoggedViewController *) [self.storyboard instantiateViewControllerWithIdentifier:@"LoggedViewController"];
-//        //        mainViewController.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
-//        //        [self presentViewController:mainViewController animated:YES completion:nil];
-//    } else {
-//        
-//        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Login unsuccessful"
-//                                                        message:@"Username or/and password incorrect"
-//                                                       delegate:nil
-//                                              cancelButtonTitle:@"OK"
-//                                              otherButtonTitles:nil];
-//        [alert show];
-    
-    
-    
-//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Login unsuccessful"
-//                                                                   message:@"Username or/and password incorrect"
-//                                                            preferredStyle:UIAlertControllerStyleAlert];
-//    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
-//                                                            style:UIAlertActionStyleDefault
-//                                                          handler:^(UIAlertAction * action) {
-//                                                              NSLog(@"You pressed button OK");
-//                                                          }];
-//    [alert addAction:defaultAction];
-//    [self presentViewController:alert animated:YES completion:nil];
-    
-//    }
 }
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {

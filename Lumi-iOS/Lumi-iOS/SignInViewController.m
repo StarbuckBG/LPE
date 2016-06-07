@@ -8,6 +8,7 @@
 
 #import "SignInViewController.h"
 #import "DatabaseIntegration.h"
+#import "LocalDataIntegration.h"
 
 @interface SignInViewController ()
 
@@ -18,11 +19,58 @@
     [super viewDidLoad];
     self.Password.secureTextEntry = true;
     self.PasswordAgain.secureTextEntry = true;
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(successfull)
+                                                 name:REGISTRATION_SUCCESSFUL
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(notSuccessefull)
+                                                 name:REGISTRATION_NOT_SUCCESSFUL
+                                               object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(userNameNotFree)
+                                                 name:REGISTRATION_USERNAME_NOT_AVAILABLE
+                                               object:nil];
 }
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
+}
+-(void) successfull {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
+        [data setUsername:self.Username.text];
+        [data setPassword:self.Password.text];
+        [data setRememberPassword:self.rememberMeSwitch.on];
+        
+        [self.navigationController popViewControllerAnimated:YES];
+    });
+}
+-(void) notSuccessefull {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Registration unsuccessful"
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              NSLog(@"You pressed button OK");
+                                                          }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+-(void) userNameNotFree {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Registration unsuccessful"
+                                                                   message:@"Username not available"
+                                                            preferredStyle:UIAlertControllerStyleAlert];
+    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              NSLog(@"You pressed button OK");
+                                                          }];
+    [alert addAction:defaultAction];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 - (IBAction)registerButton:(UIButton *)sender {
     if([self.Password.text isEqualToString:self.PasswordAgain.text] == false)

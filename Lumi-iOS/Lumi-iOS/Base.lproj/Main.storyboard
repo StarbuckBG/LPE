@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Xg-7r-v82">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F18b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="7Xg-7r-v82">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -392,15 +392,18 @@
                         <viewControllerLayoutGuide type="bottom" id="y9q-bB-pq5"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="4NQ-TE-CZN">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="cTj-LO-Z2F"/>
+                    <connections>
+                        <segue destination="HcR-hG-QIW" kind="show" identifier="goToLoginScreen" id="4K4-JS-qjv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Rcj-is-onT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="772.5" y="39"/>
+            <point key="canvasLocation" x="668" y="1503"/>
         </scene>
         <!--Map-->
         <scene sceneID="9bF-RN-q8R">
@@ -630,7 +633,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HKn-4c-DzU">
-                                <rect key="frame" x="492" y="364" width="64" height="34"/>
+                                <rect key="frame" x="492" y="378" width="64" height="34"/>
                                 <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="16"/>
                                 <state key="normal" title="Register"/>
                                 <connections>
@@ -652,20 +655,36 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GjV-WB-q2V">
+                                <rect key="frame" x="42" y="341" width="112" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFs-ea-N48">
+                                <rect key="frame" x="507" y="336" width="51" height="31"/>
+                                <connections>
+                                    <action selector="rememberMeSwitch:" destination="HcR-hG-QIW" eventType="valueChanged" id="I6c-LN-Tqe"/>
+                                </connections>
+                            </switch>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="GRx-yu-gvv" firstAttribute="trailing" secondItem="Ohc-qi-PNL" secondAttribute="trailing" id="GDV-QT-Qi5"/>
                             <constraint firstItem="Ohc-qi-PNL" firstAttribute="top" secondItem="iRu-Vf-O1q" secondAttribute="bottom" constant="126" id="O9T-ce-4mh"/>
                             <constraint firstItem="DXI-de-i9a" firstAttribute="leading" secondItem="lfs-G7-Wk7" secondAttribute="leading" id="Xsi-MS-4mb"/>
-                            <constraint firstItem="HKn-4c-DzU" firstAttribute="top" secondItem="DXI-de-i9a" secondAttribute="bottom" constant="46" id="d2N-a4-HDO"/>
+                            <constraint firstItem="GjV-WB-q2V" firstAttribute="leading" secondItem="DXI-de-i9a" secondAttribute="leading" id="bop-nw-KU6"/>
+                            <constraint firstItem="HKn-4c-DzU" firstAttribute="top" secondItem="DXI-de-i9a" secondAttribute="bottom" constant="60" id="d2N-a4-HDO"/>
                             <constraint firstItem="GRx-yu-gvv" firstAttribute="leading" secondItem="Ohc-qi-PNL" secondAttribute="leading" id="eQi-gK-Dh6"/>
                             <constraint firstItem="HKn-4c-DzU" firstAttribute="trailing" secondItem="DXI-de-i9a" secondAttribute="trailing" id="grn-hQ-W9a"/>
                             <constraint firstItem="Ohc-qi-PNL" firstAttribute="leading" secondItem="ptI-4G-RPo" secondAttribute="leadingMargin" constant="22" id="gzC-n9-M1y"/>
                             <constraint firstItem="GRx-yu-gvv" firstAttribute="top" secondItem="Ohc-qi-PNL" secondAttribute="bottom" constant="17" id="hM6-LF-l7e"/>
+                            <constraint firstItem="bFs-ea-N48" firstAttribute="centerY" secondItem="GjV-WB-q2V" secondAttribute="centerY" id="iHZ-aX-VVL"/>
+                            <constraint firstItem="GjV-WB-q2V" firstAttribute="top" secondItem="DXI-de-i9a" secondAttribute="bottom" constant="23" id="kMx-T8-bcQ"/>
                             <constraint firstItem="DXI-de-i9a" firstAttribute="top" secondItem="lfs-G7-Wk7" secondAttribute="bottom" constant="19" id="lCZ-Ah-1Pq"/>
                             <constraint firstItem="lfs-G7-Wk7" firstAttribute="leading" secondItem="GRx-yu-gvv" secondAttribute="leading" id="lhS-qc-d6x"/>
                             <constraint firstItem="DXI-de-i9a" firstAttribute="trailing" secondItem="lfs-G7-Wk7" secondAttribute="trailing" id="mvr-Pr-g0p"/>
+                            <constraint firstItem="bFs-ea-N48" firstAttribute="trailing" secondItem="DXI-de-i9a" secondAttribute="trailing" id="n4y-8S-IXX"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ohc-qi-PNL" secondAttribute="trailing" constant="24" id="n9g-tt-1D0"/>
                             <constraint firstItem="lfs-G7-Wk7" firstAttribute="top" secondItem="GRx-yu-gvv" secondAttribute="bottom" constant="16" id="orV-iL-MUK"/>
                             <constraint firstItem="lfs-G7-Wk7" firstAttribute="trailing" secondItem="GRx-yu-gvv" secondAttribute="trailing" id="txy-1N-Eu6"/>
@@ -678,11 +697,13 @@
                         <outlet property="Password" destination="GRx-yu-gvv" id="tgh-xq-iXh"/>
                         <outlet property="PasswordAgain" destination="lfs-G7-Wk7" id="qzs-A3-d1Q"/>
                         <outlet property="Username" destination="Ohc-qi-PNL" id="SY4-b2-wM7"/>
+                        <outlet property="rememberMeSwitch" destination="bFs-ea-N48" id="f29-sN-Lif"/>
+                        <segue destination="HcR-hG-QIW" kind="show" identifier="goToLogIn" id="RQr-pC-167"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="thh-SI-1qU" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-944" y="1561"/>
+            <point key="canvasLocation" x="-908" y="1562"/>
         </scene>
         <!--Account-->
         <scene sceneID="WXj-Ph-Oyy">
@@ -714,7 +735,7 @@
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-AK-3rd">
                                 <rect key="frame" x="503" y="290" width="51" height="31"/>
                                 <connections>
-                                    <action selector="rememberMeSwitch:" destination="HcR-hG-QIW" eventType="valueChanged" id="jYX-6p-UJW"/>
+                                    <action selector="rememberMeSwitch:" destination="HcR-hG-QIW" eventType="valueChanged" id="OXx-dJ-dMc"/>
                                 </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Remember me" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-aU-3xv">
@@ -729,6 +750,9 @@
                                 <state key="normal" title="Register">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="registerButton:" destination="HcR-hG-QIW" eventType="touchUpInside" id="dFV-CK-PwO"/>
+                                </connections>
                             </button>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="daF-1l-HAr">
                                 <rect key="frame" x="47" y="187" width="505" height="30"/>
@@ -758,6 +782,9 @@
                     <connections>
                         <outlet property="Password" destination="daF-1l-HAr" id="3eX-vm-OGc"/>
                         <outlet property="Username" destination="1Jd-nk-haj" id="FqD-74-B9s"/>
+                        <outlet property="rememberMeSwitch" destination="Qto-AK-3rd" id="r33-9T-Nke"/>
+                        <segue destination="Fyd-HW-vtn" kind="show" identifier="goToAccount" id="Dl2-pJ-Yh3"/>
+                        <segue destination="JyI-s0-2kI" kind="show" identifier="registerSegue" id="ms7-Ds-XUf"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FeT-g7-rul" sceneMemberID="firstResponder"/>
@@ -819,5 +846,9 @@
         <image name="map.png" width="30" height="30"/>
         <image name="profile.png" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="4K4-JS-qjv"/>
+        <segue reference="Dl2-pJ-Yh3"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

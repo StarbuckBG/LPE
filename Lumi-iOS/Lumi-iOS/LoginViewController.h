@@ -9,6 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface LoginViewController : UIViewController
+#define LOGIN_SUCCESSFUL @"LoginSuccessful"
+#define LOGIN_NOT_SUCCESSFUL @"LoginUnsuccessful"
+
+@property (weak, nonatomic) IBOutlet UISwitch *rememberMeSwitch;
 
 @property (weak, nonatomic) IBOutlet UITextField *Username;
 @property (weak, nonatomic) IBOutlet UITextField *Password;

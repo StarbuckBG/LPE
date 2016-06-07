@@ -7,6 +7,7 @@
 //
 
 #import "ProfileViewController.h"
+#import "LocalDataIntegration.h"
 
 @interface ProfileViewController ()
 
@@ -17,7 +18,34 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
+    [data setAutoLogin:NO];
+    
+    
+    
+    //    if (self.rememberMeSwitch.on) {
+    //        NSMutableDictionary* dic = [NSMutableDictionary new];
+    //        [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"dictionaryNotFilled"];
+    //        USAFormPartOneViewController *viewController = (USAFormPartOneViewController *)[storyboard instantiateViewControllerWithIdentifier:@"usa1"];
+    //        [self.navigationController pushViewController:viewController animated:YES];
+    //
+    //    } else {
+    //        PasswordViewController *viewController1 = (PasswordViewController *)[storyboard instantiateViewControllerWithIdentifier:@"pass"];
+    //        [self.navigationController pushViewController:viewController1 animated:YES];
+    //    }
+    //
+    //
 }
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
+    if (![data autoLogin]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"goToLoginScreen" sender:nil];
+        });
+    }
+}
+
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
