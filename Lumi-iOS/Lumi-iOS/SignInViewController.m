@@ -72,6 +72,9 @@
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
 }
+- (IBAction)cancelButtonToLogin:(id)sender {
+    [self performSegueWithIdentifier:@"goToLogIn" sender:nil];
+}
 - (IBAction)registerButton:(UIButton *)sender {
     if([self.Password.text isEqualToString:self.PasswordAgain.text] == false)
     {
@@ -114,14 +117,10 @@
     }
     else
     {
-        
-        
-        /*
-         * Registration request
-         */
-        
         DatabaseIntegration *database = [[DatabaseIntegration alloc]init];
         [database registerUserWithUsername:self.Username.text andPassword:self.Password.text andEmail:self.Email.text];
+        [self performSegueWithIdentifier:@"goToLogIn" sender:nil];
+
     }
     
 }

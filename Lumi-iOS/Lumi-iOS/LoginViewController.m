@@ -19,7 +19,6 @@
 -(void)viewDidLoad {
     [super viewDidLoad];
     
-    
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(successfull)
                                                  name:LOGIN_SUCCESSFUL
@@ -42,21 +41,11 @@
     [data setPassword:self.Password.text];
     [data setAutoLogin:self.rememberMeSwitch.on];
     
-        [self.navigationController popViewControllerAnimated:YES];
+        [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
     });
-    
-//    if (self.rememberMeSwitch.on) {
-//        NSMutableDictionary* dic = [NSMutableDictionary new];
-//        [[NSUserDefaults standardUserDefaults] setObject:dic forKey:@"dictionaryNotFilled"];
-//        USAFormPartOneViewController *viewController = (USAFormPartOneViewController *)[storyboard instantiateViewControllerWithIdentifier:@"usa1"];
-//        [self.navigationController pushViewController:viewController animated:YES];
-//        
-//    } else {
-//        PasswordViewController *viewController1 = (PasswordViewController *)[storyboard instantiateViewControllerWithIdentifier:@"pass"];
-//        [self.navigationController pushViewController:viewController1 animated:YES];
-//    }
-//
-//    
+}
+- (IBAction)cancelButtonToHomeScreen:(id)sender {
+    [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
 }
 -(void) notSuccessefull {
     dispatch_async(dispatch_get_main_queue(), ^{

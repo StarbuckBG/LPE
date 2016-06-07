@@ -45,6 +45,7 @@
 		19AC0C4A1D05E104001AA2E1 /* BubbleStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AC0C491D05E104001AA2E1 /* BubbleStyleKit.m */; };
 		19AC0C4D1D05E151001AA2E1 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AC0C4C1D05E151001AA2E1 /* BubbleView.m */; };
 		19AC0C501D060429001AA2E1 /* LocalDataIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AC0C4F1D060429001AA2E1 /* LocalDataIntegration.m */; };
+		D3094E4F1D0710FB00E3C180 /* lumi.png in Resources */ = {isa = PBXBuildFile; fileRef = D3094E4E1D0710FB00E3C180 /* lumi.png */; };
 		D3B423771D051DDC00014B66 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B423761D051DDC00014B66 /* LoginViewController.m */; };
 		D3B4237A1D051DED00014B66 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B423791D051DED00014B66 /* SignInViewController.m */; };
 		D3B4237D1D05374700014B66 /* ImageShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B4237C1D05374700014B66 /* ImageShareViewController.m */; };
@@ -102,6 +103,7 @@
 		19AC0C4C1D05E151001AA2E1 /* BubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
 		19AC0C4E1D060429001AA2E1 /* LocalDataIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataIntegration.h; sourceTree = "<group>"; };
 		19AC0C4F1D060429001AA2E1 /* LocalDataIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataIntegration.m; sourceTree = "<group>"; };
+		D3094E4E1D0710FB00E3C180 /* lumi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lumi.png; sourceTree = "<group>"; };
 		D3B423751D051DDC00014B66 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D3B423761D051DDC00014B66 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D3B423781D051DED00014B66 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
@@ -164,6 +166,7 @@
 		19292E891CEB8384007B5B05 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D3094E4E1D0710FB00E3C180 /* lumi.png */,
 				19292E8A1CEB8384007B5B05 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -338,6 +341,7 @@
 				19292EBE1CEB8A1C007B5B05 /* profile@2x.png in Resources */,
 				19292E991CEB8384007B5B05 /* Assets.xcassets in Resources */,
 				19292EB11CEB8A15007B5B05 /* profile2.png in Resources */,
+				D3094E4F1D0710FB00E3C180 /* lumi.png in Resources */,
 				19292EC91CEB8A23007B5B05 /* home@3x.png in Resources */,
 				19292E971CEB8384007B5B05 /* Main.storyboard in Resources */,
 			);
