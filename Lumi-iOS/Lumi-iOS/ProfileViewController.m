@@ -18,8 +18,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
-    LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
-    [data setAutoLogin:NO];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

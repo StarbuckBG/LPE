@@ -661,9 +661,6 @@
                             </label>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="bFs-ea-N48">
                                 <rect key="frame" x="507" y="336" width="51" height="31"/>
-                                <connections>
-                                    <action selector="rememberMeSwitch:" destination="HcR-hG-QIW" eventType="valueChanged" id="I6c-LN-Tqe"/>
-                                </connections>
                             </switch>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iXE-25-3O0">
                                 <rect key="frame" x="42" y="378" width="50" height="34"/>
@@ -754,9 +751,6 @@
                             </button>
                             <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Qto-AK-3rd">
                                 <rect key="frame" x="503" y="240" width="51" height="31"/>
-                                <connections>
-                                    <action selector="rememberMeSwitch:" destination="HcR-hG-QIW" eventType="valueChanged" id="OXx-dJ-dMc"/>
-                                </connections>
                             </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Keep me logged in" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Jsd-aU-3xv">
                                 <rect key="frame" x="47" y="245" width="142" height="21"/>

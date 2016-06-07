@@ -27,13 +27,21 @@
                                              selector:@selector(notSuccessefull)
                                                  name:LOGIN_NOT_SUCCESSFUL
                                                object:nil];
+    
+}
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
     LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
     if ([data rememberPassword]) {
         self.Username.text = [data username];
         self.Password.text = [data password];
     }
+    if ([data autoLogin]) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
+        });
+    }
 }
-
 -(void) successfull {
     dispatch_async(dispatch_get_main_queue(), ^{
     LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
@@ -62,8 +70,6 @@
     });
 }
 
-- (IBAction)rememberMeSwitch:(id)sender {
-}
 
 - (IBAction)registerButton:(id)sender {
     [self performSegueWithIdentifier:@"registerSegue" sender:nil];
