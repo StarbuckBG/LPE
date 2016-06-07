@@ -543,8 +543,8 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1 Lumi equals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfX-Mm-Nec">
-                                <rect key="frame" x="483.5" y="39" width="96.5" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Lumi equals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfX-Mm-Nec">
+                                <rect key="frame" x="496" y="41.5" width="84" height="18"/>
                                 <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="13"/>
                                 <color key="textColor" red="0.43529411759999997" green="0.4431372549" blue="0.47450980390000003" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -804,12 +804,12 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gVD-E5-0Sm">
-                                <rect key="frame" x="0.0" y="20" width="600" height="430"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="gVD-E5-0Sm">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="381"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CQN-w5-BeC">
-                                <rect key="frame" x="500" y="373" width="56" height="41"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="21"/>
+                                <rect key="frame" x="500" y="417" width="51" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Share">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -818,8 +818,8 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W7i-aW-SEp">
-                                <rect key="frame" x="28" y="373" width="122" height="41"/>
-                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="21"/>
+                                <rect key="frame" x="38" y="417" width="112" height="40"/>
+                                <fontDescription key="fontDescription" name="Avenir-Medium" family="Avenir" pointSize="20"/>
                                 <state key="normal" title="Choose new">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -833,7 +833,7 @@
                         <constraints>
                             <constraint firstItem="gVD-E5-0Sm" firstAttribute="leading" secondItem="iLC-5c-5Bq" secondAttribute="leadingMargin" constant="-20" id="2Xt-6o-sNP"/>
                             <constraint firstItem="W7i-aW-SEp" firstAttribute="centerY" secondItem="CQN-w5-BeC" secondAttribute="centerY" id="2dt-PZ-JeL"/>
-                            <constraint firstItem="69q-xg-d9F" firstAttribute="top" secondItem="CQN-w5-BeC" secondAttribute="bottom" constant="73" id="2lR-JM-jCi"/>
+                            <constraint firstItem="69q-xg-d9F" firstAttribute="top" secondItem="CQN-w5-BeC" secondAttribute="bottom" constant="30" id="2lR-JM-jCi"/>
                             <constraint firstItem="gVD-E5-0Sm" firstAttribute="leading" secondItem="W7i-aW-SEp" secondAttribute="trailing" constant="-150" id="9BS-61-rgW"/>
                             <constraint firstItem="gVD-E5-0Sm" firstAttribute="top" secondItem="6Zy-vU-MrM" secondAttribute="bottom" id="IK9-Mi-V3j"/>
                             <constraint firstAttribute="trailingMargin" secondItem="gVD-E5-0Sm" secondAttribute="trailing" constant="-20" id="LbS-qb-cgG"/>

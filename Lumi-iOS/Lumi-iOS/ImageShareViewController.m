@@ -19,53 +19,13 @@
     
     [self doUpload];
 }
-
--(void)doUpload
-{
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload a photo" message:nil delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Take a photo", @"Choose existing", nil];
-    
-    alert.alertViewStyle = UIAlertActionStyleDefault;
-    [alert show];
+-(void)doUpload {
+    [self alertControllerForCameraGallery];
 }
 - (IBAction)chooseNew:(id)sender {
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Upload a photo" message:nil delegate:self cancelButtonTitle:@"Dismiss" otherButtonTitles:@"Take a photo", @"Choose existing", nil];
-    
-    alert.alertViewStyle = UIAlertActionStyleDefault;
-    [alert show];
+    [self alertControllerForCameraGallery];
 }
-
-
-
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-- (void) alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
-{
-    if (buttonIndex == 1) {
-        UIImagePickerController * imagePicker = [[UIImagePickerController alloc] init];
-        imagePicker.delegate = self;
-        [imagePicker setSourceType:UIImagePickerControllerSourceTypeCamera];
-        [self presentViewController:imagePicker animated:YES completion:NULL];
-    }
-    if (buttonIndex == 2) {
-        UIImagePickerController * imagePicker2 = [[UIImagePickerController alloc] init];
-        imagePicker2.delegate = self;
-        [self presentViewController:imagePicker2 animated:YES completion:NULL];
-    }
-}
-
--(void) imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info
-{
-    UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
-    self.imageToShare = UIImageJPEGRepresentation(image, 1.0);
-    [self.imageView setImage:image];
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
-
 - (IBAction)shareClicked:(id)sender {
-    
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
@@ -74,12 +34,56 @@
         [controller addImage:[UIImage imageWithData:self.imageToShare]];
         
         [self presentViewController:controller animated:YES completion:NULL];
-        
     }
+}
+-(void) alertControllerForCameraGallery {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"Take Photo or Video"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * action) {
+                                                             UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                                             picker.delegate = self;
+                                                             picker.allowsEditing = YES;
+                                                             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                                             
+                                                             [self presentViewController:picker animated:YES completion:NULL];                                                          }];
+    UIAlertAction *galleryAction = [UIAlertAction actionWithTitle:@"Photo Library"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                                              picker.delegate = self;
+                                                              picker.allowsEditing = YES;
+                                                              picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                                              
+                                                              [self presentViewController:picker animated:YES completion:NULL];}];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction * action) {
+                                                             NSLog(@"Candel action"); }];
+    [alert addAction:galleryAction];
+    [alert addAction:cameraAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+#pragma mark - Image Picker Controller delegate methods
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
     
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    self.imageView.image = chosenImage;
     
+    [picker dismissViewControllerAnimated:YES completion:NULL];
     
+}
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
     
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
+-(void)didReceiveMemoryWarning {
+    [super didReceiveMemoryWarning];
+    // Dispose of any resources that can be recreated.
 }
 /*
  #pragma mark - Navigation
