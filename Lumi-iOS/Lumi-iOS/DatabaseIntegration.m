@@ -351,7 +351,7 @@
     
 }
 
-- (void)addTranfer:(NSString *)points toCompanyId:(NSString *)companyId
+- (void)addTransfer:(NSString *)points toCompanyId:(NSString *)companyId
 {
     NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     

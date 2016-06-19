@@ -11,5 +11,6 @@
 @interface UIColor(LumiColor)
 
 +(UIColor*) LumiPinkColor;
++(UIColor *) LumiPinkColorAlpha;
 
 @end

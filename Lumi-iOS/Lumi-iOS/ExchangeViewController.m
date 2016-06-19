@@ -8,6 +8,7 @@
 
 #import "ExchangeViewController.h"
 #import "DatabaseIntegration.h"
+#import "UIColor+Lumi.h"
 
 @interface ExchangeViewController ()
 
@@ -17,7 +18,6 @@
 NSInteger sliderValue;
 NSInteger pointsValue;
 DatabaseIntegration* interactions;
-//userDataSaving *data;
 NSMutableArray * transactionCompanies;
 NSNumber * changeRate;
 
@@ -25,29 +25,11 @@ NSNumber * changeRate;
     [super viewDidLoad];
     
     [self getUserDetails];
-//    DatabaseIntegration *database = [[DatabaseIntegration alloc]init];
-//    data = [[userDataSaving alloc]init];
-//    points.text = [NSString stringWithFormat:@"%d",[database getPoints:[data currentUser] withPass:[data currentPassword]]];
-    pointsValue = [totalPoints.text intValue];
+    pointsValue = [[[[DatabaseIntegration sharedInstance] userdata] objectForKey:@"points_balance"] integerValue];
+    totalPoints.text =  [NSString stringWithFormat:@"%ld", pointsValue];
     interactions = [[DatabaseIntegration alloc] init];
     changeRate = [NSNumber numberWithInteger:0];
-//    username.text = [NSString stringWithFormat:@"%@",[data currentUser]];
-    
-    NSDictionary* company1 = [NSDictionary dictionaryWithObjectsAndKeys:
-                              @"Riot Games", @"Name", @"1.52", @"rate", nil];
-    NSDictionary* company2 = [NSDictionary dictionaryWithObjectsAndKeys:
-                              @"TAO Games", @"Name", @"1.12", @"rate", nil];
-    NSDictionary* company3 = [NSDictionary dictionaryWithObjectsAndKeys:
-                              @"Apple Inc", @"Name", @"5.12", @"rate", nil];
-    NSDictionary* company4 = [NSDictionary dictionaryWithObjectsAndKeys:
-                              @"Blizzard Ent.", @"Name", @"2.314", @"rate", nil];
-    NSDictionary* company5 = [NSDictionary dictionaryWithObjectsAndKeys:
-                              @"Steam Powered", @"Name", @"0.721", @"rate", nil];
-    NSDictionary* company6 = [NSDictionary dictionaryWithObjectsAndKeys:
-                              @"Origin", @"Name", @"1.445", @"rate", nil];
-    
-    
-    transactionCompanies = [NSMutableArray arrayWithObjects:company1,company2,company3, company4, company5, company6,nil];
+    username.text = [[[DatabaseIntegration sharedInstance] userdata] objectForKey:@"username"];
     
     [self.tableView reloadData];
     NSInteger i;
@@ -74,6 +56,8 @@ NSNumber * changeRate;
     pointAll = [totalPoints.text intValue];
     pointsForTransaction = [pointsConversion.text intValue];
     pointAll = pointAll - pointsForTransaction;
+    pointsValue = [[[[DatabaseIntegration sharedInstance] userdata] objectForKey:@"points_balance"] integerValue];
+    
     NSLog(@"Change rate: %f", [changeRate floatValue]);
     if([changeRate floatValue] <= 0)
     {
@@ -93,10 +77,6 @@ NSNumber * changeRate;
         return;
     }
     
-//    [interactions pointsTransactionWithUserName:[data currentUser] withPass:[data currentPassword] withPoints:pointsForTransaction];
-    
-    
-    
     
     
     NSString* string = [NSString stringWithFormat:@"You just converted %@ points", pointsConversion.text];
@@ -114,28 +94,12 @@ NSNumber * changeRate;
     pointsConversion.text = [NSString stringWithFormat:@"0"];
     pointsCurency.text = [NSString stringWithFormat:@"0"];
     totalPoints.text = [NSString stringWithFormat:@"%ld", pointAll];
-    DatabaseIntegration *database = [[DatabaseIntegration alloc]init];
-//    data = [[userDataSaving alloc]init];
-//    points.text = [NSString stringWithFormat:@"%d",[database getPoints:[data currentUser] withPass:[data currentPassword]]];
-    pointsValue = [totalPoints.text intValue];
+    
     
 }
 
 - (void) getUserDetails
 {
-//    [[[FBSDKGraphRequest alloc] initWithGraphPath:@"me" parameters:nil]
-//     startWithCompletionHandler:^(FBSDKGraphRequestConnection *connection, id result, NSError *error) {
-//         if (!error) {
-//             self.FBuserid = [[FBSDKAccessToken currentAccessToken] userID];
-//             self.FBusername = [result valueForKey:@"name"];
-//             NSLog(@"Username got from getUserDetails = %@", self.FBusername);
-//             username.text = self.FBusername;
-//             // NSString *email =  [result valueForKey:@"email"];
-//         }
-//         else{
-//             NSLog(@"%@",error.localizedDescription);
-//         }
-//     }];
 }
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
@@ -148,31 +112,31 @@ NSNumber * changeRate;
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
     
-    return [transactionCompanies count];
+    return [[[DatabaseIntegration sharedInstance] companies] count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    static NSString *simpleTableIdentifier = @"SimpleTableCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CompaniesTableViewIdentifier"];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleValue1 reuseIdentifier:@"CompaniesTableViewIdentifier"];
     }
     
-//    NSManagedObject *device = [transactionCompanies objectAtIndex:indexPath.row];
+    cell.textLabel.text = [[[[DatabaseIntegration sharedInstance] companies] objectAtIndex:indexPath.row] valueForKey: @"name"];
+    cell.detailTextLabel.text = [[[[DatabaseIntegration sharedInstance] companies] objectAtIndex:indexPath.row] valueForKey: @"rate"];
     
-//    [cell.textLabel setText:[NSString stringWithFormat:@"%@", [device valueForKey:@"Name"]]];
-    
-//    [cell.detailTextLabel setText:[device valueForKey:@"rate"]];
+    UIView * backgroundView = [[UIView alloc] init];
+    backgroundView.backgroundColor = [UIColor LumiPinkColorAlpha];
+    backgroundView.layer.cornerRadius = 10.0f;
+    cell.selectedBackgroundView = backgroundView;
     
     return cell;
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    changeRate = [NSNumber numberWithFloat:1/[[[transactionCompanies objectAtIndex:indexPath.row] valueForKey:@"rate"] floatValue]];
+    changeRate = [NSNumber numberWithFloat:1/[[[[[DatabaseIntegration sharedInstance] companies] objectAtIndex:indexPath.row] valueForKey: @"rate"] floatValue]];
     pointsCurency.text = [NSString stringWithFormat:@"%ld",(long)((float)sliderValue * [changeRate floatValue])];
 }
 

@@ -27,7 +27,7 @@
     [super viewDidLoad];
     database = [DatabaseIntegration sharedInstance];
     [database updateUserData];
-    
+    [database updateCompaniesAndRates];
     self.topLeftBubbleView.innerColor = [BubbleStyleKit greenInner];
     self.topLeftBubbleView.outerColor = [BubbleStyleKit greenOuter];
     self.topLeftBubbleView.text = @"Connect";

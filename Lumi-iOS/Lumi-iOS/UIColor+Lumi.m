@@ -14,5 +14,11 @@
 {
     return [UIColor colorWithRed:1 green:0 blue:0.5 alpha:1.0];
 }
+
++(UIColor *) LumiPinkColorAlpha
+{
+    return [UIColor colorWithRed:1 green:0 blue:0.5 alpha:0.2];
+}
+
 @end
 
