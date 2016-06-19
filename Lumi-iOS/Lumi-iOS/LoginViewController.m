@@ -11,7 +11,9 @@
 #import "LocalDataIntegration.h"
 
 @interface LoginViewController ()
-
+{
+    LocalDataIntegration * data;
+}
 @end
 
 @implementation LoginViewController
@@ -27,11 +29,12 @@
                                              selector:@selector(notSuccessefull)
                                                  name:LOGIN_NOT_SUCCESSFUL
                                                object:nil];
+    data = [LocalDataIntegration sharedInstance];
     
 }
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
+    
     if ([data rememberPassword]) {
         self.Username.text = [data username];
         self.Password.text = [data password];
@@ -44,10 +47,10 @@
 }
 -(void) successfull {
     dispatch_async(dispatch_get_main_queue(), ^{
-    LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
     [data setUsername:self.Username.text];
     [data setPassword:self.Password.text];
     [data setAutoLogin:self.rememberMeSwitch.on];
+    [data syncData];
     
         [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
     });
@@ -77,14 +80,16 @@
 
 - (IBAction)LoginButton:(UIButton *)sender {
     
-    DatabaseIntegration *database = [[DatabaseIntegration alloc]init];
+    DatabaseIntegration *database = [DatabaseIntegration sharedInstance];
     [database loginWithUsername:self.Username.text andPassword:self.Password.text];
 }
+
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
 {
     [self.Username resignFirstResponder];
     [self.Password resignFirstResponder];
 }
+
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
     if (self.Username) {

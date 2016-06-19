@@ -35,7 +35,6 @@
 		19292ECD1CEB8A23007B5B05 /* profile2@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 19292EC61CEB8A23007B5B05 /* profile2@3x.png */; };
 		19292ED11CEB8B3D007B5B05 /* HomeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED01CEB8B3D007B5B05 /* HomeViewController.m */; };
 		19292ED41CEB8B4B007B5B05 /* ConnectViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED31CEB8B4B007B5B05 /* ConnectViewController.m */; };
-		19292ED71CEB8B57007B5B05 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED61CEB8B57007B5B05 /* ProfileViewController.m */; };
 		19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292ED91CEB8B69007B5B05 /* ExchangeViewController.m */; };
 		19292EDD1CEB8B75007B5B05 /* MapViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292EDC1CEB8B75007B5B05 /* MapViewController.m */; };
 		197C9E401D04AAD00017D46A /* DatabaseIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */; };
@@ -45,6 +44,10 @@
 		19AC0C4A1D05E104001AA2E1 /* BubbleStyleKit.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AC0C491D05E104001AA2E1 /* BubbleStyleKit.m */; };
 		19AC0C4D1D05E151001AA2E1 /* BubbleView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AC0C4C1D05E151001AA2E1 /* BubbleView.m */; };
 		19AC0C501D060429001AA2E1 /* LocalDataIntegration.m in Sources */ = {isa = PBXBuildFile; fileRef = 19AC0C4F1D060429001AA2E1 /* LocalDataIntegration.m */; };
+		19E0D2231D17384600CC081C /* ProfilePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0D2221D17384600CC081C /* ProfilePageViewController.swift */; };
+		19E0D2251D173A1900CC081C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0D2241D173A1900CC081C /* ProfileViewController.swift */; };
+		19E0D2271D173A2700CC081C /* LogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0D2261D173A2700CC081C /* LogsTableViewController.swift */; };
+		19E0D22A1D173FD400CC081C /* UIColor+Lumi.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E0D2291D173FD400CC081C /* UIColor+Lumi.m */; };
 		D3094E4F1D0710FB00E3C180 /* lumi.png in Resources */ = {isa = PBXBuildFile; fileRef = D3094E4E1D0710FB00E3C180 /* lumi.png */; };
 		D3B423771D051DDC00014B66 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B423761D051DDC00014B66 /* LoginViewController.m */; };
 		D3B4237A1D051DED00014B66 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B423791D051DED00014B66 /* SignInViewController.m */; };
@@ -85,8 +88,6 @@
 		19292ED01CEB8B3D007B5B05 /* HomeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HomeViewController.m; sourceTree = "<group>"; };
 		19292ED21CEB8B4B007B5B05 /* ConnectViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ConnectViewController.h; sourceTree = "<group>"; };
 		19292ED31CEB8B4B007B5B05 /* ConnectViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ConnectViewController.m; sourceTree = "<group>"; };
-		19292ED51CEB8B57007B5B05 /* ProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfileViewController.h; sourceTree = "<group>"; };
-		19292ED61CEB8B57007B5B05 /* ProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfileViewController.m; sourceTree = "<group>"; };
 		19292ED81CEB8B69007B5B05 /* ExchangeViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ExchangeViewController.h; sourceTree = "<group>"; };
 		19292ED91CEB8B69007B5B05 /* ExchangeViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ExchangeViewController.m; sourceTree = "<group>"; };
 		19292EDB1CEB8B75007B5B05 /* MapViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MapViewController.h; sourceTree = "<group>"; };
@@ -103,6 +104,12 @@
 		19AC0C4C1D05E151001AA2E1 /* BubbleView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BubbleView.m; sourceTree = "<group>"; };
 		19AC0C4E1D060429001AA2E1 /* LocalDataIntegration.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocalDataIntegration.h; sourceTree = "<group>"; };
 		19AC0C4F1D060429001AA2E1 /* LocalDataIntegration.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocalDataIntegration.m; sourceTree = "<group>"; };
+		19E0D2211D17384500CC081C /* Lumi-iOS-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Lumi-iOS-Bridging-Header.h"; sourceTree = "<group>"; };
+		19E0D2221D17384600CC081C /* ProfilePageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfilePageViewController.swift; sourceTree = "<group>"; };
+		19E0D2241D173A1900CC081C /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		19E0D2261D173A2700CC081C /* LogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogsTableViewController.swift; sourceTree = "<group>"; };
+		19E0D2281D173FD400CC081C /* UIColor+Lumi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Lumi.h"; sourceTree = "<group>"; };
+		19E0D2291D173FD400CC081C /* UIColor+Lumi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Lumi.m"; sourceTree = "<group>"; };
 		D3094E4E1D0710FB00E3C180 /* lumi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lumi.png; sourceTree = "<group>"; };
 		D3B423751D051DDC00014B66 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D3B423761D051DDC00014B66 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
@@ -207,8 +214,6 @@
 				19292ED01CEB8B3D007B5B05 /* HomeViewController.m */,
 				19292ED21CEB8B4B007B5B05 /* ConnectViewController.h */,
 				19292ED31CEB8B4B007B5B05 /* ConnectViewController.m */,
-				19292ED51CEB8B57007B5B05 /* ProfileViewController.h */,
-				19292ED61CEB8B57007B5B05 /* ProfileViewController.m */,
 				19292ED81CEB8B69007B5B05 /* ExchangeViewController.h */,
 				19292ED91CEB8B69007B5B05 /* ExchangeViewController.m */,
 				19292EDB1CEB8B75007B5B05 /* MapViewController.h */,
@@ -219,6 +224,10 @@
 				D3B423791D051DED00014B66 /* SignInViewController.m */,
 				D3B4237B1D05374700014B66 /* ImageShareViewController.h */,
 				D3B4237C1D05374700014B66 /* ImageShareViewController.m */,
+				19E0D2221D17384600CC081C /* ProfilePageViewController.swift */,
+				19E0D2241D173A1900CC081C /* ProfileViewController.swift */,
+				19E0D2261D173A2700CC081C /* LogsTableViewController.swift */,
+				19E0D2211D17384500CC081C /* Lumi-iOS-Bridging-Header.h */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -228,6 +237,8 @@
 			children = (
 				19AC0C4B1D05E151001AA2E1 /* BubbleView.h */,
 				19AC0C4C1D05E151001AA2E1 /* BubbleView.m */,
+				19E0D2281D173FD400CC081C /* UIColor+Lumi.h */,
+				19E0D2291D173FD400CC081C /* UIColor+Lumi.m */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -360,14 +371,17 @@
 				19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */,
 				19292E8B1CEB8384007B5B05 /* main.m in Sources */,
 				19AC0C4D1D05E151001AA2E1 /* BubbleView.m in Sources */,
+				19E0D2251D173A1900CC081C /* ProfileViewController.swift in Sources */,
 				D3B4237A1D051DED00014B66 /* SignInViewController.m in Sources */,
+				19E0D2271D173A2700CC081C /* LogsTableViewController.swift in Sources */,
 				D3B423771D051DDC00014B66 /* LoginViewController.m in Sources */,
 				19AC0C501D060429001AA2E1 /* LocalDataIntegration.m in Sources */,
 				19292ED11CEB8B3D007B5B05 /* HomeViewController.m in Sources */,
+				19E0D2231D17384600CC081C /* ProfilePageViewController.swift in Sources */,
 				19292ED41CEB8B4B007B5B05 /* ConnectViewController.m in Sources */,
 				197C9E471D04C1F70017D46A /* RDCodeScannerView.m in Sources */,
-				19292ED71CEB8B57007B5B05 /* ProfileViewController.m in Sources */,
 				19292EDD1CEB8B75007B5B05 /* MapViewController.m in Sources */,
+				19E0D22A1D173FD400CC081C /* UIColor+Lumi.m in Sources */,
 				19AC0C4A1D05E104001AA2E1 /* BubbleStyleKit.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -482,12 +496,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Lumi-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RDCrew.Lumi-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lumi-iOS/Lumi-iOS-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -495,12 +512,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = "Lumi-iOS/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "RDCrew.Lumi-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Lumi-iOS/Lumi-iOS-Bridging-Header.h";
 			};
 			name = Release;
 		};

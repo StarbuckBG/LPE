@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LocalDataIntegration.h"
 
 @interface DatabaseIntegration : NSObject
 
@@ -27,6 +28,8 @@
 #define PLAYGROUNDS_DATA_UPDATED @"PlaygroundDataUpdatd"
 #define APPLICANCES_DATA_UPDATED @"AppliancesDataUpdated"
 
+
+
 @property (nonatomic, strong) __block NSMutableDictionary * userdata;
 @property (nonatomic, strong) __block NSMutableArray * logs;
 @property (nonatomic, strong) __block NSMutableArray * playgrounds;
@@ -35,6 +38,7 @@
 
 +(instancetype)sharedInstance;
 
+- (void) updateUserData;
 - (void) loginWithUsername: (NSString *) username andPassword: (NSString *) password;
 - (void) registerUserWithUsername: (NSString *) username andPassword: (NSString *) password andEmail: (NSString *) email;
 - (void) registerUserWithFacebookId: (NSString *) facebookId andPassword: (NSString *) password andUsername: (NSString *) username;
@@ -42,8 +46,10 @@
 - (void) updateAppliances;
 - (void) updateAppliancesForPlaygroundId: (NSString *) playgroundId;
 - (void) addToLogPoints: (NSString *) points onApplianceId: (NSString *) applicanceId withIntensity: (NSString *) intensity fromTime: (NSDate *) startTime toTime: (NSDate *) endTime;
+- (void) addTranfer: (NSString *) points toCompanyId: (NSString *) companyId;
 - (void) getLogs;
 - (void) updateCompaniesAndRates;
+- (void) updateAllData;
 
 
 

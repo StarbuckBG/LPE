@@ -509,7 +509,7 @@
                     <connections>
                         <segue destination="9pv-A4-QxB" kind="relationship" relationship="viewControllers" id="u7Y-xg-7CH"/>
                         <segue destination="8rJ-Kc-sve" kind="relationship" relationship="viewControllers" id="lzU-1b-eKA"/>
-                        <segue destination="Fyd-HW-vtn" kind="relationship" relationship="viewControllers" id="ILs-1i-6Dj"/>
+                        <segue destination="AqL-ae-i7C" kind="relationship" relationship="viewControllers" id="zNE-Zu-HVB"/>
                         <segue destination="mEt-Rk-615" kind="relationship" relationship="viewControllers" id="7lt-7C-l95"/>
                         <segue destination="3uJ-l6-I4n" kind="relationship" relationship="viewControllers" id="VUX-OQ-DoG"/>
                     </connections>
@@ -519,23 +519,161 @@
             <point key="canvasLocation" x="-205.5" y="39"/>
         </scene>
         <!--Profile-->
-        <scene sceneID="OhC-AO-Ptk">
+        <scene sceneID="nYW-95-v0B">
             <objects>
-                <viewController id="Fyd-HW-vtn" customClass="ProfileViewController" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="ProfilePageViewControler" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="AqL-ae-i7C" customClass="ProfilePageViewController" customModule="Lumi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="5PP-pH-3eT"/>
+                </pageViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="X9k-6x-00S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1021.5" y="795"/>
+        </scene>
+        <!--Profile View Controller-->
+        <scene sceneID="FMW-N3-fqZ">
+            <objects>
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7FZ-2g-Q8H" customClass="ProfileViewController" customModule="Lumi_iOS" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="MES-hr-pab"/>
-                        <viewControllerLayoutGuide type="bottom" id="y9q-bB-pq5"/>
+                        <viewControllerLayoutGuide type="top" id="iVF-IA-RGw"/>
+                        <viewControllerLayoutGuide type="bottom" id="yqL-S0-1yg"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="4NQ-TE-CZN">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                    <view key="view" contentMode="scaleToFill" id="FVB-CO-ZPM">
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" scrollEnabled="NO" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" showsSelectionImmediatelyOnTouchBegin="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="nqm-Hv-zyZ">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="283" id="fDd-cq-GwL">
+                                        <variation key="widthClass=compact" constant="230"/>
+                                    </constraint>
+                                </constraints>
+                                <color key="sectionIndexColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="fDd-cq-GwL"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="fDd-cq-GwL"/>
+                                    </mask>
+                                </variation>
+                                <connections>
+                                    <outlet property="dataSource" destination="7FZ-2g-Q8H" id="1ba-Av-qYZ"/>
+                                    <outlet property="delegate" destination="7FZ-2g-Q8H" id="A17-c1-dEV"/>
+                                </connections>
+                            </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="lumi.png" translatesAutoresizingMaskIntoConstraints="NO" id="1Uj-w6-gip">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="229" id="Owd-eL-vQ9"/>
+                                    <constraint firstAttribute="width" secondItem="1Uj-w6-gip" secondAttribute="height" multiplier="1:1" id="hqB-oI-MEa"/>
+                                </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="Owd-eL-vQ9"/>
+                                        <exclude reference="hqB-oI-MEa"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <mask key="constraints">
+                                        <include reference="Owd-eL-vQ9"/>
+                                        <include reference="hqB-oI-MEa"/>
+                                    </mask>
+                                </variation>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1Uj-w6-gip" firstAttribute="centerX" secondItem="FVB-CO-ZPM" secondAttribute="centerX" id="MC4-KG-FFb"/>
+                            <constraint firstItem="nqm-Hv-zyZ" firstAttribute="leading" secondItem="FVB-CO-ZPM" secondAttribute="leadingMargin" id="UPx-BE-hdH"/>
+                            <constraint firstItem="1Uj-w6-gip" firstAttribute="top" secondItem="iVF-IA-RGw" secondAttribute="bottom" constant="8" id="XhA-AZ-85I"/>
+                            <constraint firstItem="nqm-Hv-zyZ" firstAttribute="trailing" secondItem="FVB-CO-ZPM" secondAttribute="trailingMargin" id="f5A-31-CT0"/>
+                            <constraint firstItem="yqL-S0-1yg" firstAttribute="top" secondItem="nqm-Hv-zyZ" secondAttribute="bottom" constant="20" id="t5R-o2-gXr"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="nqm-Hv-zyZ"/>
+                                <exclude reference="1Uj-w6-gip"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="MC4-KG-FFb"/>
+                                <exclude reference="XhA-AZ-85I"/>
+                                <exclude reference="UPx-BE-hdH"/>
+                                <exclude reference="f5A-31-CT0"/>
+                                <exclude reference="t5R-o2-gXr"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="nqm-Hv-zyZ"/>
+                                <include reference="1Uj-w6-gip"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="MC4-KG-FFb"/>
+                                <include reference="XhA-AZ-85I"/>
+                                <include reference="UPx-BE-hdH"/>
+                                <include reference="f5A-31-CT0"/>
+                                <include reference="t5R-o2-gXr"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="profileTableView" destination="nqm-Hv-zyZ" id="E4v-l8-dT2"/>
+                        <segue destination="AqL-ae-i7C" kind="show" id="VBW-jh-bbL"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ten-n9-4fy" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1377" y="1474"/>
+        </scene>
+        <!--Logs Table View Controller-->
+        <scene sceneID="Vau-o6-h4I">
+            <objects>
+                <tableViewController storyboardIdentifier="LogsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8H3-dM-Rb0" customClass="LogsTableViewController" customModule="Lumi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tjb-qe-9PD">
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="cTj-LO-Z2F"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rcj-is-onT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="logsTableViewControllerCell" textLabel="GLj-3Z-viP" detailTextLabel="ELY-G6-a4c" style="IBUITableViewCellStyleValue1" id="phY-xl-aPV">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="phY-xl-aPV" id="pbr-fF-KQ6">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="GLj-3Z-viP">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                            </variation>
+                                        </label>
+                                        <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ELY-G6-a4c">
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
+                                            <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact">
+                                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="16"/>
+                                            </variation>
+                                        </label>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8H3-dM-Rb0" id="8zZ-gv-mx7"/>
+                            <outlet property="delegate" destination="8H3-dM-Rb0" id="DdR-SK-QYU"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <segue destination="AqL-ae-i7C" kind="show" id="eak-BE-f0K"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qV2-yr-gxd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="668" y="1503"/>
+            <point key="canvasLocation" x="-556.5" y="1474"/>
         </scene>
         <!--Map-->
         <scene sceneID="9bF-RN-q8R">
@@ -676,9 +814,6 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="308" y="370" width="11" height="24"/>
-                                </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lumis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0i-j3-Vlx">
                                 <rect key="frame" x="529" y="351" width="51" height="25"/>
@@ -709,9 +844,6 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="23"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="146" y="15" width="110" height="32"/>
-                                </variation>
                             </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="V9L-jC-wkD">
                                 <rect key="frame" x="20" y="62" width="560" height="252"/>
@@ -742,9 +874,6 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="20" y="61" width="360" height="244"/>
-                                </variation>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1001,6 +1130,7 @@
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
+                                <exclude reference="JSc-ys-Iwo"/>
                                 <exclude reference="bVw-sz-1mF"/>
                                 <exclude reference="pHF-4R-YPk"/>
                             </mask>
@@ -1009,6 +1139,11 @@
                             <mask key="constraints">
                                 <include reference="bVw-sz-1mF"/>
                                 <include reference="pHF-4R-YPk"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="constraints">
+                                <include reference="JSc-ys-Iwo"/>
                             </mask>
                         </variation>
                     </view>
@@ -1097,5 +1232,8 @@
         <image name="map.png" width="30" height="30"/>
         <image name="profile.png" width="30" height="30"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="eak-BE-f0K"/>
+    </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

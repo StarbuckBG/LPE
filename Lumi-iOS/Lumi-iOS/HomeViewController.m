@@ -26,8 +26,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     database = [DatabaseIntegration sharedInstance];
-    [database loginWithUsername:@"starbuck" andPassword:@"12348765"];
-    [database registerUserWithUsername:@"lumiUser1" andPassword:@"12348765" andEmail:@"lumiUser1@playgroundenergy.com"];
+    [database updateUserData];
     
     self.topLeftBubbleView.innerColor = [BubbleStyleKit greenInner];
     self.topLeftBubbleView.outerColor = [BubbleStyleKit greenOuter];
