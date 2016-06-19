@@ -43,7 +43,7 @@
      Login with username (GET http://rapiddevcrew.com/lumi_v2/)
      */
     
-    NSURL* URL = [NSURL URLWithString:@"http://rapiddevcrew.com/lumi_v2/"];
+    NSURL* URL = [NSURL URLWithString:@"https://rapiddevcrew.com/lumi_v2/"];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
     request.HTTPMethod = @"GET";
     
@@ -90,7 +90,7 @@
      Register with email (POST http://rapiddevcrew.com/lumi_v2/register/)
      */
     
-    NSURL* URL = [NSURL URLWithString:@"http://rapiddevcrew.com/lumi_v2/register/"];
+    NSURL* URL = [NSURL URLWithString:@"https://rapiddevcrew.com/lumi_v2/register/"];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
     request.HTTPMethod = @"POST";
     
@@ -146,7 +146,7 @@
      Get Playground Locations (GET http://rapiddevcrew.com/lumi_v2/getPlaygrounds/)
      */
     
-    NSURL* URL = [NSURL URLWithString:@"http://rapiddevcrew.com/lumi_v2/getPlaygrounds/"];
+    NSURL* URL = [NSURL URLWithString:@"https://rapiddevcrew.com/lumi_v2/getPlaygrounds/"];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
     request.HTTPMethod = @"GET";
     
@@ -181,7 +181,7 @@
      Get Companies (GET http://rapiddevcrew.com/lumi_v2/getCompanies/)
      */
     
-    NSURL* URL = [NSURL URLWithString:@"http://rapiddevcrew.com/lumi_v2/getCompanies/"];
+    NSURL* URL = [NSURL URLWithString:@"https://rapiddevcrew.com/lumi_v2/getCompanies/"];
     NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
     request.HTTPMethod = @"GET";
     
@@ -204,5 +204,6 @@
     [task resume];
 
 }
+
 
 @end

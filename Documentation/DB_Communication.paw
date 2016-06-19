@@ -5,7 +5,7 @@
     <databaseInfo>
         <version>134481920</version>
         <UUID>8EE3E766-1F82-4408-BF1A-F296923ED25E</UUID>
-        <nextObjectID>206</nextObjectID>
+        <nextObjectID>214</nextObjectID>
         <metadata>
             <plist version="1.0">
                 <dict>
@@ -515,7 +515,7 @@
         <attribute name="redirectauthorization" type="bool">0</attribute>
         <attribute name="method" type="string">POST</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
-        <attribute name="body" type="string">[{"data":{"json":"{\\"facebookId\\":\\"123123123\\",\\"password\\":\\"12348765\\",\\"username\\":\\"starbuck\\"}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
+        <attribute name="body" type="string">[{"data":{"json":"{\\"facebookId\\":\\"123123126\\",\\"password\\":\\"12348765\\",\\"username\\":\\"starbuckk\\"}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
         <attribute name="order" type="int64">1</attribute>
         <attribute name="name" type="string">Register with facebook</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z167"></relationship>
@@ -594,7 +594,7 @@
     </object>
     <object type="LMREQUEST" id="z150">
         <attribute name="uuid" type="string">B2A84408-5E64-487C-B88B-AFD98BA77583</attribute>
-        <attribute name="url" type="string">http://rapiddevcrew.com/lumi_v2/</attribute>
+        <attribute name="url" type="string">https://rapiddevcrew.com/lumi_v2/</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -605,7 +605,7 @@
         <attribute name="name" type="string">Login with username</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z167"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z126 z104"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z104 z126"></relationship>
     </object>
     <object type="LMREQUEST" id="z151">
         <attribute name="uuid" type="string">6C1585CF-4B0F-4B6B-ABCC-D5DC6BB5FD23</attribute>
@@ -794,7 +794,7 @@
         <attribute name="order" type="int64">2</attribute>
         <attribute name="name" type="string">lumi_v2</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z175 z143 z138 z166 z150 z183 z182 z171 z131"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM" idrefs="z182 z213 z131 z150 z138 z143 z166 z175 z208 z171 z212 z183"></relationship>
         <relationship name="bodyparameters" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="headers" type="0/0" destination="LMKEYVALUE"></relationship>
         <relationship name="urlparameters" type="0/0" destination="LMKEYVALUE"></relationship>
@@ -830,7 +830,7 @@
     </object>
     <object type="LMREQUEST" id="z171">
         <attribute name="uuid" type="string">7A4AE7FE-081E-4C0A-B783-28016563E022</attribute>
-        <attribute name="url" type="string">http://rapiddevcrew.com/lumi_v2/</attribute>
+        <attribute name="url" type="string">https://rapiddevcrew.com/lumi_v2/</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -892,9 +892,9 @@
         <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z119"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z176">
-        <attribute name="value" type="string"></attribute>
+        <attribute name="value" type="string">["{\\"user_id\\":\\"2\\"}"]</attribute>
         <attribute name="order" type="int64">0</attribute>
-        <attribute name="name" type="string"></attribute>
+        <attribute name="name" type="string">Data</attribute>
         <attribute name="enabled" type="bool">1</attribute>
         <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
         <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
@@ -983,7 +983,7 @@
     </object>
     <object type="LMREQUEST" id="z183">
         <attribute name="uuid" type="string">DA6FC376-FF8B-4F36-9F14-EBED4A6614C6</attribute>
-        <attribute name="url" type="string"></attribute>
+        <attribute name="url" type="string">https://rapiddevcrew.com/lumi_v2/getLogsForUser/</attribute>
         <attribute name="storecookies" type="bool">1</attribute>
         <attribute name="sendcookies" type="bool">1</attribute>
         <attribute name="redirectmethod" type="bool">0</attribute>
@@ -991,10 +991,10 @@
         <attribute name="method" type="string">GET</attribute>
         <attribute name="followredirects" type="bool">0</attribute>
         <attribute name="order" type="int64">9</attribute>
-        <attribute name="name" type="string">Get logs</attribute>
+        <attribute name="name" type="string">Get logs for user</attribute>
         <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z167"></relationship>
         <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
-        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z176"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z176 z207"></relationship>
     </object>
     <object type="LMKEYVALUE" id="z184">
         <attribute name="value" type="string">["{\\"username\\":\\"testuser\\"}"]</attribute>
@@ -1224,5 +1224,90 @@
         <attribute name="value" type="string"></attribute>
         <relationship name="environment" type="1/1" destination="LMENVIRONMENT" idrefs="z164"></relationship>
         <relationship name="variable" type="1/1" destination="LMENVIRONMENTVARIABLE" idrefs="z102"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z207">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">1</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z183"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z208">
+        <attribute name="uuid" type="string">499255F4-4453-4182-B811-8D1BCEA5A812</attribute>
+        <attribute name="url" type="string">https://rapiddevcrew.com/lumi_v2/getUserChart/</attribute>
+        <attribute name="storecookies" type="bool">1</attribute>
+        <attribute name="sendcookies" type="bool">1</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">GET</attribute>
+        <attribute name="followredirects" type="bool">0</attribute>
+        <attribute name="order" type="int64">10</attribute>
+        <attribute name="name" type="string">Get result for all users</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z167"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z209"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z209">
+        <attribute name="order" type="int64">1</attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z208"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z211">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">0</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z212"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z212">
+        <attribute name="uuid" type="string">FEB03348-0398-4B63-A6DC-ECE733BB0C58</attribute>
+        <attribute name="url" type="string">https://rapiddevcrew.com/lumi_v2/addLog/</attribute>
+        <attribute name="storecookies" type="bool">1</attribute>
+        <attribute name="sendcookies" type="bool">1</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">POST</attribute>
+        <attribute name="followredirects" type="bool">0</attribute>
+        <attribute name="body" type="string">[{"data":{"json":"{\\"user_id\\":\\"2\\",\\"points\\":\\"600\\",\\"intensity\\":\\"3.4\\",\\"appliance_id\\":\\"1\\",\\"start_time\\":\\"2016-06-18 00:00:12\\",\\"end_time\\":\\"2016-06-18 00:00:16\\"}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
+        <attribute name="order" type="int64">11</attribute>
+        <attribute name="name" type="string">addLog</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z167"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z211"></relationship>
+    </object>
+    <object type="LMREQUEST" id="z213">
+        <attribute name="body" type="string">[{"data":{"json":"{\\"user_id\\":\\"1\\",\\"company_id\\":\\"1\\",\\"points\\":\\"200\\"}"},"identifier":"com.luckymarmot.JSONDynamicValue"}]</attribute>
+        <attribute name="uuid" type="string">1801F48E-CD70-4D06-8717-232BA64FE8E3</attribute>
+        <attribute name="url" type="string">https://rapiddevcrew.com/lumi_v2/addTransfer/</attribute>
+        <attribute name="storecookies" type="bool">1</attribute>
+        <attribute name="sendcookies" type="bool">1</attribute>
+        <attribute name="redirectmethod" type="bool">0</attribute>
+        <attribute name="redirectauthorization" type="bool">0</attribute>
+        <attribute name="method" type="string">POST</attribute>
+        <attribute name="followredirects" type="bool">0</attribute>
+        <attribute name="order" type="int64">12</attribute>
+        <attribute name="name" type="string">addTransfer</attribute>
+        <relationship name="parent" type="0/1" destination="LMREQUESTTREEITEM" idrefs="z167"></relationship>
+        <relationship name="children" type="0/0" destination="LMREQUESTTREEITEM"></relationship>
+        <relationship name="headers" type="0/0" destination="LMKEYVALUE" idrefs="z214"></relationship>
+    </object>
+    <object type="LMKEYVALUE" id="z214">
+        <attribute name="value" type="string"></attribute>
+        <attribute name="order" type="int64">0</attribute>
+        <attribute name="name" type="string"></attribute>
+        <attribute name="enabled" type="bool">1</attribute>
+        <relationship name="groupforbodyparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforheaders" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="groupforurlparameters" type="0/1" destination="LMREQUESTGROUP"></relationship>
+        <relationship name="request" type="0/1" destination="LMREQUEST" idrefs="z213"></relationship>
     </object>
 </database>
