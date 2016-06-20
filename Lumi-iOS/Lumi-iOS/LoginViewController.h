@@ -7,14 +7,16 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RGFormViewController.h"
 
-@interface LoginViewController : UIViewController
+@interface LoginViewController : RGFormViewController
+
 #define LOGIN_SUCCESSFUL @"LoginSuccessful"
 #define LOGIN_NOT_SUCCESSFUL @"LoginUnsuccessful"
 
 @property (weak, nonatomic) IBOutlet UISwitch *rememberMeSwitch;
 
-@property (weak, nonatomic) IBOutlet UITextField *Username;
-@property (weak, nonatomic) IBOutlet UITextField *Password;
+@property (weak, nonatomic) IBOutlet RGTextField *Username;
+@property (weak, nonatomic) IBOutlet RGTextField *Password;
 
 @end

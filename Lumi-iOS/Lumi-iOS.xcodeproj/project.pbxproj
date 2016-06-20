@@ -48,6 +48,8 @@
 		19E0D2251D173A1900CC081C /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0D2241D173A1900CC081C /* ProfileViewController.swift */; };
 		19E0D2271D173A2700CC081C /* LogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0D2261D173A2700CC081C /* LogsTableViewController.swift */; };
 		19E0D22A1D173FD400CC081C /* UIColor+Lumi.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E0D2291D173FD400CC081C /* UIColor+Lumi.m */; };
+		6AA7879D1D17D7C700795115 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AA7879C1D17D7C700795115 /* error.png */; };
+		6AA787A01D17EA1A00795115 /* RGFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7879F1D17EA1A00795115 /* RGFormViewController.m */; };
 		D3094E4F1D0710FB00E3C180 /* lumi.png in Resources */ = {isa = PBXBuildFile; fileRef = D3094E4E1D0710FB00E3C180 /* lumi.png */; };
 		D34F0C2F1D1796F4003EFA6E /* RGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C2E1D1796F4003EFA6E /* RGTextField.m */; };
 		D34F0C3C1D17996C003EFA6E /* AMPopTip.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C321D17996C003EFA6E /* AMPopTip.m */; };
@@ -116,6 +118,9 @@
 		19E0D2261D173A2700CC081C /* LogsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogsTableViewController.swift; sourceTree = "<group>"; };
 		19E0D2281D173FD400CC081C /* UIColor+Lumi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Lumi.h"; sourceTree = "<group>"; };
 		19E0D2291D173FD400CC081C /* UIColor+Lumi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Lumi.m"; sourceTree = "<group>"; };
+		6AA7879C1D17D7C700795115 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
+		6AA7879E1D17EA1A00795115 /* RGFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGFormViewController.h; sourceTree = "<group>"; };
+		6AA7879F1D17EA1A00795115 /* RGFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGFormViewController.m; sourceTree = "<group>"; };
 		D3094E4E1D0710FB00E3C180 /* lumi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lumi.png; sourceTree = "<group>"; };
 		D34F0C2D1D1796F4003EFA6E /* RGTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTextField.h; sourceTree = "<group>"; };
 		D34F0C2E1D1796F4003EFA6E /* RGTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTextField.m; sourceTree = "<group>"; };
@@ -223,6 +228,7 @@
 				19292EA81CEB8A15007B5B05 /* map2.png */,
 				19292EA91CEB8A15007B5B05 /* profile.png */,
 				19292EAA1CEB8A15007B5B05 /* profile2.png */,
+				6AA7879C1D17D7C700795115 /* error.png */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -281,6 +287,8 @@
 				197C9E461D04C1F70017D46A /* RDCodeScannerView.m */,
 				D34F0C2D1D1796F4003EFA6E /* RGTextField.h */,
 				D34F0C2E1D1796F4003EFA6E /* RGTextField.m */,
+				6AA7879E1D17EA1A00795115 /* RGFormViewController.h */,
+				6AA7879F1D17EA1A00795115 /* RGFormViewController.m */,
 			);
 			name = "Rapid Development Crew";
 			sourceTree = "<group>";
@@ -395,6 +403,7 @@
 				19292EB11CEB8A15007B5B05 /* profile2.png in Resources */,
 				D3094E4F1D0710FB00E3C180 /* lumi.png in Resources */,
 				19292EC91CEB8A23007B5B05 /* home@3x.png in Resources */,
+				6AA7879D1D17D7C700795115 /* error.png in Resources */,
 				19292E971CEB8384007B5B05 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -415,6 +424,7 @@
 				19292E8B1CEB8384007B5B05 /* main.m in Sources */,
 				D34F0C3F1D17996C003EFA6E /* AMPopTip+Entrance.m in Sources */,
 				19AC0C4D1D05E151001AA2E1 /* BubbleView.m in Sources */,
+				6AA787A01D17EA1A00795115 /* RGFormViewController.m in Sources */,
 				D34F0C401D17996C003EFA6E /* AMPopTip+Exit.m in Sources */,
 				D34F0C3C1D17996C003EFA6E /* AMPopTip.m in Sources */,
 				19E0D2251D173A1900CC081C /* ProfileViewController.swift in Sources */,

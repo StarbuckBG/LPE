@@ -8,9 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "RGTextField.h"
+#import "RGFormViewController.h"
 
 
-@interface SignInViewController : UIViewController<UITextFieldDelegate>
+@interface SignInViewController : RGFormViewController 
+
 #define REGISTRATION_SUCCESSFUL @"RegistrationSuccessful"
 #define REGISTRATION_NOT_SUCCESSFUL @"RegisterNotSuccessful"
 #define REGISTRATION_USERNAME_NOT_AVAILABLE @"RegistrationUsernameNotAvailable"
@@ -21,6 +23,6 @@
 @property (weak, nonatomic) IBOutlet RGTextField *Password;
 @property (weak, nonatomic) IBOutlet RGTextField *PasswordAgain;
 @property (weak, nonatomic) IBOutlet RGTextField *Email;
+
 - (IBAction)registerButton:(UIButton *)sender;
-- (BOOL)IsValidEmail:(NSString *)string;
 @end

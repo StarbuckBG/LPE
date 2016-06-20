@@ -199,9 +199,9 @@ typedef NS_ENUM(NSInteger, AMPopTipActionAnimation) {
 - (void)stopActionAnimation;
 
 /**-----------------------------------------------------------------------------
-* @name AMPopTip Properties
-* -----------------------------------------------------------------------------
-*/
+ * @name AMPopTip Properties
+ * -----------------------------------------------------------------------------
+ */
 
 /** Font
  *
@@ -396,16 +396,16 @@ typedef NS_ENUM(NSInteger, AMPopTipActionAnimation) {
 @property (nonatomic, assign) BOOL shouldDismissOnTapOutside;
 
 /** Dismiss on swipe outside
-*
-* A boolean value that determines whether to dismiss when swiping outside the popover.
-*/
+ *
+ * A boolean value that determines whether to dismiss when swiping outside the popover.
+ */
 @property (nonatomic, assign) BOOL shouldDismissOnSwipeOutside;
 
 /** Direction to dismiss on swipe outside
-*
-* A direction that determines what swipe direction to dismiss when swiping outside the popover.
-* The default direction is UISwipeGestureRecognizerDirectionRight if this is not set.
-*/
+ *
+ * A direction that determines what swipe direction to dismiss when swiping outside the popover.
+ * The default direction is UISwipeGestureRecognizerDirectionRight if this is not set.
+ */
 @property (nonatomic, assign) UISwipeGestureRecognizerDirection swipeRemoveGestureDirection;
 
 /** Tap handler

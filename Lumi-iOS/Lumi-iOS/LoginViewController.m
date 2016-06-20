@@ -32,6 +32,10 @@
     data = [LocalDataIntegration sharedInstance];
     
 }
+-(void) setValidation {
+    [self.Username addValidationForTextFieldsWithUserName];
+    [self.Password addValidationForTextFieldsWithPass];
+}
 -(void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     

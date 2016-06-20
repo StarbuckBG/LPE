@@ -34,7 +34,7 @@ typedef NS_ENUM(int, InputType)
 - (void)hidePopUps;
 - (void)showMessageError;
 - (void)tapOnError;
--(void)addValidationForTextFieldsWithWord;
+-(void)addValidationForTextFieldsWithUserName;
 -(void)addValidationForTextFieldsWithPass;
 -(void)addValidationForTextFieldsWithEmailAddress;
 -(BOOL)validate;

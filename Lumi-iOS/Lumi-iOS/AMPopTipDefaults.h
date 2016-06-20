@@ -20,7 +20,7 @@
 #define kDefaultBounceAnimationIn 1.2
 #define kDefaultBounceAnimationOut 1.0
 #define kDefaultEdgeInsets UIEdgeInsetsZero
-#define kDefaultEdgeMargin 0
+#define kDefaultEdgeMargin 10
 #define kDefaultOffset 0
 #define kDefaultBounceOffset 8
 #define kDefaultFloatOffset 8

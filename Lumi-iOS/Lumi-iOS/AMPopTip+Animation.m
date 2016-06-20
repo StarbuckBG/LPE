@@ -29,7 +29,7 @@
         case AMPopTipActionAnimationNone:
             return;
             break;
-        default:
+            default:
             break;
     }
 }
@@ -54,7 +54,7 @@
             yOffset = -self.actionFloatOffset;
             break;
     }
-
+    
     [UIView animateWithDuration:(self.actionAnimationIn / 2) delay:self.actionDelayIn options:(UIViewAnimationOptionRepeat | UIViewAnimationOptionBeginFromCurrentState | UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionAutoreverse | UIViewAnimationOptionAllowUserInteraction) animations:^{
         self.transform = CGAffineTransformMakeTranslation(xOffset, yOffset);
     } completion:nil];
@@ -80,7 +80,7 @@
             yOffset = -self.actionBounceOffset;
             break;
     }
-
+    
     [UIView animateWithDuration:(self.actionAnimationIn / 10) delay:self.actionDelayIn options:(UIViewAnimationOptionCurveEaseIn | UIViewAnimationOptionAllowUserInteraction) animations:^{
         self.transform = CGAffineTransformMakeTranslation(xOffset, yOffset);
     } completion:^(BOOL finished) {

@@ -37,11 +37,11 @@
             completion();
             break;
         }
-        default: {
-            [self.containerView addSubview:self];
-            completion();
-            break;
-        }
+            default: {
+                [self.containerView addSubview:self];
+                completion();
+                break;
+            }
     }
 }
 
@@ -63,12 +63,12 @@
         case AMPopTipDirectionNone:
             self.transform = CGAffineTransformTranslate(self.transform, 0, (self.containerView.frame.size.height - self.fromFrame.origin.y));
             break;
-
-        default:
+            
+            default:
             break;
     }
     [self.containerView addSubview:self];
-
+    
     [UIView animateWithDuration:self.animationIn delay:self.delayIn usingSpringWithDamping:0.6 initialSpringVelocity:1.5 options:(UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState) animations:^{
         self.transform = CGAffineTransformIdentity;
     } completion:^(BOOL completed){
@@ -81,7 +81,7 @@
 - (void)entranceScale:(void (^)())completion {
     self.transform = CGAffineTransformMakeScale(0, 0);
     [self.containerView addSubview:self];
-
+    
     [UIView animateWithDuration:self.animationIn delay:self.delayIn usingSpringWithDamping:0.6 initialSpringVelocity:1.5 options:(UIViewAnimationOptionCurveEaseInOut | UIViewAnimationOptionBeginFromCurrentState) animations:^{
         self.transform = CGAffineTransformIdentity;
     } completion:^(BOOL completed){

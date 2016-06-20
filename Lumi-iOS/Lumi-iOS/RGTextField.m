@@ -54,6 +54,7 @@
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string
 {
+    [self hidePopUps];
      if (textField.text.length >= self.maxLength && range.length == 0) {
         return NO; // Change not allowed
     } else {
@@ -89,8 +90,7 @@
     [self hidePopUps];
     [self.popTip removeFromSuperview];
     self.popTip = [AMPopTip popTip];
-    self.presentationView = [(UIViewController*)self.rgdelegate view].subviews[0];
-    [self.popTip showText:self.errorMessage direction:AMPopTipDirectionDown maxWidth:320 inView:self.presentationView fromFrame:self.frame];
+    [self.popTip showText:self.errorMessage direction:AMPopTipDirectionDown maxWidth:320 inView:self.superview fromFrame:self.frame];
     self.popTip.shouldDismissOnTap = YES;
 }
 
@@ -98,14 +98,14 @@
 {
     UIButton * btnError = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 25, 25)];
     [btnError addTarget:self action:@selector(tapOnError) forControlEvents:UIControlEventTouchUpInside];
-    [btnError setBackgroundImage:[UIImage imageNamed:@"error"] forState:UIControlStateNormal];
+    [btnError setBackgroundImage:[UIImage imageNamed:@"error.png"] forState:UIControlStateNormal];
     self.rightView = btnError;
     self.rightViewMode = UITextFieldViewModeUnlessEditing;
 }
 
 - (void)hidePopUps
 {
-    NSArray* subViews = [(UIViewController*)self.rgdelegate view].subviews[0].subviews;
+    NSArray* subViews = [(UIViewController*)self.rgdelegate view].subviews;
     for (int i = 0; i < subViews.count; i++) {
         UIView*v = [subViews objectAtIndex:i];
         if ([v isKindOfClass:[AMPopTip class]]) {

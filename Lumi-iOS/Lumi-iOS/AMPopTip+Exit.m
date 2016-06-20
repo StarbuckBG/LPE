@@ -38,13 +38,13 @@
             }
             break;
         }
-        default: {
-            [self.containerView addSubview:self];
-            if (completion) {
-                completion();
+            default: {
+                [self.containerView addSubview:self];
+                if (completion) {
+                    completion();
+                }
+                break;
             }
-            break;
-        }
     }
 }
 
