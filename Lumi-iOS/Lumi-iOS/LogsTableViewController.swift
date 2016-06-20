@@ -9,11 +9,14 @@
 import UIKit
 
 class LogsTableViewController: UITableViewController {
+    @IBOutlet weak var logTableView: UITableView!
 
     private let databaseIntegration: DatabaseIntegration = DatabaseIntegration.sharedInstance();
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(logsUpdatedNotificationHandler), name: LOGS_UPDATED, object: nil)
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -24,7 +27,7 @@ class LogsTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        return 1
+        return (DatabaseIntegration.sharedInstance().logs != nil) ? 1 : 0
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -39,6 +42,11 @@ class LogsTableViewController: UITableViewController {
         cell.detailTextLabel!.text = databaseIntegration.logs.objectAtIndex(indexPath.row).valueForKey("start_time") as? String
         
         return cell
+    }
+    
+    func logsUpdatedNotificationHandler(aNotification:NSNotification)
+    {
+        self.logTableView.reloadData()
     }
     
 }

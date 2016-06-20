@@ -28,6 +28,8 @@
     database = [DatabaseIntegration sharedInstance];
     [database updateUserData];
     [database updateCompaniesAndRates];
+    
+    
     self.topLeftBubbleView.innerColor = [BubbleStyleKit greenInner];
     self.topLeftBubbleView.outerColor = [BubbleStyleKit greenOuter];
     self.topLeftBubbleView.text = @"Connect";
@@ -38,7 +40,7 @@
     
     self.centerBubbleView.innerColor = [BubbleStyleKit blueInner];
     self.centerBubbleView.outerColor = [BubbleStyleKit blueOuter];
-    self.centerBubbleView.text = @"1523";
+    self.centerBubbleView.text = @"Loading";
     
     self.bottomLeftBubbleView.innerColor = [BubbleStyleKit redInner];
     self.bottomLeftBubbleView.outerColor = [BubbleStyleKit redOuter];
@@ -47,6 +49,9 @@
     self.bottomRightBubbleView.innerColor = [BubbleStyleKit purpleInner];
     self.bottomRightBubbleView.outerColor = [BubbleStyleKit purpleOuter];
     self.bottomRightBubbleView.text = @"Exchange";
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDataUpdatedNotificationHandler:) name:USERDATA_UPDATED object:nil];
+    
     
 }
 
@@ -150,6 +155,12 @@
 
 - (IBAction)bottomLeftTapGestureRecognized:(UITapGestureRecognizer *)sender {
     self.tabBarController.selectedIndex = 4;
+}
+
+- (void) userDataUpdatedNotificationHandler: (NSNotification *) notification
+{
+    self.centerBubbleView.text = [database.userdata objectForKey:@"points_balance"];
+    [self.centerBubbleView setNeedsDisplay];
 }
 
 

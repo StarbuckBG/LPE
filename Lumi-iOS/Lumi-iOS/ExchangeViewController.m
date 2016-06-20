@@ -15,7 +15,6 @@
 @end
 
 @implementation ExchangeViewController
-NSInteger sliderValue;
 NSInteger pointsValue;
 DatabaseIntegration* interactions;
 NSMutableArray * transactionCompanies;
@@ -25,16 +24,14 @@ NSNumber * changeRate;
     [super viewDidLoad];
     
     [self getUserDetails];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataUpdatedNotificationHandler:) name:USERDATA_UPDATED object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(dataUpdatedNotificationHandler:) name:COMPANIES_DATA_UPDATED object:nil];
     pointsValue = [[[[DatabaseIntegration sharedInstance] userdata] objectForKey:@"points_balance"] integerValue];
     totalPoints.text =  [NSString stringWithFormat:@"%ld", pointsValue];
     interactions = [[DatabaseIntegration alloc] init];
     changeRate = [NSNumber numberWithInteger:0];
     username.text = [[[DatabaseIntegration sharedInstance] userdata] objectForKey:@"username"];
-    
-    [self.tableView reloadData];
-    NSInteger i;
-    i = pointsValue/2;
-    pointsConversion.text = [NSString stringWithFormat:@"%ld", i];
+    pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)slider.value];
     
 }
 
@@ -44,9 +41,8 @@ NSNumber * changeRate;
 }
 - (IBAction) slider:(id)sender
 {
-    sliderValue = slider.value/10000 * pointsValue;
-    pointsConversion.text = [NSString stringWithFormat:@"%ld", sliderValue];
-    pointsCurency.text = [NSString stringWithFormat:@"%ld",(long)((float)sliderValue * [changeRate floatValue])];
+    pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)(slider.value/10000 * pointsValue)];
+    pointsCurency.text = [NSString stringWithFormat:@"%ld",(long)((float)slider.value/10000 * pointsValue * [changeRate floatValue])];
     
 }
 - (IBAction)convertButton:(id)sender
@@ -137,7 +133,7 @@ NSNumber * changeRate;
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath
 {
     changeRate = [NSNumber numberWithFloat:1/[[[[[DatabaseIntegration sharedInstance] companies] objectAtIndex:indexPath.row] valueForKey: @"rate"] floatValue]];
-    pointsCurency.text = [NSString stringWithFormat:@"%ld",(long)((float)sliderValue * [changeRate floatValue])];
+    pointsCurency.text = [NSString stringWithFormat:@"%ld",(long)((float)(NSInteger)(slider.value/10000 * pointsValue) * [changeRate floatValue])];
 }
 
 /*
@@ -149,5 +145,12 @@ NSNumber * changeRate;
     // Pass the selected object to the new view controller.
 }
 */
+
+- (void) dataUpdatedNotificationHandler: (NSNotification*) aNotification
+{
+    totalPoints.text =  [NSString stringWithFormat:@"%ld", pointsValue];
+    pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)slider.value];
+    [self.tableView reloadData];
+}
 
 @end

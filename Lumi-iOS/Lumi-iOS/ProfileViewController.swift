@@ -14,7 +14,7 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector(updateTable()), name: USERDATA_UPDATED, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(userDataUpdatedNotificationHandler), name: USERDATA_UPDATED, object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -23,9 +23,13 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    func updateTable()
+    override func viewWillAppear(animated: Bool) {
+        DatabaseIntegration.sharedInstance().updateUserData()
+    }
+    
+    func userDataUpdatedNotificationHandler()
     {
-        profileTableView.reloadData()
+        self.profileTableView.reloadData()
     }
     
 
