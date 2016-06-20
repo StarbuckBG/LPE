@@ -49,6 +49,12 @@
 		19E0D2271D173A2700CC081C /* LogsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19E0D2261D173A2700CC081C /* LogsTableViewController.swift */; };
 		19E0D22A1D173FD400CC081C /* UIColor+Lumi.m in Sources */ = {isa = PBXBuildFile; fileRef = 19E0D2291D173FD400CC081C /* UIColor+Lumi.m */; };
 		D3094E4F1D0710FB00E3C180 /* lumi.png in Resources */ = {isa = PBXBuildFile; fileRef = D3094E4E1D0710FB00E3C180 /* lumi.png */; };
+		D34F0C2F1D1796F4003EFA6E /* RGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C2E1D1796F4003EFA6E /* RGTextField.m */; };
+		D34F0C3C1D17996C003EFA6E /* AMPopTip.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C321D17996C003EFA6E /* AMPopTip.m */; };
+		D34F0C3D1D17996C003EFA6E /* AMPopTip+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C341D17996C003EFA6E /* AMPopTip+Animation.m */; };
+		D34F0C3E1D17996C003EFA6E /* AMPopTip+Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C361D17996C003EFA6E /* AMPopTip+Draw.m */; };
+		D34F0C3F1D17996C003EFA6E /* AMPopTip+Entrance.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C381D17996C003EFA6E /* AMPopTip+Entrance.m */; };
+		D34F0C401D17996C003EFA6E /* AMPopTip+Exit.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C3A1D17996C003EFA6E /* AMPopTip+Exit.m */; };
 		D3B423771D051DDC00014B66 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B423761D051DDC00014B66 /* LoginViewController.m */; };
 		D3B4237A1D051DED00014B66 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B423791D051DED00014B66 /* SignInViewController.m */; };
 		D3B4237D1D05374700014B66 /* ImageShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B4237C1D05374700014B66 /* ImageShareViewController.m */; };
@@ -111,6 +117,19 @@
 		19E0D2281D173FD400CC081C /* UIColor+Lumi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIColor+Lumi.h"; sourceTree = "<group>"; };
 		19E0D2291D173FD400CC081C /* UIColor+Lumi.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+Lumi.m"; sourceTree = "<group>"; };
 		D3094E4E1D0710FB00E3C180 /* lumi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lumi.png; sourceTree = "<group>"; };
+		D34F0C2D1D1796F4003EFA6E /* RGTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTextField.h; sourceTree = "<group>"; };
+		D34F0C2E1D1796F4003EFA6E /* RGTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTextField.m; sourceTree = "<group>"; };
+		D34F0C311D17996C003EFA6E /* AMPopTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPopTip.h; sourceTree = "<group>"; };
+		D34F0C321D17996C003EFA6E /* AMPopTip.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AMPopTip.m; sourceTree = "<group>"; };
+		D34F0C331D17996C003EFA6E /* AMPopTip+Animation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AMPopTip+Animation.h"; sourceTree = "<group>"; };
+		D34F0C341D17996C003EFA6E /* AMPopTip+Animation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AMPopTip+Animation.m"; sourceTree = "<group>"; };
+		D34F0C351D17996C003EFA6E /* AMPopTip+Draw.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AMPopTip+Draw.h"; sourceTree = "<group>"; };
+		D34F0C361D17996C003EFA6E /* AMPopTip+Draw.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AMPopTip+Draw.m"; sourceTree = "<group>"; };
+		D34F0C371D17996C003EFA6E /* AMPopTip+Entrance.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AMPopTip+Entrance.h"; sourceTree = "<group>"; };
+		D34F0C381D17996C003EFA6E /* AMPopTip+Entrance.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AMPopTip+Entrance.m"; sourceTree = "<group>"; };
+		D34F0C391D17996C003EFA6E /* AMPopTip+Exit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AMPopTip+Exit.h"; sourceTree = "<group>"; };
+		D34F0C3A1D17996C003EFA6E /* AMPopTip+Exit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AMPopTip+Exit.m"; sourceTree = "<group>"; };
+		D34F0C3B1D17996C003EFA6E /* AMPopTipDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPopTipDefaults.h; sourceTree = "<group>"; };
 		D3B423751D051DDC00014B66 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D3B423761D051DDC00014B66 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D3B423781D051DED00014B66 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
@@ -157,6 +176,7 @@
 				19292E8C1CEB8384007B5B05 /* AppDelegate.h */,
 				19292E8D1CEB8384007B5B05 /* AppDelegate.m */,
 				19AC0C471D05E0F9001AA2E1 /* StyleKit */,
+				D34F0C301D179952003EFA6E /* AMPopTip */,
 				197C9E481D04C1FE0017D46A /* Rapid Development Crew */,
 				19292EE01CEB8BC9007B5B05 /* DatabaseLogic */,
 				19292EDE1CEB8BAC007B5B05 /* Views */,
@@ -259,6 +279,8 @@
 			children = (
 				197C9E451D04C1F70017D46A /* RDCodeScannerView.h */,
 				197C9E461D04C1F70017D46A /* RDCodeScannerView.m */,
+				D34F0C2D1D1796F4003EFA6E /* RGTextField.h */,
+				D34F0C2E1D1796F4003EFA6E /* RGTextField.m */,
 			);
 			name = "Rapid Development Crew";
 			sourceTree = "<group>";
@@ -270,6 +292,24 @@
 				19AC0C491D05E104001AA2E1 /* BubbleStyleKit.m */,
 			);
 			name = StyleKit;
+			sourceTree = "<group>";
+		};
+		D34F0C301D179952003EFA6E /* AMPopTip */ = {
+			isa = PBXGroup;
+			children = (
+				D34F0C311D17996C003EFA6E /* AMPopTip.h */,
+				D34F0C321D17996C003EFA6E /* AMPopTip.m */,
+				D34F0C331D17996C003EFA6E /* AMPopTip+Animation.h */,
+				D34F0C341D17996C003EFA6E /* AMPopTip+Animation.m */,
+				D34F0C351D17996C003EFA6E /* AMPopTip+Draw.h */,
+				D34F0C361D17996C003EFA6E /* AMPopTip+Draw.m */,
+				D34F0C371D17996C003EFA6E /* AMPopTip+Entrance.h */,
+				D34F0C381D17996C003EFA6E /* AMPopTip+Entrance.m */,
+				D34F0C391D17996C003EFA6E /* AMPopTip+Exit.h */,
+				D34F0C3A1D17996C003EFA6E /* AMPopTip+Exit.m */,
+				D34F0C3B1D17996C003EFA6E /* AMPopTipDefaults.h */,
+			);
+			name = AMPopTip;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -304,6 +344,7 @@
 					19292E851CEB8384007B5B05 = {
 						CreatedOnToolsVersion = 7.3.1;
 						DevelopmentTeam = P6Y2W9RQ54;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -368,9 +409,14 @@
 				19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */,
 				197C9E401D04AAD00017D46A /* DatabaseIntegration.m in Sources */,
 				D3B4237D1D05374700014B66 /* ImageShareViewController.m in Sources */,
+				D34F0C2F1D1796F4003EFA6E /* RGTextField.m in Sources */,
 				19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */,
+				D34F0C3D1D17996C003EFA6E /* AMPopTip+Animation.m in Sources */,
 				19292E8B1CEB8384007B5B05 /* main.m in Sources */,
+				D34F0C3F1D17996C003EFA6E /* AMPopTip+Entrance.m in Sources */,
 				19AC0C4D1D05E151001AA2E1 /* BubbleView.m in Sources */,
+				D34F0C401D17996C003EFA6E /* AMPopTip+Exit.m in Sources */,
+				D34F0C3C1D17996C003EFA6E /* AMPopTip.m in Sources */,
 				19E0D2251D173A1900CC081C /* ProfileViewController.swift in Sources */,
 				D3B4237A1D051DED00014B66 /* SignInViewController.m in Sources */,
 				19E0D2271D173A2700CC081C /* LogsTableViewController.swift in Sources */,
@@ -381,6 +427,7 @@
 				19292ED41CEB8B4B007B5B05 /* ConnectViewController.m in Sources */,
 				197C9E471D04C1F70017D46A /* RDCodeScannerView.m in Sources */,
 				19292EDD1CEB8B75007B5B05 /* MapViewController.m in Sources */,
+				D34F0C3E1D17996C003EFA6E /* AMPopTip+Draw.m in Sources */,
 				19E0D22A1D173FD400CC081C /* UIColor+Lumi.m in Sources */,
 				19AC0C4A1D05E104001AA2E1 /* BubbleStyleKit.m in Sources */,
 			);
@@ -505,6 +552,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lumi-iOS/Lumi-iOS-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -520,6 +568,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "RDCrew.Lumi-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Lumi-iOS/Lumi-iOS-Bridging-Header.h";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

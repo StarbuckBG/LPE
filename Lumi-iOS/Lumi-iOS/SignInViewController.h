@@ -7,18 +7,20 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "RGTextField.h"
 
-@interface SignInViewController : UIViewController
+
+@interface SignInViewController : UIViewController<UITextFieldDelegate>
 #define REGISTRATION_SUCCESSFUL @"RegistrationSuccessful"
 #define REGISTRATION_NOT_SUCCESSFUL @"RegisterNotSuccessful"
 #define REGISTRATION_USERNAME_NOT_AVAILABLE @"RegistrationUsernameNotAvailable"
 
 @property (weak, nonatomic) IBOutlet UISwitch *rememberMeSwitch;
 
-@property (weak, nonatomic) IBOutlet UITextField *Username;
-@property (weak, nonatomic) IBOutlet UITextField *Password;
-@property (weak, nonatomic) IBOutlet UITextField *PasswordAgain;
-@property (weak, nonatomic) IBOutlet UITextField *Email;
+@property (weak, nonatomic) IBOutlet RGTextField *Username;
+@property (weak, nonatomic) IBOutlet RGTextField *Password;
+@property (weak, nonatomic) IBOutlet RGTextField *PasswordAgain;
+@property (weak, nonatomic) IBOutlet RGTextField *Email;
 - (IBAction)registerButton:(UIButton *)sender;
 - (BOOL)IsValidEmail:(NSString *)string;
 @end

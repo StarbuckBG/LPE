@@ -9,6 +9,7 @@
 #import "SignInViewController.h"
 #import "DatabaseIntegration.h"
 #import "LocalDataIntegration.h"
+#import "RGTextField.h"
 
 @interface SignInViewController ()
 
@@ -19,7 +20,10 @@
     [super viewDidLoad];
     self.Password.secureTextEntry = true;
     self.PasswordAgain.secureTextEntry = true;
-    
+    [self delegateTF];
+    [self gestureHandle];
+//    [self setValidation];
+
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(successfull)
                                                  name:REGISTRATION_SUCCESSFUL
@@ -38,6 +42,61 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void) delegateTF {
+    for (UIView* view in self.view.subviews) {
+        if ([view isKindOfClass:[RGTextField class]]) {
+            RGTextField *tf = (RGTextField*)view;
+            tf.rgdelegate = self;
+        }
+    }
+}
+
+- (void) setValidation {
+    [self.Username addValidationForTextFieldsWithWord];
+    [self.Password addValidationForTextFieldsWithPass];
+    [self.PasswordAgain addValidationForTextFieldsWithPass];
+    [self.Email addValidationForTextFieldsWithEmailAddress];
+}
+
+-(BOOL)checkForErrors {
+    BOOL areValid = YES;
+    NSArray* subViews = self.view.subviews;
+    for (int i = 0; i < subViews.count; i ++) {
+        UIView* view = [subViews objectAtIndex:i];
+        if ([view isKindOfClass:[RGTextField class]]) {
+            RGTextField* rgTf =(RGTextField*)view;
+            if (![rgTf validate]) {
+                areValid = NO;
+                [self showFirstErrorPopUp];
+            }
+        }
+    }
+    return areValid;
+}
+
+#pragma mark- FindFirstError
+- (RGTextField*) findFirstErrorInView:(UIView*)aView
+{
+    RGTextField* rgTf;
+    NSArray* subViews = aView.subviews;
+    for (int i = 0; i < subViews.count; i ++) {
+        UIView* view = [subViews objectAtIndex:i];
+        if ([view isKindOfClass:[RGTextField class]]) {
+            rgTf =(RGTextField*)view;
+            if(![rgTf validate])break;
+        }
+    }
+    return rgTf;
+}
+
+#pragma mark- ShowFirstErrorMessage
+-(void) showFirstErrorPopUp
+{
+    RGTextField* tf = [self findFirstErrorInView:self.view];
+    [tf tapOnError];
+}
+
 -(void) successfull {
     dispatch_async(dispatch_get_main_queue(), ^{
         LocalDataIntegration * data = [[LocalDataIntegration alloc]init];
@@ -48,6 +107,32 @@
         [self.navigationController popViewControllerAnimated:YES];
     });
 }
+
+#pragma mark- Gestures
+- (void) gestureHandle
+{
+    UITapGestureRecognizer *singleFingerTap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleSingleTap:)];
+    [self.view addGestureRecognizer:singleFingerTap];
+}
+- (void)handleSingleTap:(UITapGestureRecognizer *)recognizer
+{
+    [self hideKeyboard];
+    
+    NSArray* subViews = self.view.subviews;
+    for (int i = 0; i < subViews.count; i ++) {
+        UIView* view = [subViews objectAtIndex:i];
+        if ([view isKindOfClass:[RGTextField class]]) {
+            RGTextField* rgTf =(RGTextField*)view;
+            [rgTf hidePopUps];
+            break;
+        }
+    }
+}
+- (void) hideKeyboard
+{
+    [self.view endEditing:YES];
+}
+
 -(void) notSuccessefull {
     UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Registration unsuccessful"
                                                                    message:nil
