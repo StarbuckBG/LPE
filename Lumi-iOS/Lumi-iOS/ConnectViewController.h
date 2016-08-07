@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <CoreBluetooth/CoreBluetooth.h>
 #import "RDCodeScannerView.h"
 
-@interface ConnectViewController : UIViewController <RDCodeScannerDelegate>
+@interface ConnectViewController : UIViewController <RDCodeScannerDelegate, CBCentralManagerDelegate, CBPeripheralDelegate>
 
 @end
