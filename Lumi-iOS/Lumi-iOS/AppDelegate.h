@@ -7,11 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Reachability.h"
+#import "RDInternetData.h"
 
 @interface AppDelegate : UIResponder <UIApplicationDelegate>
 
 @property (strong, nonatomic) UIWindow *window;
-
+@property (nonatomic, assign) BOOL hasInternet;
+@property Reachability* reachability;
 
 @end
 

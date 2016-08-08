@@ -51,6 +51,8 @@
 		6AA7879D1D17D7C700795115 /* error.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AA7879C1D17D7C700795115 /* error.png */; };
 		6AA787A01D17EA1A00795115 /* RGFormViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AA7879F1D17EA1A00795115 /* RGFormViewController.m */; };
 		D3094E4F1D0710FB00E3C180 /* lumi.png in Resources */ = {isa = PBXBuildFile; fileRef = D3094E4E1D0710FB00E3C180 /* lumi.png */; };
+		D309DD541D5896CF0064C70F /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = D309DD531D5896CF0064C70F /* Reachability.m */; };
+		D309DD571D5896FB0064C70F /* RDInternetData.m in Sources */ = {isa = PBXBuildFile; fileRef = D309DD561D5896FB0064C70F /* RDInternetData.m */; };
 		D34F0C2F1D1796F4003EFA6E /* RGTextField.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C2E1D1796F4003EFA6E /* RGTextField.m */; };
 		D34F0C3C1D17996C003EFA6E /* AMPopTip.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C321D17996C003EFA6E /* AMPopTip.m */; };
 		D34F0C3D1D17996C003EFA6E /* AMPopTip+Animation.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C341D17996C003EFA6E /* AMPopTip+Animation.m */; };
@@ -122,6 +124,10 @@
 		6AA7879E1D17EA1A00795115 /* RGFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGFormViewController.h; sourceTree = "<group>"; };
 		6AA7879F1D17EA1A00795115 /* RGFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGFormViewController.m; sourceTree = "<group>"; };
 		D3094E4E1D0710FB00E3C180 /* lumi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lumi.png; sourceTree = "<group>"; };
+		D309DD521D5896CF0064C70F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		D309DD531D5896CF0064C70F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		D309DD551D5896FB0064C70F /* RDInternetData.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RDInternetData.h; sourceTree = "<group>"; };
+		D309DD561D5896FB0064C70F /* RDInternetData.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RDInternetData.m; sourceTree = "<group>"; };
 		D34F0C2D1D1796F4003EFA6E /* RGTextField.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGTextField.h; sourceTree = "<group>"; };
 		D34F0C2E1D1796F4003EFA6E /* RGTextField.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGTextField.m; sourceTree = "<group>"; };
 		D34F0C311D17996C003EFA6E /* AMPopTip.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPopTip.h; sourceTree = "<group>"; };
@@ -177,6 +183,7 @@
 		19292E881CEB8384007B5B05 /* Lumi-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				D309DD511D5896A70064C70F /* Other Libralies */,
 				19292EA31CEB8A05007B5B05 /* Resources */,
 				19292E8C1CEB8384007B5B05 /* AppDelegate.h */,
 				19292E8D1CEB8384007B5B05 /* AppDelegate.m */,
@@ -289,6 +296,8 @@
 				D34F0C2E1D1796F4003EFA6E /* RGTextField.m */,
 				6AA7879E1D17EA1A00795115 /* RGFormViewController.h */,
 				6AA7879F1D17EA1A00795115 /* RGFormViewController.m */,
+				D309DD551D5896FB0064C70F /* RDInternetData.h */,
+				D309DD561D5896FB0064C70F /* RDInternetData.m */,
 			);
 			name = "Rapid Development Crew";
 			sourceTree = "<group>";
@@ -300,6 +309,15 @@
 				19AC0C491D05E104001AA2E1 /* BubbleStyleKit.m */,
 			);
 			name = StyleKit;
+			sourceTree = "<group>";
+		};
+		D309DD511D5896A70064C70F /* Other Libralies */ = {
+			isa = PBXGroup;
+			children = (
+				D309DD531D5896CF0064C70F /* Reachability.m */,
+				D309DD521D5896CF0064C70F /* Reachability.h */,
+			);
+			name = "Other Libralies";
 			sourceTree = "<group>";
 		};
 		D34F0C301D179952003EFA6E /* AMPopTip */ = {
@@ -415,6 +433,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D309DD541D5896CF0064C70F /* Reachability.m in Sources */,
 				19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */,
 				197C9E401D04AAD00017D46A /* DatabaseIntegration.m in Sources */,
 				D3B4237D1D05374700014B66 /* ImageShareViewController.m in Sources */,
@@ -432,6 +451,7 @@
 				19E0D2271D173A2700CC081C /* LogsTableViewController.swift in Sources */,
 				D3B423771D051DDC00014B66 /* LoginViewController.m in Sources */,
 				19AC0C501D060429001AA2E1 /* LocalDataIntegration.m in Sources */,
+				D309DD571D5896FB0064C70F /* RDInternetData.m in Sources */,
 				19292ED11CEB8B3D007B5B05 /* HomeViewController.m in Sources */,
 				19E0D2231D17384600CC081C /* ProfilePageViewController.swift in Sources */,
 				19292ED41CEB8B4B007B5B05 /* ConnectViewController.m in Sources */,

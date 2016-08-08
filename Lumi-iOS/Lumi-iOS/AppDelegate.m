@@ -23,7 +23,49 @@
     pageControl.currentPageIndicatorTintColor = [UIColor LumiPinkColor];
     pageControl.backgroundColor = [UIColor whiteColor];
     
+    [self setUpRechability];
+    
     return YES;
+}
+
+#warning remove NSLogs after
+-(void) setUpRechability
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNetworkChange:) name:kReachabilityChangedNotification object:nil];
+    
+    self.reachability = [Reachability reachabilityForInternetConnection];
+    [self.reachability startNotifier];
+    
+    NetworkStatus remoteHostStatus = [self.reachability currentReachabilityStatus];
+    
+    if       (remoteHostStatus == NotReachable) {
+        self.hasInternet=NO;
+    }
+    else if (remoteHostStatus == ReachableViaWiFi || remoteHostStatus == ReachableViaWWAN) {
+        self.hasInternet=YES;
+    }
+    
+    
+    [self setInternetData];
+}
+
+- (void) handleNetworkChange:(NSNotification *)notice
+{
+    NetworkStatus remoteHostStatus = [self.reachability currentReachabilityStatus];
+    
+    if      (remoteHostStatus == NotReachable) {
+        self.hasInternet=NO;
+    }
+    else if (remoteHostStatus == ReachableViaWiFi || remoteHostStatus == ReachableViaWWAN) {
+        self.hasInternet=YES;
+    }
+    
+    [self setInternetData];
+}
+
+- (void) setInternetData {
+    RDInternetData* internetData = [RDInternetData sharedInstance];
+    internetData.hasInternet = self.hasInternet;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

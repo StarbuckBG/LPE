@@ -9,6 +9,8 @@
 #import "LoginViewController.h"
 #import "DatabaseIntegration.h"
 #import "LocalDataIntegration.h"
+#import "Reachability.h"
+#import "RDInternetData.h"
 
 @interface LoginViewController ()
 {
@@ -30,8 +32,14 @@
                                                  name:LOGIN_NOT_SUCCESSFUL
                                                object:nil];
     data = [LocalDataIntegration sharedInstance];
-    
+
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkChange) name:@"IntenetConnectionChanged" object:nil];
 }
+- (void)networkChange {
+    RDInternetData* internetData = [RDInternetData sharedInstance];
+    NSLog(@"network change: %d", internetData.hasInternet);
+}
+
 -(void) setValidation {
     [self.Username addValidationForTextFieldsWithUserName];
     [self.Password addValidationForTextFieldsWithPass];
