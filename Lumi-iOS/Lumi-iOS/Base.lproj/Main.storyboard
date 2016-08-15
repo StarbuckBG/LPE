@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HcR-hG-QIW">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A239j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HcR-hG-QIW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -423,11 +423,15 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="TGX-ul-l7b"/>
                                     <constraint firstAttribute="width" secondItem="Obb-mQ-B27" secondAttribute="height" multiplier="1:1" id="tNg-zx-NVS"/>
+                                    <constraint firstAttribute="width" secondItem="Obb-mQ-B27" secondAttribute="height" multiplier="1:1" id="tkc-De-8pU"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
+                                        <exclude reference="TGX-ul-l7b"/>
                                         <exclude reference="tNg-zx-NVS"/>
+                                        <exclude reference="tkc-De-8pU"/>
                                     </mask>
                                 </variation>
                                 <variation key="widthClass=compact">
@@ -435,16 +439,24 @@
                                         <include reference="tNg-zx-NVS"/>
                                     </mask>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="TGX-ul-l7b"/>
+                                        <include reference="tkc-De-8pU"/>
+                                    </mask>
+                                </variation>
                             </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="Obb-mQ-B27" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="B7G-8O-5ws"/>
                             <constraint firstItem="Obb-mQ-B27" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="30" id="Fk9-Fa-KbO"/>
                             <constraint firstItem="tfI-dA-BUl" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="LxP-bL-KMI"/>
                             <constraint firstItem="tfI-dA-BUl" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="80:229" id="UaI-pP-xIa"/>
                             <constraint firstItem="Obb-mQ-B27" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Z4S-t2-SrS"/>
                             <constraint firstItem="tfI-dA-BUl" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="100" id="c0K-9R-JPu"/>
                             <constraint firstItem="Obb-mQ-B27" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="gBe-m6-iUc"/>
+                            <constraint firstItem="Obb-mQ-B27" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="hBJ-Mz-pLh"/>
                             <constraint firstItem="tfI-dA-BUl" firstAttribute="top" secondItem="L7p-HK-0SC" secondAttribute="bottom" constant="20" id="mAs-ux-Ozi"/>
                             <constraint firstItem="tfI-dA-BUl" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="xFc-b8-dUa"/>
                         </constraints>
@@ -454,14 +466,16 @@
                                 <exclude reference="Obb-mQ-B27"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="Fk9-Fa-KbO"/>
-                                <exclude reference="Z4S-t2-SrS"/>
-                                <exclude reference="gBe-m6-iUc"/>
                                 <exclude reference="LxP-bL-KMI"/>
                                 <exclude reference="UaI-pP-xIa"/>
                                 <exclude reference="c0K-9R-JPu"/>
                                 <exclude reference="mAs-ux-Ozi"/>
                                 <exclude reference="xFc-b8-dUa"/>
+                                <exclude reference="B7G-8O-5ws"/>
+                                <exclude reference="Fk9-Fa-KbO"/>
+                                <exclude reference="Z4S-t2-SrS"/>
+                                <exclude reference="gBe-m6-iUc"/>
+                                <exclude reference="hBJ-Mz-pLh"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -470,21 +484,24 @@
                                 <include reference="Obb-mQ-B27"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="mAs-ux-Ozi"/>
+                                <include reference="xFc-b8-dUa"/>
                                 <include reference="Fk9-Fa-KbO"/>
                                 <include reference="Z4S-t2-SrS"/>
                                 <include reference="gBe-m6-iUc"/>
-                                <include reference="mAs-ux-Ozi"/>
-                                <include reference="xFc-b8-dUa"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
                             <mask key="subviews">
                                 <include reference="tfI-dA-BUl"/>
+                                <include reference="Obb-mQ-B27"/>
                             </mask>
                             <mask key="constraints">
                                 <include reference="LxP-bL-KMI"/>
                                 <include reference="UaI-pP-xIa"/>
                                 <include reference="c0K-9R-JPu"/>
+                                <include reference="B7G-8O-5ws"/>
+                                <include reference="hBJ-Mz-pLh"/>
                             </mask>
                         </variation>
                     </view>
