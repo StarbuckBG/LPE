@@ -1,5 +1,5 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A239j" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HcR-hG-QIW">
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="HcR-hG-QIW">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -466,16 +466,16 @@
                                 <exclude reference="Obb-mQ-B27"/>
                             </mask>
                             <mask key="constraints">
-                                <exclude reference="LxP-bL-KMI"/>
-                                <exclude reference="UaI-pP-xIa"/>
-                                <exclude reference="c0K-9R-JPu"/>
-                                <exclude reference="mAs-ux-Ozi"/>
-                                <exclude reference="xFc-b8-dUa"/>
                                 <exclude reference="B7G-8O-5ws"/>
                                 <exclude reference="Fk9-Fa-KbO"/>
                                 <exclude reference="Z4S-t2-SrS"/>
                                 <exclude reference="gBe-m6-iUc"/>
                                 <exclude reference="hBJ-Mz-pLh"/>
+                                <exclude reference="LxP-bL-KMI"/>
+                                <exclude reference="UaI-pP-xIa"/>
+                                <exclude reference="c0K-9R-JPu"/>
+                                <exclude reference="mAs-ux-Ozi"/>
+                                <exclude reference="xFc-b8-dUa"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -484,11 +484,11 @@
                                 <include reference="Obb-mQ-B27"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="mAs-ux-Ozi"/>
-                                <include reference="xFc-b8-dUa"/>
                                 <include reference="Fk9-Fa-KbO"/>
                                 <include reference="Z4S-t2-SrS"/>
                                 <include reference="gBe-m6-iUc"/>
+                                <include reference="mAs-ux-Ozi"/>
+                                <include reference="xFc-b8-dUa"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=regular">
@@ -497,11 +497,11 @@
                                 <include reference="Obb-mQ-B27"/>
                             </mask>
                             <mask key="constraints">
+                                <include reference="B7G-8O-5ws"/>
+                                <include reference="hBJ-Mz-pLh"/>
                                 <include reference="LxP-bL-KMI"/>
                                 <include reference="UaI-pP-xIa"/>
                                 <include reference="c0K-9R-JPu"/>
-                                <include reference="B7G-8O-5ws"/>
-                                <include reference="hBJ-Mz-pLh"/>
                             </mask>
                         </variation>
                     </view>

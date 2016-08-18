@@ -7,6 +7,7 @@
 //
 
 #import "DatabaseIntegration.h"
+#import "LocalDataIntegration.h"
 
 @implementation DatabaseIntegration
 
@@ -88,6 +89,12 @@
 
 - (void) loginWithUsername: (NSString *) username andPassword: (NSString *) password
 {
+    LocalDataIntegration * data;
+
+    [data setUsername:username];
+    [data setPassword:password];
+    [data syncData];
+    
     NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
     
     /* Create session, and optionally set a NSURLSessionDelegate. */

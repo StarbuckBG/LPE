@@ -9,7 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "RGFormViewController.h"
 
-@interface LoginViewController : RGFormViewController
+@interface LoginViewController : RGFormViewController<UITextFieldDelegate>
 
 #define LOGIN_SUCCESSFUL @"LoginSuccessful"
 #define LOGIN_NOT_SUCCESSFUL @"LoginUnsuccessful"

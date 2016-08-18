@@ -32,6 +32,8 @@
                                              selector:@selector(notSuccessefull)
                                                  name:LOGIN_NOT_SUCCESSFUL
                                                object:nil];
+    self.Username.delegate = self;
+    self.Password.delegate = self;
     data = [LocalDataIntegration sharedInstance];
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkChange) name:@"IntenetConnectionChanged" object:nil];
@@ -92,7 +94,9 @@
 }
 
 - (IBAction)LoginButton:(UIButton *)sender {
-    
+    [self login];
+}
+-(void)login {
     DatabaseIntegration *database = [DatabaseIntegration sharedInstance];
     [database loginWithUsername:self.Username.text andPassword:self.Password.text];
 }
@@ -105,32 +109,16 @@
 
 -(BOOL)textFieldShouldReturn:(UITextField *)textField
 {
-    if (self.Username) {
+    
+    if (textField == self.Username) {
         [self.Username resignFirstResponder];
-    }
-    if (self.Password) {
+        [self.Password becomeFirstResponder];
+    } else if (textField == self.Password) {
         [self.Password resignFirstResponder];
+        [self login];
     }    
     return NO;
 }
--(void) textFieldDidBeginEditing:(UITextField *)textField
-{
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDuration:0.2];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    self.view.frame = CGRectMake(self.view.frame.origin.x, (self.view.frame.origin.y - 170.0), self.view.frame.size.width, self.view.frame.size.height);
-    [UIView commitAnimations];
-}
--(void) textFieldDidEndEditing:(UITextField *)textField
-{
-    [UIView beginAnimations:nil context:NULL];
-    [UIView setAnimationDelegate:self];
-    [UIView setAnimationDuration:0.2];
-    [UIView setAnimationBeginsFromCurrentState:YES];
-    self.view.frame = CGRectMake(self.view.frame.origin.x, (self.view.frame.origin.y + 170.0), self.view.frame.size.width, self.view.frame.size.height);
-    [UIView commitAnimations];
-    
-}
+
 
 @end

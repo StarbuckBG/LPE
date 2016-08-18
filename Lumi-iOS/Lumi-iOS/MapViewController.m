@@ -24,14 +24,10 @@ bool showCurrentLocationOnLoad = YES;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    self.locationManager = [[CLLocationManager alloc] init];
-    [self.locationManager requestAlwaysAuthorization];
-    self.locationManager.delegate = self;
-    [self.locationManager startUpdatingLocation];
+
     self.mapView.showsUserLocation = YES;
     self.mapView.showsBuildings = YES;
     self.mapView.delegate = self;
-    [self startLocationManager];
     
     MKUserTrackingBarButtonItem *buttonItem = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
     self.parentViewController.navigationItem.rightBarButtonItem = buttonItem;
@@ -41,6 +37,8 @@ bool showCurrentLocationOnLoad = YES;
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playgroundsUpdatedNotificationHandler:) name:PLAYGROUNDS_DATA_UPDATED object:nil];
     
     [database updatePlaygrounds];
+    [self startLocationManager];
+
 }
 - (void)startLocationManager
 {
