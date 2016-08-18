@@ -20,6 +20,7 @@
 @end
 
 @implementation MapViewController
+bool showCurrentLocationOnLoad = YES;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -27,25 +28,52 @@
     [self.locationManager requestAlwaysAuthorization];
     self.locationManager.delegate = self;
     [self.locationManager startUpdatingLocation];
+    self.mapView.showsUserLocation = YES;
+    self.mapView.showsBuildings = YES;
     self.mapView.delegate = self;
-    self.mapView.showsScale = YES;
-    self.mapView.showsCompass = YES;
+    [self startLocationManager];
+    
+    MKUserTrackingBarButtonItem *buttonItem = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
+    self.parentViewController.navigationItem.rightBarButtonItem = buttonItem;
+    
     database = [DatabaseIntegration sharedInstance];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playgroundsUpdatedNotificationHandler:) name:PLAYGROUNDS_DATA_UPDATED object:nil];
     
     [database updatePlaygrounds];
 }
+- (void)startLocationManager
+{
+    self.locationManager = [[CLLocationManager alloc] init];
+    self.locationManager.delegate = self;
+    self.locationManager.distanceFilter = kCLDistanceFilterNone; //whenever we move
+    self.locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [self.locationManager startUpdatingLocation];
+    [self.locationManager requestWhenInUseAuthorization]; // Add This Line
+}
+
+-(void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation {
+    if (showCurrentLocationOnLoad == YES) {
+        [self goToCurrentLoactionWithLocation:userLocation andMapView:mapView];
+        showCurrentLocationOnLoad = NO;
+    }
+    myLocation = userLocation;
+}
+
+- (void)goToCurrentLoactionWithLocation:(MKUserLocation *)userLocation andMapView:(MKMapView *)mapView {
+    MKMapCamera* camera = [MKMapCamera cameraLookingAtCenterCoordinate:userLocation.coordinate fromEyeCoordinate:CLLocationCoordinate2DMake(userLocation.coordinate.latitude, userLocation.coordinate.longitude) eyeAltitude:10000];
+    [mapView setCamera:camera animated:YES];
+}
+
+
 
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
-    [self.locationManager startUpdatingLocation];
-    self.mapView.showsUserLocation = YES;
+    showCurrentLocationOnLoad = YES;
+
     [database updatePlaygrounds];
-    UIBarButtonItem * findMeButton = [[UIBarButtonItem alloc] initWithTitle:@"Find me" style:UIBarButtonItemStylePlain target:self action:@selector(findMeButtonTapped:)];
-    self.parentViewController.navigationItem.rightBarButtonItem = findMeButton;
-    
 }
 
 - (void) viewWillDisappear:(BOOL)animated
@@ -72,13 +100,6 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-
-
-- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
-{
-    myLocation = userLocation;
-}
-
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
