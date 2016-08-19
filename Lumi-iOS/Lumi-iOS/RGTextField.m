@@ -146,7 +146,7 @@
 #pragma mark- ValidationHelpers
 -(void)addValidationForTextFieldsWithUserName
 {
-    self.regex = @"^.{3,500}$";
+    self.regex = @"^.{6,500}$";
     self.errorMessage = @"Please Fill This Field!";
     self.inputType = InputTypeText;
     self.maxLength = 500;

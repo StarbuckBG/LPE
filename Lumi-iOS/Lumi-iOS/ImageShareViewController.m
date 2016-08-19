@@ -9,31 +9,39 @@
 #import "ImageShareViewController.h"
 
 @interface ImageShareViewController ()
-
+@property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @end
 
 @implementation ImageShareViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    NSData* data = [[NSUserDefaults standardUserDefaults] objectForKey:@"shareImageKey"];
+    self.imageView.image = [UIImage imageWithData:data];
+    self.navigationItem.title = @"Share";
     
-    [self doUpload];
+    UIBarButtonItem* retakeButton = [[UIBarButtonItem alloc] initWithTitle:@"Retake" style:UIBarButtonItemStylePlain target:self
+                                                                  action:@selector(retakeAction)];
+    self.navigationItem.rightBarButtonItem = retakeButton;
+    
+    [self.shareButton.layer setBorderWidth:1];
+    self.shareButton.layer.cornerRadius = 5;
+    UIColor* color = [self.view tintColor];
+    [self.shareButton.layer setBorderColor:[color CGColor]];
 }
--(void)doUpload {
+
+- (void)retakeAction {
     [self alertControllerForCameraGallery];
 }
-- (IBAction)chooseNew:(id)sender {
-    [self alertControllerForCameraGallery];
-}
+
 - (IBAction)shareClicked:(id)sender {
     if([SLComposeViewController isAvailableForServiceType:SLServiceTypeFacebook]) {
         
         SLComposeViewController *controller = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
         
-        [controller addURL:[NSURL URLWithString:@"http://www.playgroundenrgy.com"]];
-        [controller addImage:[UIImage imageWithData:self.imageToShare]];
-        
-        [self presentViewController:controller animated:YES completion:NULL];
+        NSData* data = [[NSUserDefaults standardUserDefaults] objectForKey:@"shareImageKey"];
+        [controller addImage:[UIImage imageWithData:data]];
+        [self presentViewController:controller animated:YES completion:nil];
     }
 }
 -(void) alertControllerForCameraGallery {

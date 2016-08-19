@@ -38,6 +38,18 @@
 
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(networkChange) name:@"IntenetConnectionChanged" object:nil];
 }
+
+-(void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    NSString* un = [[NSUserDefaults standardUserDefaults] stringForKey:@"usernameToLoadAfterRegistration"];
+    NSString* ps = [[NSUserDefaults standardUserDefaults] stringForKey:@"passwordToLoadAfterRegistration"];
+    if (un) {
+    self.Username.text = un;
+    self.Password.text = ps;
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"usernameToLoadAfterRegistration"];
+    [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"passwordToLoadAfterRegistration"];
+    }
+}
 - (void)networkChange {
     RDInternetData* internetData = [RDInternetData sharedInstance];
     NSLog(@"network change: %d", internetData.hasInternet);

@@ -132,6 +132,8 @@
     {
         DatabaseIntegration *database = [[DatabaseIntegration alloc]init];
         [database registerUserWithUsername:self.Username.text andPassword:self.Password.text andEmail:self.Email.text];
+        [[NSUserDefaults standardUserDefaults] setObject:self.Username.text forKey:@"usernameToLoadAfterRegistration"];
+        [[NSUserDefaults standardUserDefaults] setObject:self.Password.text forKey:@"passwordToLoadAfterRegistration"];
         [self performSegueWithIdentifier:@"goToLogIn" sender:nil];
         
     }

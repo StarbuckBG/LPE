@@ -145,8 +145,7 @@
 
 - (IBAction)topRightTapGestureRecognized:(UITapGestureRecognizer *)sender {
     //self.tabBarController.selectedIndex = 2;
-    [self performSegueWithIdentifier:@"shareImageSegue" sender:nil];
-
+    [self alertControllerForCameraGallery];
 }
 
 - (IBAction)bottomRightTapGestureRecognized:(UITapGestureRecognizer *)sender {
@@ -163,6 +162,51 @@
     [self.centerBubbleView setNeedsDisplay];
 }
 
-
+-(void) alertControllerForCameraGallery {
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil
+                                                                   message:nil
+                                                            preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *cameraAction = [UIAlertAction actionWithTitle:@"Take Photo or Video"
+                                                           style:UIAlertActionStyleDefault
+                                                         handler:^(UIAlertAction * action) {
+                                                             UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                                             picker.delegate = self;
+                                                             picker.allowsEditing = YES;
+                                                             picker.sourceType = UIImagePickerControllerSourceTypeCamera;
+                                                             
+                                                             [self presentViewController:picker animated:YES completion:NULL];                                                          }];
+    UIAlertAction *galleryAction = [UIAlertAction actionWithTitle:@"Photo Library"
+                                                            style:UIAlertActionStyleDefault
+                                                          handler:^(UIAlertAction * action) {
+                                                              UIImagePickerController *picker = [[UIImagePickerController alloc] init];
+                                                              picker.delegate = self;
+                                                              picker.allowsEditing = YES;
+                                                              picker.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+                                                              
+                                                              [self presentViewController:picker animated:YES completion:NULL];}];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"Cancel"
+                                                           style:UIAlertActionStyleCancel
+                                                         handler:^(UIAlertAction * action) {
+                                                             NSLog(@"Candel action"); }];
+    [alert addAction:galleryAction];
+    [alert addAction:cameraAction];
+    [alert addAction:cancelAction];
+    [self presentViewController:alert animated:YES completion:nil];
+}
+#pragma mark - Image Picker Controller delegate methods
+-(void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+    
+    UIImage *chosenImage = info[UIImagePickerControllerEditedImage];
+    NSData* data = UIImageJPEGRepresentation(chosenImage, 1.0);
+    [[NSUserDefaults standardUserDefaults] setObject:data forKey:@"shareImageKey"];
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+        [self performSegueWithIdentifier:@"shareImageSegue" sender:nil];
+    
+}
+-(void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+    
+    [picker dismissViewControllerAnimated:YES completion:NULL];
+    
+}
 
 @end
