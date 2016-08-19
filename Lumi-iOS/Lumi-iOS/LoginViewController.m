@@ -47,19 +47,19 @@
     [self.Username addValidationForTextFieldsWithUserName];
     [self.Password addValidationForTextFieldsWithPass];
 }
--(void)viewWillAppear:(BOOL)animated {
-    [super viewWillAppear:animated];
-    
-    if ([data rememberPassword]) {
-        self.Username.text = [data username];
-        self.Password.text = [data password];
-    }
-    if ([data autoLogin]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
-        [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
-        });
-    }
-}
+//-(void)viewWillAppear:(BOOL)animated {
+//    [super viewWillAppear:animated];
+//    
+//    if ([data rememberPassword]) {
+//        self.Username.text = [data username];
+//        self.Password.text = [data password];
+//    }
+//    if ([data autoLogin]) {
+//        dispatch_async(dispatch_get_main_queue(), ^{
+//        [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
+//        });
+//    }
+//}
 -(void) successfull {
     dispatch_async(dispatch_get_main_queue(), ^{
     [data setUsername:self.Username.text];
@@ -70,8 +70,9 @@
         [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
     });
 }
+#warning will there be cancel button.
 - (IBAction)cancelButtonToHomeScreen:(id)sender {
-    [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
+//    [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
 }
 -(void) notSuccessefull {
     dispatch_async(dispatch_get_main_queue(), ^{

@@ -59,6 +59,8 @@
 		D34F0C3E1D17996C003EFA6E /* AMPopTip+Draw.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C361D17996C003EFA6E /* AMPopTip+Draw.m */; };
 		D34F0C3F1D17996C003EFA6E /* AMPopTip+Entrance.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C381D17996C003EFA6E /* AMPopTip+Entrance.m */; };
 		D34F0C401D17996C003EFA6E /* AMPopTip+Exit.m in Sources */ = {isa = PBXBuildFile; fileRef = D34F0C3A1D17996C003EFA6E /* AMPopTip+Exit.m */; };
+		D3AAD61D1D66F83A0032F058 /* EntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3AAD61C1D66F83A0032F058 /* EntryViewController.m */; };
+		D3AAD61F1D66FD6E0032F058 /* locationPin.png in Resources */ = {isa = PBXBuildFile; fileRef = D3AAD61E1D66FD6E0032F058 /* locationPin.png */; };
 		D3B423771D051DDC00014B66 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B423761D051DDC00014B66 /* LoginViewController.m */; };
 		D3B4237A1D051DED00014B66 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B423791D051DED00014B66 /* SignInViewController.m */; };
 		D3B4237D1D05374700014B66 /* ImageShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B4237C1D05374700014B66 /* ImageShareViewController.m */; };
@@ -141,6 +143,9 @@
 		D34F0C391D17996C003EFA6E /* AMPopTip+Exit.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "AMPopTip+Exit.h"; sourceTree = "<group>"; };
 		D34F0C3A1D17996C003EFA6E /* AMPopTip+Exit.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "AMPopTip+Exit.m"; sourceTree = "<group>"; };
 		D34F0C3B1D17996C003EFA6E /* AMPopTipDefaults.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AMPopTipDefaults.h; sourceTree = "<group>"; };
+		D3AAD61B1D66F83A0032F058 /* EntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EntryViewController.h; sourceTree = "<group>"; };
+		D3AAD61C1D66F83A0032F058 /* EntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EntryViewController.m; sourceTree = "<group>"; };
+		D3AAD61E1D66FD6E0032F058 /* locationPin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = locationPin.png; sourceTree = "<group>"; };
 		D3B423751D051DDC00014B66 /* LoginViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginViewController.h; sourceTree = "<group>"; };
 		D3B423761D051DDC00014B66 /* LoginViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginViewController.m; sourceTree = "<group>"; };
 		D3B423781D051DED00014B66 /* SignInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignInViewController.h; sourceTree = "<group>"; };
@@ -214,6 +219,7 @@
 		19292EA31CEB8A05007B5B05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				D3AAD61E1D66FD6E0032F058 /* locationPin.png */,
 				19292EC01CEB8A23007B5B05 /* connect@3x.png */,
 				19292EC11CEB8A23007B5B05 /* exchange@3x.png */,
 				19292EC21CEB8A23007B5B05 /* home@3x.png */,
@@ -261,6 +267,8 @@
 				19E0D2241D173A1900CC081C /* ProfileViewController.swift */,
 				19E0D2261D173A2700CC081C /* LogsTableViewController.swift */,
 				19E0D2211D17384500CC081C /* Lumi-iOS-Bridging-Header.h */,
+				D3AAD61B1D66F83A0032F058 /* EntryViewController.h */,
+				D3AAD61C1D66F83A0032F058 /* EntryViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -416,6 +424,7 @@
 				19292EB91CEB8A1C007B5B05 /* connect@2x.png in Resources */,
 				19292EBA1CEB8A1C007B5B05 /* exchange@2x.png in Resources */,
 				19292EAE1CEB8A15007B5B05 /* map.png in Resources */,
+				D3AAD61F1D66FD6E0032F058 /* locationPin.png in Resources */,
 				19292EBE1CEB8A1C007B5B05 /* profile@2x.png in Resources */,
 				19292E991CEB8384007B5B05 /* Assets.xcassets in Resources */,
 				19292EB11CEB8A15007B5B05 /* profile2.png in Resources */,
@@ -454,6 +463,7 @@
 				D309DD571D5896FB0064C70F /* RDInternetData.m in Sources */,
 				19292ED11CEB8B3D007B5B05 /* HomeViewController.m in Sources */,
 				19E0D2231D17384600CC081C /* ProfilePageViewController.swift in Sources */,
+				D3AAD61D1D66F83A0032F058 /* EntryViewController.m in Sources */,
 				19292ED41CEB8B4B007B5B05 /* ConnectViewController.m in Sources */,
 				197C9E471D04C1F70017D46A /* RDCodeScannerView.m in Sources */,
 				19292EDD1CEB8B75007B5B05 /* MapViewController.m in Sources */,

@@ -29,9 +29,6 @@ bool showCurrentLocationOnLoad = YES;
     self.mapView.showsBuildings = YES;
     self.mapView.delegate = self;
     
-    MKUserTrackingBarButtonItem *buttonItem = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
-    self.parentViewController.navigationItem.rightBarButtonItem = buttonItem;
-    
     database = [DatabaseIntegration sharedInstance];
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(playgroundsUpdatedNotificationHandler:) name:PLAYGROUNDS_DATA_UPDATED object:nil];
@@ -64,11 +61,12 @@ bool showCurrentLocationOnLoad = YES;
     [mapView setCamera:camera animated:YES];
 }
 
-
-
 - (void) viewWillAppear:(BOOL)animated
 {
     [super viewWillAppear:animated];
+    MKUserTrackingBarButtonItem *buttonItem = [[MKUserTrackingBarButtonItem alloc] initWithMapView:self.mapView];
+    self.parentViewController.navigationItem.rightBarButtonItem = buttonItem;
+    
     showCurrentLocationOnLoad = YES;
 
     [database updatePlaygrounds];
@@ -101,16 +99,26 @@ bool showCurrentLocationOnLoad = YES;
 
 -(MKAnnotationView *)mapView:(MKMapView *)mapView viewForAnnotation:(id <MKAnnotation>)annotation
 {
-    if ([annotation isKindOfClass:[MKUserLocation class]])
-        return nil;
-    
-    MKAnnotationView *annotationView = [[MKPinAnnotationView alloc] initWithAnnotation:annotation reuseIdentifier:@"loc"];
-    annotationView.canShowCallout = YES;
-    annotationView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
-    
-    return annotationView;
+    MKAnnotationView *pinView = nil;
+    if(annotation != self.mapView.userLocation)
+    {
+        static NSString *defaultPinID = @"com.invasivecode.pin";
+        pinView = (MKAnnotationView *)[self.mapView dequeueReusableAnnotationViewWithIdentifier:defaultPinID];
+        if ( pinView == nil )
+            pinView = [[MKAnnotationView alloc]
+                       initWithAnnotation:annotation reuseIdentifier:defaultPinID];
+        
+        //pinView.pinColor = MKPinAnnotationColorGreen;
+        pinView.canShowCallout = YES;
+        pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
+        //pinView.animatesDrop = YES;
+        pinView.image = [UIImage imageNamed:@"locationPin.png"];    //as suggested by Squatch
+    }
+    else {
+        [self.mapView.userLocation setTitle:@"I am here"];
+    }
+    return pinView;
 }
-
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
@@ -175,7 +183,6 @@ bool showCurrentLocationOnLoad = YES;
     }
 }
 
-
 - (void) addPointsToMap
 {
     for(NSDictionary * aDictionary in database.playgrounds)
@@ -199,12 +206,6 @@ bool showCurrentLocationOnLoad = YES;
         [self.mapView removeAnnotations:self.mapView.annotations];
         [self addPointsToMap];
     });
-}
-
-- (void) findMeButtonTapped:(UIButton *)sender {
-    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(myLocation.coordinate, 800, 800);
-    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
-    
 }
 
 @end
