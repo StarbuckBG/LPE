@@ -423,7 +423,9 @@
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="TGX-ul-l7b"/>
+                                    <constraint firstAttribute="width" constant="240" id="TGX-ul-l7b">
+                                        <variation key="widthClass=compact" constant="300"/>
+                                    </constraint>
                                     <constraint firstAttribute="width" secondItem="Obb-mQ-B27" secondAttribute="height" multiplier="1:1" id="tNg-zx-NVS"/>
                                     <constraint firstAttribute="width" secondItem="Obb-mQ-B27" secondAttribute="height" multiplier="1:1" id="tkc-De-8pU"/>
                                 </constraints>
@@ -436,6 +438,7 @@
                                 </variation>
                                 <variation key="widthClass=compact">
                                     <mask key="constraints">
+                                        <include reference="TGX-ul-l7b"/>
                                         <include reference="tNg-zx-NVS"/>
                                     </mask>
                                 </variation>
@@ -450,7 +453,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Obb-mQ-B27" firstAttribute="centerY" secondItem="QS5-Rx-YEW" secondAttribute="centerY" id="B7G-8O-5ws"/>
-                            <constraint firstItem="Obb-mQ-B27" firstAttribute="leading" secondItem="QS5-Rx-YEW" secondAttribute="leadingMargin" constant="30" id="Fk9-Fa-KbO"/>
                             <constraint firstItem="tfI-dA-BUl" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="LxP-bL-KMI"/>
                             <constraint firstItem="tfI-dA-BUl" firstAttribute="width" secondItem="QS5-Rx-YEW" secondAttribute="height" multiplier="80:229" id="UaI-pP-xIa"/>
                             <constraint firstItem="Obb-mQ-B27" firstAttribute="centerX" secondItem="QS5-Rx-YEW" secondAttribute="centerX" id="Z4S-t2-SrS"/>
@@ -467,7 +469,6 @@
                             </mask>
                             <mask key="constraints">
                                 <exclude reference="B7G-8O-5ws"/>
-                                <exclude reference="Fk9-Fa-KbO"/>
                                 <exclude reference="Z4S-t2-SrS"/>
                                 <exclude reference="gBe-m6-iUc"/>
                                 <exclude reference="hBJ-Mz-pLh"/>
@@ -484,7 +485,6 @@
                                 <include reference="Obb-mQ-B27"/>
                             </mask>
                             <mask key="constraints">
-                                <include reference="Fk9-Fa-KbO"/>
                                 <include reference="Z4S-t2-SrS"/>
                                 <include reference="gBe-m6-iUc"/>
                                 <include reference="mAs-ux-Ozi"/>
@@ -508,6 +508,7 @@
                     <tabBarItem key="tabBarItem" title="Connect" image="connect.png" id="cPa-gy-q4n"/>
                     <connections>
                         <outlet property="bubbleView" destination="Obb-mQ-B27" id="7wD-bg-i0p"/>
+                        <outlet property="bubbleXConstraint" destination="TGX-ul-l7b" id="ohr-Iv-ruu"/>
                         <outlet property="codeScannerView" destination="tfI-dA-BUl" id="4Mn-ty-Gta"/>
                     </connections>
                 </viewController>
@@ -539,7 +540,9 @@
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Playground energy" id="DMU-HO-blq"/>
+                    <navigationItem key="navigationItem" title="Playground energy" id="DMU-HO-blq">
+                        <barButtonItem key="leftBarButtonItem" systemItem="reply" id="I8k-yK-P1R"/>
+                    </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" translucent="NO" id="W28-zg-YXA">
                         <rect key="frame" x="0.0" y="975" width="768" height="49"/>
@@ -867,15 +870,6 @@
                         <rect key="frame" x="0.0" y="64" width="600" height="487"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfT-Oc-bY8">
-                                <rect key="frame" x="510" y="353" width="11" height="21"/>
-                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="200" y="353" width="121" height="22"/>
-                                </variation>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points for conversion:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kv4-qx-mg4">
                                 <rect key="frame" x="20" y="351" width="172" height="25"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
@@ -894,6 +888,9 @@
                                 <state key="normal" title="Convert">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="convertButton:" destination="mEt-Rk-615" eventType="touchUpInside" id="oHe-OW-34H"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converted currency:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd0-3a-akg">
                                 <rect key="frame" x="20" y="379" width="156" height="20"/>
@@ -926,6 +923,7 @@
                                     <constraint firstAttribute="height" constant="24" id="Kl1-I5-zJJ"/>
                                     <constraint firstAttribute="width" constant="11" id="yrU-vB-D1e">
                                         <variation key="widthClass=compact" constant="137"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
@@ -1002,11 +1000,34 @@
                                     <constraint firstAttribute="height" constant="25" id="R9w-Mi-LBP"/>
                                     <constraint firstAttribute="width" constant="11" id="Xwn-rP-36U">
                                         <variation key="widthClass=compact" constant="176"/>
+                                        <variation key="heightClass=regular-widthClass=regular" constant="200"/>
                                     </constraint>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfT-Oc-bY8">
+                                <rect key="frame" x="510" y="353" width="11" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="200" id="tXp-rJ-81N"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="tXp-rJ-81N"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="200" y="353" width="121" height="22"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="tXp-rJ-81N"/>
+                                    </mask>
+                                </variation>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1058,7 +1079,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Qz-pm-rps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="771" y="790"/>
+            <point key="canvasLocation" x="771" y="789.75"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="GSt-Dc-uGQ">
@@ -1387,9 +1408,9 @@
         <image name="profile.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="RQr-pC-167"/>
         <segue reference="anh-l1-NGB"/>
-        <segue reference="VBW-jh-bbL"/>
+        <segue reference="zNE-Zu-HVB"/>
+        <segue reference="RQr-pC-167"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>

@@ -31,7 +31,7 @@ NSNumber * changeRate;
     interactions = [[DatabaseIntegration alloc] init];
     changeRate = [NSNumber numberWithInteger:0];
     username.text = [[[DatabaseIntegration sharedInstance] userdata] objectForKey:@"username"];
-    pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)slider.value];
+    pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)(slider.value/10000 * pointsValue)];
     
 }
 

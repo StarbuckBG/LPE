@@ -15,10 +15,13 @@
 {
     NSMutableSet <CBPeripheral *> *deviceList;
     NSString * nameOfDeviceToConnect;
+    NSInteger currentPoints;
+    NSTimer * aTimer;
+    __weak IBOutlet NSLayoutConstraint *bubbleXConstraint;
 }
 @property (weak, nonatomic) IBOutlet RDCodeScannerView * codeScannerView;
 @property (strong, nonatomic) CBCentralManager * centralManager;
-@property (weak, nonatomic) __block IBOutlet BubbleView *bubbleView;
+@property (weak, nonatomic) IBOutlet BubbleView *bubbleView;
 
 
 @end
@@ -28,27 +31,60 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     deviceList = [[NSMutableSet alloc] init];
+    
     self.centralManager = [[CBCentralManager alloc] initWithDelegate:self queue:dispatch_get_main_queue()];
     
 }
 
 - (void) viewWillAppear:(BOOL)animated
 {
+    currentPoints = 0;
+    
+    
+    self.bubbleView.alpha = 0;
+    self.bubbleView.innerColor = [BubbleStyleKit purpleInner];
+    self.bubbleView.outerColor = [BubbleStyleKit purpleOuter];
+    
+    
     self.codeScannerView.delegate = self;
     [self.codeScannerView startReading];
     [self.centralManager scanForPeripheralsWithServices:nil options:nil];
     
     
-    self.bubbleView.alpha = 0;
-    self.bubbleView.innerColor = [BubbleStyleKit greenInner];
-    self.bubbleView.outerColor = [BubbleStyleKit greenOuter];
-    self.bubbleView.text = @"Hello";
+    bubbleXConstraint.constant = self.view.bounds.size.width/2.0f;
     
     [UIView animateWithDuration:5.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{
         self.bubbleView.center = CGPointMake(self.bubbleView.center.x, self.bubbleView.center.y - 20);
     } completion:^(BOOL finished) {
         ;
     }];
+#warning For Debug !!!
+    if(self.bubbleView.alpha == 0)
+    {
+        [self switchToConnected];
+    }
+
+    
+}
+
+- (void) viewDidDisappear:(BOOL)animated
+{
+    [aTimer invalidate];
+    [self switchToDisconnected];
+}
+
+- (void) pointClicked
+{
+    self.bubbleView.text = [NSString stringWithFormat:@"%ld", (long)currentPoints++];
+    
+    if(bubbleXConstraint.constant <= self.view.bounds.size.width*2.0f/3.0f) bubbleXConstraint.constant += 0.001*bubbleXConstraint.constant;
+    else
+    {
+        ;
+    }
+    
+    [self.bubbleView setNeedsDisplay];
+    
     
 }
 
@@ -57,6 +93,45 @@
     // Dispose of any resources that can be recreated.
 }
 
+- (void) switchToConnected
+{
+    [UIView animateWithDuration:2.0f delay:0 options:UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         self.codeScannerView.alpha = 0;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+    
+    [UIView animateWithDuration:2.0f delay:2 options:UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         self.bubbleView.alpha = 1;
+                     }
+                     completion:^(BOOL finished) {
+                         aTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(pointClicked) userInfo:nil repeats:YES];
+                         
+                     }];
+}
+
+- (void) switchToDisconnected
+{
+    [UIView animateWithDuration:2.0f delay:0 options:UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         self.bubbleView.alpha = 0;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+    
+    [UIView animateWithDuration:2.0f delay:2 options:UIViewAnimationOptionAllowUserInteraction
+                     animations:^{
+                         self.codeScannerView.alpha = 1;
+                     }
+                     completion:^(BOOL finished) {
+                         
+                     }];
+    
+}
 
 /*
  #pragma mark - Navigation
@@ -104,46 +179,17 @@
     peripheral.delegate = self;
     [peripheral discoverServices:nil];
     
+    aTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(pointClicked) userInfo:nil repeats:YES];
+    [self switchToConnected];
     
-    [UIView animateWithDuration:2.0f delay:0 options:UIViewAnimationOptionAllowUserInteraction
-                     animations:^{
-                         self.codeScannerView.alpha = 0;
-                     }
-                     completion:^(BOOL finished) {
-                         
-                     }];
     
-    [UIView animateWithDuration:2.0f delay:2 options:UIViewAnimationOptionAllowUserInteraction
-                     animations:^{
-                         self.bubbleView.alpha = 1;
-                     }
-                     completion:^(BOOL finished) {
-                         
-                     }];
-    
-
 }
 
 - (void) centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
+    [self switchToDisconnected];
+    currentPoints = 0;
     peripheral.delegate = nil;
-    
-    
-    [UIView animateWithDuration:2.0f delay:0 options:UIViewAnimationOptionAllowUserInteraction
-                     animations:^{
-                         self.bubbleView.alpha = 0;
-                     }
-                     completion:^(BOOL finished) {
-                         
-                     }];
-    
-    [UIView animateWithDuration:2.0f delay:2 options:UIViewAnimationOptionAllowUserInteraction
-                     animations:^{
-                         self.codeScannerView.alpha = 1;
-                     }
-                     completion:^(BOOL finished) {
-                         
-                     }];
 }
 
 
