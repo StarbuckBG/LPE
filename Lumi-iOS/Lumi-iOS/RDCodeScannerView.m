@@ -56,7 +56,7 @@
     }
     
     self.captureSession = [[AVCaptureSession alloc] init];
-    [self.captureSession addInput:input];
+    if(captureDevice!=nil)[self.captureSession addInput:input];
     
     AVCaptureMetadataOutput *captureMetadataOutput = [[AVCaptureMetadataOutput alloc] init];
     [self.captureSession addOutput:captureMetadataOutput];
