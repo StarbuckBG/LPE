@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		106AB8151D6FECE900C03C35 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106AB8141D6FECE900C03C35 /* TabBarViewController.m */; };
+		106AB8181D6FEDE700C03C35 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106AB8171D6FEDE700C03C35 /* InfoViewController.m */; };
 		19292E8B1CEB8384007B5B05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E8A1CEB8384007B5B05 /* main.m */; };
 		19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E8D1CEB8384007B5B05 /* AppDelegate.m */; };
 		19292E971CEB8384007B5B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19292E951CEB8384007B5B05 /* Main.storyboard */; };
@@ -67,6 +69,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		106AB8131D6FECE900C03C35 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
+		106AB8141D6FECE900C03C35 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		106AB8161D6FEDE700C03C35 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
+		106AB8171D6FEDE700C03C35 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
 		19292E861CEB8384007B5B05 /* Lumi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lumi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19292E8A1CEB8384007B5B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19292E8C1CEB8384007B5B05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -267,8 +273,12 @@
 				19E0D2241D173A1900CC081C /* ProfileViewController.swift */,
 				19E0D2261D173A2700CC081C /* LogsTableViewController.swift */,
 				19E0D2211D17384500CC081C /* Lumi-iOS-Bridging-Header.h */,
+				106AB8161D6FEDE700C03C35 /* InfoViewController.h */,
+				106AB8171D6FEDE700C03C35 /* InfoViewController.m */,
 				D3AAD61B1D66F83A0032F058 /* EntryViewController.h */,
 				D3AAD61C1D66F83A0032F058 /* EntryViewController.m */,
+				106AB8131D6FECE900C03C35 /* TabBarViewController.h */,
+				106AB8141D6FECE900C03C35 /* TabBarViewController.m */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -450,6 +460,7 @@
 				19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */,
 				D34F0C3D1D17996C003EFA6E /* AMPopTip+Animation.m in Sources */,
 				19292E8B1CEB8384007B5B05 /* main.m in Sources */,
+				106AB8181D6FEDE700C03C35 /* InfoViewController.m in Sources */,
 				D34F0C3F1D17996C003EFA6E /* AMPopTip+Entrance.m in Sources */,
 				19AC0C4D1D05E151001AA2E1 /* BubbleView.m in Sources */,
 				6AA787A01D17EA1A00795115 /* RGFormViewController.m in Sources */,
@@ -458,6 +469,7 @@
 				19E0D2251D173A1900CC081C /* ProfileViewController.swift in Sources */,
 				D3B4237A1D051DED00014B66 /* SignInViewController.m in Sources */,
 				19E0D2271D173A2700CC081C /* LogsTableViewController.swift in Sources */,
+				106AB8151D6FECE900C03C35 /* TabBarViewController.m in Sources */,
 				D3B423771D051DDC00014B66 /* LoginViewController.m in Sources */,
 				19AC0C501D060429001AA2E1 /* LocalDataIntegration.m in Sources */,
 				D309DD571D5896FB0064C70F /* RDInternetData.m in Sources */,

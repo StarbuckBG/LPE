@@ -52,7 +52,6 @@
     
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(userDataUpdatedNotificationHandler:) name:USERDATA_UPDATED object:nil];
     
-    
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -154,6 +153,9 @@
 
 - (IBAction)bottomLeftTapGestureRecognized:(UITapGestureRecognizer *)sender {
     self.tabBarController.selectedIndex = 4;
+}
+- (IBAction)centerTapGestureRecognized:(UITapGestureRecognizer *)sender {
+    self.tabBarController.selectedIndex = 2;
 }
 
 - (void) userDataUpdatedNotificationHandler: (NSNotification *) notification

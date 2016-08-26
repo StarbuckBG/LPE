@@ -33,6 +33,21 @@ NSNumber * changeRate;
     username.text = [[[DatabaseIntegration sharedInstance] userdata] objectForKey:@"username"];
     pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)(slider.value/10000 * pointsValue)];
     
+    
+}
+
+- (void) viewDidAppear:(BOOL)animated
+{
+    [self setSliderImageViewOnThumb];
+}
+
+- (void) setSliderImageViewOnThumb
+{
+    UIImageView * thumbImageView = [slider.subviews lastObject];
+    UILabel * thumbLabel = [[UILabel alloc] initWithFrame:thumbImageView.bounds];
+    thumbLabel.text = @"<>";
+    thumbLabel.textAlignment = NSTextAlignmentCenter;
+    [thumbImageView addSubview:thumbLabel];
 }
 
 - (void)didReceiveMemoryWarning {
