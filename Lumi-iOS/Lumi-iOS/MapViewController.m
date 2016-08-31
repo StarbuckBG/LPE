@@ -108,11 +108,22 @@ bool showCurrentLocationOnLoad = YES;
             pinView = [[MKAnnotationView alloc]
                        initWithAnnotation:annotation reuseIdentifier:defaultPinID];
         
-        //pinView.pinColor = MKPinAnnotationColorGreen;
+        //pinView.tintColor = MKPinAnnotationColorWhite;
         pinView.canShowCallout = YES;
         pinView.rightCalloutAccessoryView = [UIButton buttonWithType:UIButtonTypeDetailDisclosure];
         //pinView.animatesDrop = YES;
-        pinView.image = [UIImage imageNamed:@"locationPin.png"];    //as suggested by Squatch
+        UIImage * pinImage = [UIImage imageNamed:@"locationPin.png"];
+        CGRect imageRect;
+        imageRect.size.height = 30;
+        imageRect.size.width = 30;
+        imageRect.origin = CGPointMake(0, 0);
+        UIGraphicsBeginImageContext(imageRect.size);
+        [pinImage drawInRect:imageRect];
+        pinView.image = UIGraphicsGetImageFromCurrentImageContext();
+//        pinView.layer.borderColor = [UIColor colorWithRed:1.0f green:0 blue:0.5f alpha:1.0f].CGColor;
+//        pinView.layer.borderWidth = 1.0f;
+        pinView.layer.cornerRadius = (imageRect.size.height + imageRect.size.width) / 4;
+        
     }
     else {
         [self.mapView.userLocation setTitle:@"I am here"];

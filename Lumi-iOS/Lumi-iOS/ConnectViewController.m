@@ -22,6 +22,7 @@
 @property (weak, nonatomic) IBOutlet RDCodeScannerView * codeScannerView;
 @property (strong, nonatomic) CBCentralManager * centralManager;
 @property (weak, nonatomic) IBOutlet BubbleView *bubbleView;
+@property (weak, nonatomic) IBOutlet UITextView *connectionScreenInformationView;
 
 
 @end
@@ -58,12 +59,6 @@
     } completion:^(BOOL finished) {
         ;
     }];
-#warning For Debug !!!
-    if(self.bubbleView.alpha == 0)
-    {
-        [self switchToConnected];
-    }
-
     
 }
 
@@ -98,6 +93,7 @@
     [UIView animateWithDuration:2.0f delay:0 options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          self.codeScannerView.alpha = 0;
+                         self.connectionScreenInformationView.alpha = 0;
                      }
                      completion:^(BOOL finished) {
                          
@@ -126,6 +122,7 @@
     [UIView animateWithDuration:2.0f delay:2 options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          self.codeScannerView.alpha = 1;
+                         self.connectionScreenInformationView.alpha = 1;
                      }
                      completion:^(BOOL finished) {
                          
