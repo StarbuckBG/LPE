@@ -96,4 +96,11 @@
     [userDefaults synchronize];
 }
 
+- (void) clearDataForCurrentUser {
+    [self setUsername:@""];
+    [self setPassword:@""];
+    [self setAutoLogin:NO];
+    [self syncData];
+}
+
 @end

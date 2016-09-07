@@ -193,6 +193,15 @@
     [alert addAction:galleryAction];
     [alert addAction:cameraAction];
     [alert addAction:cancelAction];
+    
+    
+    if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+        [alert setModalPresentationStyle:UIModalPresentationPopover];
+        
+        UIPopoverPresentationController *popPresenter = [alert popoverPresentationController];
+        popPresenter.sourceView = self.view;
+        popPresenter.sourceRect = CGRectMake(self.view.bounds.size.width/2, self.view.bounds.size.height/1.1, 1.0, 1.0);
+    }
     [self presentViewController:alert animated:YES completion:nil];
 }
 #pragma mark - Image Picker Controller delegate methods
