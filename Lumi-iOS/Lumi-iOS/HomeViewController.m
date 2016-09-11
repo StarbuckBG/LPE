@@ -54,6 +54,18 @@
     
 }
 
+- (void) viewWillAppear:(BOOL)animated
+{
+    if([[UIScreen mainScreen] bounds].size.width <= 320)
+    {
+        self.topLeftBubbleView.alpha = 0;
+        self.bottomLeftBubbleView.alpha = 0;
+        self.centerBubbleView.alpha = 0;
+        self.bottomRightBubbleView.alpha = 0;
+        self.topRightBubbleView.alpha = 0;
+    }
+}
+
 - (void) viewDidAppear:(BOOL)animated
 {
     if([[UIScreen mainScreen] bounds].size.width <= 320)
@@ -86,7 +98,17 @@
         self.bottomRightBubbleView.frame = bottomRight;
         self.bottomRightBubbleView.center = bottomRightCenter;
         
+        [UIView animateWithDuration:3.0f animations:^{
+            self.topLeftBubbleView.alpha = 1;
+            self.bottomLeftBubbleView.alpha = 1;
+            self.centerBubbleView.alpha = 1;
+            self.bottomRightBubbleView.alpha = 1;
+            self.topRightBubbleView.alpha = 1;
+        }];
+        
     }
+    
+    
     
     
     [UIView animateWithDuration:5.0f delay:0 options:UIViewAnimationOptionRepeat|UIViewAnimationOptionAutoreverse|UIViewAnimationOptionAllowUserInteraction animations:^{

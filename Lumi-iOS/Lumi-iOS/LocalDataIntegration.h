@@ -25,5 +25,6 @@
 + (instancetype)sharedInstance;
 - (void) syncData;
 - (void) clearDataForCurrentUser;
+- (void) logout;
 
 @end

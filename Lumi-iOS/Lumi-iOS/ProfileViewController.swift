@@ -14,7 +14,9 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(userDataUpdatedNotificationHandler), name: USERDATA_UPDATED, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self,
+                                                         selector: #selector(userDataUpdatedNotificationHandler),
+                                                         name: USERDATA_UPDATED, object: nil)
         // Do any additional setup after loading the view.
     }
 
@@ -25,13 +27,35 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         DatabaseIntegration.sharedInstance().updateUserData()
+        self.navigationController!.topViewController!.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Logout",
+                                                                      style:.Plain,
+                                                                      target: self,
+                                                                      action: #selector(logout(_:)))
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        self.navigationController!.topViewController!.navigationItem.rightBarButtonItem = nil;
     }
     
     func userDataUpdatedNotificationHandler()
     {
-        self.profileTableView.reloadData()
+        dispatch_async(dispatch_get_main_queue())
+        {
+            // reload the UI on main thread
+            self.profileTableView.reloadData()
+        }
     }
     
+    func logout(sender: UIBarButtonItem)
+    {
+        if let loginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") where storyboard != nil
+        {
+            self.presentViewController(loginViewController,animated: true) {
+                //erase stored data on logout
+                LocalDataIntegration.sharedInstance().logout()
+            }
+        }
+    }
 
     /*
     // MARK: - Navigation

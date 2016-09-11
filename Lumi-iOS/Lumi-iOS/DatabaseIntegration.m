@@ -71,13 +71,16 @@
         if (error == nil) {
             // Success
             responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
-            self.userdata = [responseArray objectAtIndex:0];
-            [[NSNotificationCenter defaultCenter] postNotificationName:USERDATA_UPDATED object:self];
-            [self updateUserLogs];
+            if(responseArray != nil)
+            {
+                self.userdata = [responseArray objectAtIndex:0];
+                [[NSNotificationCenter defaultCenter] postNotificationName:USERDATA_UPDATED object:self];
+                [self updateUserLogs];
+            }
         }
         else {
             // Failure
-            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+//            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
             [[NSNotificationCenter defaultCenter] postNotificationName:CONNECTION_PROBLEMS object:self];
         }
     }];
@@ -171,7 +174,7 @@
     NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error == nil) {
             // Success
-            NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
+//            NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
             responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"requestSuccessful" object:self];
             if((((NSHTTPURLResponse*)response).statusCode) == 200)
@@ -189,7 +192,7 @@
         }
         else {
             // Failure
-            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+//            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
             [[NSNotificationCenter defaultCenter] postNotificationName:@"connectionProblems" object:self];
         }
     }];
@@ -292,14 +295,14 @@
     NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error == nil) {
             // Success
-            NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
+            //NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
             responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
             self.logs = responseArray;
             [[NSNotificationCenter defaultCenter] postNotificationName:LOGS_UPDATED object:self];
         }
         else {
             // Failure
-            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+            //NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
             [[NSNotificationCenter defaultCenter] postNotificationName:@"connectionProblems" object:self];
         }
     }];
@@ -343,14 +346,14 @@
     NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error == nil) {
             // Success
-            NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
+            //NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
             responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
             [[NSNotificationCenter defaultCenter] postNotificationName:LOG_ADDED object:self];
             
         }
         else {
             // Failure
-            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+            //NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
             [[NSNotificationCenter defaultCenter] postNotificationName:@"connectionProblems" object:self];
         }
     }];
@@ -388,13 +391,13 @@
     NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         if (error == nil) {
             // Success
-            NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
+//            NSLog(@"URL Session Task Succeeded: HTTP %ld", ((NSHTTPURLResponse*)response).statusCode);
             responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
             [[NSNotificationCenter defaultCenter] postNotificationName:@"requestSuccessful" object:self];
         }
         else {
             // Failure
-            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+//            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
             [[NSNotificationCenter defaultCenter] postNotificationName:@"connectionProblems" object:self];
         }
     }];

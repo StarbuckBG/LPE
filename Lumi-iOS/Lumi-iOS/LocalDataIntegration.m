@@ -103,4 +103,9 @@
     [self syncData];
 }
 
+- (void) logout
+{
+    [self clearDataForCurrentUser];
+}
+
 @end

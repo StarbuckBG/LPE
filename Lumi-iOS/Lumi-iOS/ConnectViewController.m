@@ -10,19 +10,21 @@
 #import "BubbleView.h"
 #import "UIColor+Lumi.h"
 #import "BubbleStyleKit.h"
+#import "DatabaseIntegration.h"
 
 @interface ConnectViewController ()
 {
     NSMutableSet <CBPeripheral *> *deviceList;
     NSString * nameOfDeviceToConnect;
     NSInteger currentPoints;
-    NSTimer * aTimer;
     __weak IBOutlet NSLayoutConstraint *bubbleXConstraint;
 }
 @property (weak, nonatomic) IBOutlet RDCodeScannerView * codeScannerView;
 @property (strong, nonatomic) CBCentralManager * centralManager;
 @property (weak, nonatomic) IBOutlet BubbleView *bubbleView;
 @property (weak, nonatomic) IBOutlet UITextView *connectionScreenInformationView;
+@property (weak, nonatomic) IBOutlet UIButton *finishButton;
+
 
 
 @end
@@ -46,6 +48,7 @@
     self.bubbleView.innerColor = [BubbleStyleKit purpleInner];
     self.bubbleView.outerColor = [BubbleStyleKit purpleOuter];
     
+    self.finishButton.alpha = 0;
     
     self.codeScannerView.delegate = self;
     [self.codeScannerView startReading];
@@ -64,10 +67,22 @@
 
 - (void) viewDidDisappear:(BOOL)animated
 {
-    [aTimer invalidate];
     [self switchToDisconnected];
 }
 
+- (void) incrementPoints: (NSInteger) value
+{
+    currentPoints += value;
+    
+    self.bubbleView.text = [NSString stringWithFormat:@"%ld", (long)currentPoints];
+
+    if(bubbleXConstraint.constant <= self.view.bounds.size.width*2.0f/3.0f) bubbleXConstraint.constant += 0.001*bubbleXConstraint.constant;
+    else
+    {
+    }
+    
+    [self.bubbleView setNeedsDisplay];
+}
 - (void) pointClicked
 {
     self.bubbleView.text = [NSString stringWithFormat:@"%ld", (long)currentPoints++];
@@ -75,11 +90,15 @@
     if(bubbleXConstraint.constant <= self.view.bounds.size.width*2.0f/3.0f) bubbleXConstraint.constant += 0.001*bubbleXConstraint.constant;
     else
     {
-        ;
     }
     
     [self.bubbleView setNeedsDisplay];
     
+    
+}
+
+- (void) presentYouHaveWonScreenWithPoints:(NSInteger) points
+{
     
 }
 
@@ -90,6 +109,9 @@
 
 - (void) switchToConnected
 {
+    self.bubbleView.text = [NSString stringWithFormat:@"%ld", (long)currentPoints];
+    [self.bubbleView setNeedsDisplay];
+    
     [UIView animateWithDuration:2.0f delay:0 options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          self.codeScannerView.alpha = 0;
@@ -102,9 +124,9 @@
     [UIView animateWithDuration:2.0f delay:2 options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          self.bubbleView.alpha = 1;
+                         self.finishButton.alpha = 1;
                      }
                      completion:^(BOOL finished) {
-                         aTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(pointClicked) userInfo:nil repeats:YES];
                          
                      }];
 }
@@ -114,6 +136,7 @@
     [UIView animateWithDuration:2.0f delay:0 options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          self.bubbleView.alpha = 0;
+                         self.finishButton.alpha = 0;
                      }
                      completion:^(BOOL finished) {
                          
@@ -128,6 +151,7 @@
                          
                      }];
     
+    
 }
 
 /*
@@ -139,6 +163,15 @@
  // Pass the selected object to the new view controller.
  }
  */
+
+#pragma mark - RDCodeScannerDelegate
+- (void)codeScanned:(RDCodeScannerView *)object codeData:(NSString *)codeData
+{
+    NSLog(@"%@",codeData);
+    nameOfDeviceToConnect = codeData;
+    [self connectToDeviceWithName:nameOfDeviceToConnect];
+}
+
 
 - (void) connectToDeviceWithName: (NSString *) deviceName
 {
@@ -157,13 +190,6 @@
     }
 }
 
-- (void)codeScanned:(RDCodeScannerView *)object codeData:(NSString *)codeData
-{
-    NSLog(@"%@",codeData);
-    nameOfDeviceToConnect = codeData;
-    [self connectToDeviceWithName:nameOfDeviceToConnect];
-}
-
 #pragma mark - CBCentralManagerDelegate
 
 - (void) centralManagerDidUpdateState:(CBCentralManager *)central
@@ -175,8 +201,6 @@
 {
     peripheral.delegate = self;
     [peripheral discoverServices:nil];
-    
-    aTimer = [NSTimer scheduledTimerWithTimeInterval:1.0f target:self selector:@selector(pointClicked) userInfo:nil repeats:YES];
     [self switchToConnected];
     
     
@@ -185,6 +209,12 @@
 - (void) centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
     [self switchToDisconnected];
+    [[DatabaseIntegration sharedInstance] addToLogPoints:[NSString stringWithFormat:@"%d", currentPoints]
+                                           onApplianceId:@"1"
+                                           withIntensity:@"5"
+                                                fromTime:[NSDate date]
+                                                  toTime:[NSDate date]];
+    
     currentPoints = 0;
     peripheral.delegate = nil;
 }
@@ -228,12 +258,30 @@
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateValueForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
-    NSLog(@"%@", [characteristic.value base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed]);
+    //NSLog(@"%@", [characteristic.value base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed]);
+    NSInteger energyValue = [[[NSString alloc] initWithData:characteristic.value
+                                        encoding:NSUTF8StringEncoding] characterAtIndex:0]/10;
+    [self incrementPoints:energyValue];
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error
 {
+}
+
+#pragma mark - IB Event Handlers
+- (IBAction)finishButtonPressed:(UIButton *)sender {
+    
+    for (CBPeripheral * aPeripheral in deviceList)
+    {
+        if([aPeripheral.name isEqualToString:nameOfDeviceToConnect])
+        {
+            [self.centralManager cancelPeripheralConnection:aPeripheral];
+            break;
+        }
+    }
     
 }
+
+
 
 @end

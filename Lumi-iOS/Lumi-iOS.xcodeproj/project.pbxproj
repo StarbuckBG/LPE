@@ -10,7 +10,9 @@
 		105F40FC1D775C8200852EDC /* locationPin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F40FA1D775C8200852EDC /* locationPin@2x.png */; };
 		105F40FD1D775C8200852EDC /* locationPin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F40FB1D775C8200852EDC /* locationPin@3x.png */; };
 		106AB8151D6FECE900C03C35 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106AB8141D6FECE900C03C35 /* TabBarViewController.m */; };
-		106AB8181D6FEDE700C03C35 /* InfoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106AB8171D6FEDE700C03C35 /* InfoViewController.m */; };
+		10EACB4B1D85CF1400F9B24F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EACB4A1D85CF1400F9B24F /* InfoViewController.swift */; };
+		10EACB4D1D85D09300F9B24F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EACB4C1D85D09300F9B24F /* MessageUI.framework */; };
+		10EACB4F1D85D90D00F9B24F /* lumi-privacy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 10EACB4E1D85D90D00F9B24F /* lumi-privacy.pdf */; };
 		19292E8B1CEB8384007B5B05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E8A1CEB8384007B5B05 /* main.m */; };
 		19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E8D1CEB8384007B5B05 /* AppDelegate.m */; };
 		19292E971CEB8384007B5B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19292E951CEB8384007B5B05 /* Main.storyboard */; };
@@ -75,8 +77,9 @@
 		105F40FB1D775C8200852EDC /* locationPin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locationPin@3x.png"; sourceTree = "<group>"; };
 		106AB8131D6FECE900C03C35 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		106AB8141D6FECE900C03C35 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
-		106AB8161D6FEDE700C03C35 /* InfoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InfoViewController.h; sourceTree = "<group>"; };
-		106AB8171D6FEDE700C03C35 /* InfoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InfoViewController.m; sourceTree = "<group>"; };
+		10EACB4A1D85CF1400F9B24F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; };
+		10EACB4C1D85D09300F9B24F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		10EACB4E1D85D90D00F9B24F /* lumi-privacy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "lumi-privacy.pdf"; sourceTree = "<group>"; };
 		19292E861CEB8384007B5B05 /* Lumi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lumi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19292E8A1CEB8384007B5B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19292E8C1CEB8384007B5B05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -169,6 +172,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				10EACB4D1D85D09300F9B24F /* MessageUI.framework in Frameworks */,
 				197C9E441D04BDCB0017D46A /* AVFoundation.framework in Frameworks */,
 				197C9E421D04BDC00017D46A /* MapKit.framework in Frameworks */,
 			);
@@ -180,6 +184,7 @@
 		19292E7D1CEB8384007B5B05 = {
 			isa = PBXGroup;
 			children = (
+				10EACB4C1D85D09300F9B24F /* MessageUI.framework */,
 				197C9E431D04BDCB0017D46A /* AVFoundation.framework */,
 				197C9E411D04BDC00017D46A /* MapKit.framework */,
 				19292E881CEB8384007B5B05 /* Lumi-iOS */,
@@ -229,6 +234,7 @@
 		19292EA31CEB8A05007B5B05 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				10EACB4E1D85D90D00F9B24F /* lumi-privacy.pdf */,
 				D3AAD61E1D66FD6E0032F058 /* locationPin.png */,
 				105F40FA1D775C8200852EDC /* locationPin@2x.png */,
 				105F40FB1D775C8200852EDC /* locationPin@3x.png */,
@@ -278,9 +284,8 @@
 				19E0D2221D17384600CC081C /* ProfilePageViewController.swift */,
 				19E0D2241D173A1900CC081C /* ProfileViewController.swift */,
 				19E0D2261D173A2700CC081C /* LogsTableViewController.swift */,
+				10EACB4A1D85CF1400F9B24F /* InfoViewController.swift */,
 				19E0D2211D17384500CC081C /* Lumi-iOS-Bridging-Header.h */,
-				106AB8161D6FEDE700C03C35 /* InfoViewController.h */,
-				106AB8171D6FEDE700C03C35 /* InfoViewController.m */,
 				D3AAD61B1D66F83A0032F058 /* EntryViewController.h */,
 				D3AAD61C1D66F83A0032F058 /* EntryViewController.m */,
 				106AB8131D6FECE900C03C35 /* TabBarViewController.h */,
@@ -443,6 +448,7 @@
 				105F40FC1D775C8200852EDC /* locationPin@2x.png in Resources */,
 				D3AAD61F1D66FD6E0032F058 /* locationPin.png in Resources */,
 				19292EBE1CEB8A1C007B5B05 /* profile@2x.png in Resources */,
+				10EACB4F1D85D90D00F9B24F /* lumi-privacy.pdf in Resources */,
 				19292E991CEB8384007B5B05 /* Assets.xcassets in Resources */,
 				105F40FD1D775C8200852EDC /* locationPin@3x.png in Resources */,
 				19292EB11CEB8A15007B5B05 /* profile2.png in Resources */,
@@ -464,11 +470,11 @@
 				19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */,
 				197C9E401D04AAD00017D46A /* DatabaseIntegration.m in Sources */,
 				D3B4237D1D05374700014B66 /* ImageShareViewController.m in Sources */,
+				10EACB4B1D85CF1400F9B24F /* InfoViewController.swift in Sources */,
 				D34F0C2F1D1796F4003EFA6E /* RGTextField.m in Sources */,
 				19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */,
 				D34F0C3D1D17996C003EFA6E /* AMPopTip+Animation.m in Sources */,
 				19292E8B1CEB8384007B5B05 /* main.m in Sources */,
-				106AB8181D6FEDE700C03C35 /* InfoViewController.m in Sources */,
 				D34F0C3F1D17996C003EFA6E /* AMPopTip+Entrance.m in Sources */,
 				19AC0C4D1D05E151001AA2E1 /* BubbleView.m in Sources */,
 				6AA787A01D17EA1A00795115 /* RGFormViewController.m in Sources */,
