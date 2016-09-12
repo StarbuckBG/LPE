@@ -10,21 +10,13 @@ import UIKit
 import MessageUI
 
 class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate {
-    @IBOutlet weak var termsOfUseWebView: UIWebView!
+    
+    @IBOutlet weak var versionLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        //        NSString *path = [[NSBundle mainBundle] pathForResource:@"document" ofType:@"pdf"];
-        //        NSURL *targetURL = [NSURL fileURLWithPath:path];
-        //        NSURLRequest *request = [NSURLRequest requestWithURL:targetURL];
-        
-        //        [webView loadRequest:request];
-        
-        let path = NSBundle.mainBundle().pathForResource("lumi-privacy", ofType: "pdf")
-        let targetURL = NSURL.fileURLWithPath(path!)
-        let request = NSURLRequest.init(URL: targetURL)
-        termsOfUseWebView.loadRequest(request)
-        // Do any additional setup after loading the view.
+        self.versionLabel.text = "Version \(UIApplication.appVersion()) (\(UIApplication.build()))"
+        self.navigationController?.navigationItem.backBarButtonItem?.title = ""
     }
     
     override func didReceiveMemoryWarning() {

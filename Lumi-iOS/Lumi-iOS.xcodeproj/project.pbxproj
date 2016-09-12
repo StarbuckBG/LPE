@@ -13,6 +13,8 @@
 		10EACB4B1D85CF1400F9B24F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EACB4A1D85CF1400F9B24F /* InfoViewController.swift */; };
 		10EACB4D1D85D09300F9B24F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EACB4C1D85D09300F9B24F /* MessageUI.framework */; };
 		10EACB4F1D85D90D00F9B24F /* lumi-privacy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 10EACB4E1D85D90D00F9B24F /* lumi-privacy.pdf */; };
+		10EACB521D85F6CF00F9B24F /* UIApplication+RDAppVersion.m in Sources */ = {isa = PBXBuildFile; fileRef = 10EACB511D85F6CF00F9B24F /* UIApplication+RDAppVersion.m */; };
+		10EACB541D8682AB00F9B24F /* termsOfUseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EACB531D8682AB00F9B24F /* termsOfUseViewController.swift */; };
 		19292E8B1CEB8384007B5B05 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E8A1CEB8384007B5B05 /* main.m */; };
 		19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 19292E8D1CEB8384007B5B05 /* AppDelegate.m */; };
 		19292E971CEB8384007B5B05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19292E951CEB8384007B5B05 /* Main.storyboard */; };
@@ -80,6 +82,9 @@
 		10EACB4A1D85CF1400F9B24F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; };
 		10EACB4C1D85D09300F9B24F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		10EACB4E1D85D90D00F9B24F /* lumi-privacy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "lumi-privacy.pdf"; sourceTree = "<group>"; };
+		10EACB501D85F6CF00F9B24F /* UIApplication+RDAppVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+RDAppVersion.h"; sourceTree = "<group>"; };
+		10EACB511D85F6CF00F9B24F /* UIApplication+RDAppVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+RDAppVersion.m"; sourceTree = "<group>"; };
+		10EACB531D8682AB00F9B24F /* termsOfUseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = termsOfUseViewController.swift; sourceTree = "<group>"; };
 		19292E861CEB8384007B5B05 /* Lumi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lumi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19292E8A1CEB8384007B5B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19292E8C1CEB8384007B5B05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -285,6 +290,7 @@
 				19E0D2241D173A1900CC081C /* ProfileViewController.swift */,
 				19E0D2261D173A2700CC081C /* LogsTableViewController.swift */,
 				10EACB4A1D85CF1400F9B24F /* InfoViewController.swift */,
+				10EACB531D8682AB00F9B24F /* termsOfUseViewController.swift */,
 				19E0D2211D17384500CC081C /* Lumi-iOS-Bridging-Header.h */,
 				D3AAD61B1D66F83A0032F058 /* EntryViewController.h */,
 				D3AAD61C1D66F83A0032F058 /* EntryViewController.m */,
@@ -327,6 +333,8 @@
 				6AA7879F1D17EA1A00795115 /* RGFormViewController.m */,
 				D309DD551D5896FB0064C70F /* RDInternetData.h */,
 				D309DD561D5896FB0064C70F /* RDInternetData.m */,
+				10EACB501D85F6CF00F9B24F /* UIApplication+RDAppVersion.h */,
+				10EACB511D85F6CF00F9B24F /* UIApplication+RDAppVersion.m */,
 			);
 			name = "Rapid Development Crew";
 			sourceTree = "<group>";
@@ -468,8 +476,10 @@
 			files = (
 				D309DD541D5896CF0064C70F /* Reachability.m in Sources */,
 				19292E8E1CEB8384007B5B05 /* AppDelegate.m in Sources */,
+				10EACB521D85F6CF00F9B24F /* UIApplication+RDAppVersion.m in Sources */,
 				197C9E401D04AAD00017D46A /* DatabaseIntegration.m in Sources */,
 				D3B4237D1D05374700014B66 /* ImageShareViewController.m in Sources */,
+				10EACB541D8682AB00F9B24F /* termsOfUseViewController.swift in Sources */,
 				10EACB4B1D85CF1400F9B24F /* InfoViewController.swift in Sources */,
 				D34F0C2F1D1796F4003EFA6E /* RGTextField.m in Sources */,
 				19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */,

@@ -4,3 +4,4 @@
 
 #import "DatabaseIntegration.h"
 #import "LocalDataIntegration.h"
+#import "UIApplication+RDAppVersion.h"
