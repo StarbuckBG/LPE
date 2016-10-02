@@ -10,6 +10,7 @@
 		105F40FC1D775C8200852EDC /* locationPin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F40FA1D775C8200852EDC /* locationPin@2x.png */; };
 		105F40FD1D775C8200852EDC /* locationPin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F40FB1D775C8200852EDC /* locationPin@3x.png */; };
 		106AB8151D6FECE900C03C35 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106AB8141D6FECE900C03C35 /* TabBarViewController.m */; };
+		10D4588C1DA15CE0000DC62A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10D4588B1DA15CE0000DC62A /* GoogleService-Info.plist */; };
 		10EACB4B1D85CF1400F9B24F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EACB4A1D85CF1400F9B24F /* InfoViewController.swift */; };
 		10EACB4D1D85D09300F9B24F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EACB4C1D85D09300F9B24F /* MessageUI.framework */; };
 		10EACB4F1D85D90D00F9B24F /* lumi-privacy.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 10EACB4E1D85D90D00F9B24F /* lumi-privacy.pdf */; };
@@ -72,6 +73,7 @@
 		D3B423771D051DDC00014B66 /* LoginViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B423761D051DDC00014B66 /* LoginViewController.m */; };
 		D3B4237A1D051DED00014B66 /* SignInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B423791D051DED00014B66 /* SignInViewController.m */; };
 		D3B4237D1D05374700014B66 /* ImageShareViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D3B4237C1D05374700014B66 /* ImageShareViewController.m */; };
+		FB19952C15AAE3F4BA0A684C /* Pods_Lumi_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7049387363CF19F8A1028CDE /* Pods_Lumi_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -79,6 +81,7 @@
 		105F40FB1D775C8200852EDC /* locationPin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locationPin@3x.png"; sourceTree = "<group>"; };
 		106AB8131D6FECE900C03C35 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		106AB8141D6FECE900C03C35 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		10D4588B1DA15CE0000DC62A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10EACB4A1D85CF1400F9B24F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; };
 		10EACB4C1D85D09300F9B24F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		10EACB4E1D85D90D00F9B24F /* lumi-privacy.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = "lumi-privacy.pdf"; sourceTree = "<group>"; };
@@ -143,6 +146,8 @@
 		6AA7879C1D17D7C700795115 /* error.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = error.png; sourceTree = "<group>"; };
 		6AA7879E1D17EA1A00795115 /* RGFormViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RGFormViewController.h; sourceTree = "<group>"; };
 		6AA7879F1D17EA1A00795115 /* RGFormViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RGFormViewController.m; sourceTree = "<group>"; };
+		7049387363CF19F8A1028CDE /* Pods_Lumi_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Lumi_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C0E9132237D42FF218739975 /* Pods-Lumi-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lumi-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-Lumi-iOS/Pods-Lumi-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		D3094E4E1D0710FB00E3C180 /* lumi.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lumi.png; sourceTree = "<group>"; };
 		D309DD521D5896CF0064C70F /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 		D309DD531D5896CF0064C70F /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
@@ -170,6 +175,7 @@
 		D3B423791D051DED00014B66 /* SignInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignInViewController.m; sourceTree = "<group>"; };
 		D3B4237B1D05374700014B66 /* ImageShareViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ImageShareViewController.h; sourceTree = "<group>"; };
 		D3B4237C1D05374700014B66 /* ImageShareViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ImageShareViewController.m; sourceTree = "<group>"; };
+		EDA136D6A401203694C0ED45 /* Pods-Lumi-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Lumi-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Lumi-iOS/Pods-Lumi-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -180,12 +186,21 @@
 				10EACB4D1D85D09300F9B24F /* MessageUI.framework in Frameworks */,
 				197C9E441D04BDCB0017D46A /* AVFoundation.framework in Frameworks */,
 				197C9E421D04BDC00017D46A /* MapKit.framework in Frameworks */,
+				FB19952C15AAE3F4BA0A684C /* Pods_Lumi_iOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		17D01D51B65616DF9B2DA96F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7049387363CF19F8A1028CDE /* Pods_Lumi_iOS.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		19292E7D1CEB8384007B5B05 = {
 			isa = PBXGroup;
 			children = (
@@ -194,6 +209,8 @@
 				197C9E411D04BDC00017D46A /* MapKit.framework */,
 				19292E881CEB8384007B5B05 /* Lumi-iOS */,
 				19292E871CEB8384007B5B05 /* Products */,
+				623A494E60F6753020FC90E8 /* Pods */,
+				17D01D51B65616DF9B2DA96F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -222,6 +239,7 @@
 				19292E981CEB8384007B5B05 /* Assets.xcassets */,
 				19292E9A1CEB8384007B5B05 /* LaunchScreen.storyboard */,
 				19292E9D1CEB8384007B5B05 /* Info.plist */,
+				10D4588B1DA15CE0000DC62A /* GoogleService-Info.plist */,
 				19292E891CEB8384007B5B05 /* Supporting Files */,
 			);
 			path = "Lumi-iOS";
@@ -348,6 +366,15 @@
 			name = StyleKit;
 			sourceTree = "<group>";
 		};
+		623A494E60F6753020FC90E8 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				EDA136D6A401203694C0ED45 /* Pods-Lumi-iOS.debug.xcconfig */,
+				C0E9132237D42FF218739975 /* Pods-Lumi-iOS.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		D309DD511D5896A70064C70F /* Other Libralies */ = {
 			isa = PBXGroup;
 			children = (
@@ -382,9 +409,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 19292EA01CEB8384007B5B05 /* Build configuration list for PBXNativeTarget "Lumi-iOS" */;
 			buildPhases = (
+				C18CE54E753AED2FF4A8A7E7 /* [CP] Check Pods Manifest.lock */,
 				19292E821CEB8384007B5B05 /* Sources */,
 				19292E831CEB8384007B5B05 /* Frameworks */,
 				19292E841CEB8384007B5B05 /* Resources */,
+				4BB656A818559A3807DA9144 /* [CP] Embed Pods Frameworks */,
+				855F4A0DAD6AAAC757A90AE5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,6 +479,7 @@
 				19292EBD1CEB8A1C007B5B05 /* map2@2x.png in Resources */,
 				19292EC71CEB8A23007B5B05 /* connect@3x.png in Resources */,
 				19292EB01CEB8A15007B5B05 /* profile.png in Resources */,
+				10D4588C1DA15CE0000DC62A /* GoogleService-Info.plist in Resources */,
 				19292EAC1CEB8A15007B5B05 /* exchange.png in Resources */,
 				19292EB91CEB8A1C007B5B05 /* connect@2x.png in Resources */,
 				19292EBA1CEB8A1C007B5B05 /* exchange@2x.png in Resources */,
@@ -468,6 +499,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4BB656A818559A3807DA9144 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lumi-iOS/Pods-Lumi-iOS-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		855F4A0DAD6AAAC757A90AE5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Lumi-iOS/Pods-Lumi-iOS-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		C18CE54E753AED2FF4A8A7E7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		19292E821CEB8384007B5B05 /* Sources */ = {
@@ -617,6 +696,7 @@
 		};
 		19292EA11CEB8384007B5B05 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EDA136D6A401203694C0ED45 /* Pods-Lumi-iOS.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -636,6 +716,7 @@
 		};
 		19292EA21CEB8384007B5B05 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0E9132237D42FF218739975 /* Pods-Lumi-iOS.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

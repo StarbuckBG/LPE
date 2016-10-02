@@ -12,6 +12,8 @@
 #import "BubbleStyleKit.h"
 #import "DatabaseIntegration.h"
 
+#define pointsMultiplier 25
+
 @interface ConnectViewController ()
 {
     NSMutableSet <CBPeripheral *> *deviceList;
@@ -74,9 +76,11 @@
 {
     currentPoints += value;
     
-    self.bubbleView.text = [NSString stringWithFormat:@"%ld", (long)currentPoints];
+    NSInteger pointsToPresent = currentPoints/pointsMultiplier;
+    
+    self.bubbleView.text = [NSString stringWithFormat:@"%ld", (long)pointsToPresent];
 
-    if(bubbleXConstraint.constant <= self.view.bounds.size.width*2.0f/3.0f) bubbleXConstraint.constant += 0.001*bubbleXConstraint.constant;
+    if(bubbleXConstraint.constant <= self.view.bounds.size.width*2.0f/3.0f) bubbleXConstraint.constant += 0.0001*bubbleXConstraint.constant;
     else
     {
     }
@@ -209,7 +213,9 @@
 - (void) centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
     [self switchToDisconnected];
-    [[DatabaseIntegration sharedInstance] addToLogPoints:[NSString stringWithFormat:@"%d", currentPoints]
+    NSInteger pointsToPresent = currentPoints/pointsMultiplier;
+    
+    [[DatabaseIntegration sharedInstance] addToLogPoints:[NSString stringWithFormat:@"%d", pointsToPresent]
                                            onApplianceId:@"1"
                                            withIntensity:@"5"
                                                 fromTime:[NSDate date]
@@ -260,8 +266,8 @@
 {
     //NSLog(@"%@", [characteristic.value base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed]);
     NSInteger energyValue = [[[NSString alloc] initWithData:characteristic.value
-                                        encoding:NSUTF8StringEncoding] characterAtIndex:0]/10;
-    [self incrementPoints:energyValue];
+                                        encoding:NSUTF8StringEncoding] characterAtIndex:0];
+    [self incrementPoints:energyValue+1];
 }
 
 - (void)peripheral:(CBPeripheral *)peripheral didUpdateNotificationStateForCharacteristic:(CBCharacteristic *)characteristic error:(NSError *)error

@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "UIColor+Lumi.h"
+#import "Firebase.h"
 
 @interface AppDelegate ()
 
@@ -22,7 +23,7 @@
     pageControl.pageIndicatorTintColor = [UIColor grayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor LumiPinkColor];
     pageControl.backgroundColor = [UIColor whiteColor];
-    
+    [FIRApp configure];
     [self setUpRechability];
     
     return YES;
