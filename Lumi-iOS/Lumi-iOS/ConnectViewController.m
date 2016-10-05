@@ -11,6 +11,9 @@
 #import "UIColor+Lumi.h"
 #import "BubbleStyleKit.h"
 #import "DatabaseIntegration.h"
+#import "BButton/BButton.h"
+#import "SCLAlertView_Objective_C/SCLAlertView.h"
+#import "SAConfettiView-Swift.h"
 
 #define pointsMultiplier 25
 
@@ -79,7 +82,7 @@
     NSInteger pointsToPresent = currentPoints/pointsMultiplier;
     
     self.bubbleView.text = [NSString stringWithFormat:@"%ld", (long)pointsToPresent];
-
+    
     if(bubbleXConstraint.constant <= self.view.bounds.size.width*2.0f/3.0f) bubbleXConstraint.constant += 0.0001*bubbleXConstraint.constant;
     else
     {
@@ -220,6 +223,8 @@
                                            withIntensity:@"5"
                                                 fromTime:[NSDate date]
                                                   toTime:[NSDate date]];
+    SCLAlertView * alertView = [[SCLAlertView alloc] init];
+    [alertView showSuccess:self title:@"Yayyy" subTitle:[NSString stringWithFormat:@"You have won %d Lumis", pointsToPresent] closeButtonTitle:@"Ok" duration:0.0f];
     
     currentPoints = 0;
     peripheral.delegate = nil;
@@ -266,7 +271,7 @@
 {
     //NSLog(@"%@", [characteristic.value base64EncodedStringWithOptions:NSDataBase64EncodingEndLineWithLineFeed]);
     NSInteger energyValue = [[[NSString alloc] initWithData:characteristic.value
-                                        encoding:NSUTF8StringEncoding] characterAtIndex:0];
+                                                   encoding:NSUTF8StringEncoding] characterAtIndex:0];
     [self incrementPoints:energyValue+1];
 }
 

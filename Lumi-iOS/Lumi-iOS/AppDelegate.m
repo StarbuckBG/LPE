@@ -29,7 +29,6 @@
     return YES;
 }
 
-#warning remove NSLogs after
 -(void) setUpRechability
 {
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(handleNetworkChange:) name:kReachabilityChangedNotification object:nil];

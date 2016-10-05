@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "19292E851CEB8384007B5B05"
-               BuildableName = "Lumi-iOS.app"
+               BuildableName = "Playground Energy.app"
                BlueprintName = "Lumi-iOS"
                ReferencedContainer = "container:Lumi-iOS.xcodeproj">
             </BuildableReference>
@@ -33,7 +33,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "19292E851CEB8384007B5B05"
-            BuildableName = "Lumi-iOS.app"
+            BuildableName = "Playground Energy.app"
             BlueprintName = "Lumi-iOS"
             ReferencedContainer = "container:Lumi-iOS.xcodeproj">
          </BuildableReference>
@@ -56,7 +56,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "19292E851CEB8384007B5B05"
-            BuildableName = "Lumi-iOS.app"
+            BuildableName = "Playground Energy.app"
             BlueprintName = "Lumi-iOS"
             ReferencedContainer = "container:Lumi-iOS.xcodeproj">
          </BuildableReference>
@@ -75,7 +75,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "19292E851CEB8384007B5B05"
-            BuildableName = "Lumi-iOS.app"
+            BuildableName = "Playground Energy.app"
             BlueprintName = "Lumi-iOS"
             ReferencedContainer = "container:Lumi-iOS.xcodeproj">
          </BuildableReference>

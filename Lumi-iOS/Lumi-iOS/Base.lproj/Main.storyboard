@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16A313a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u8r-2B-scj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="16B2333a" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="u8r-2B-scj">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -45,8 +45,7 @@
                                         <include reference="aI5-Fu-P8N"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="420" y="372.5" width="180" height="180"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="MPh-1B-YgJ"/>
                                         <include reference="apv-lk-kLZ"/>
@@ -86,8 +85,7 @@
                                         <include reference="yLK-JG-3Nt"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="420" y="64.5" width="180" height="180"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="QYi-LT-2xZ"/>
                                         <include reference="xg1-nH-UOO"/>
@@ -171,8 +169,7 @@
                                         <include reference="BDl-Xn-iNk"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="180" y="180" width="240" height="240"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Zsd-CE-Vbj"/>
                                         <include reference="ZwY-R8-8uu"/>
@@ -421,8 +418,7 @@
                                         <exclude reference="Hqb-WS-JdX"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="200" y="40" width="200" height="200"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="1cP-vO-qTF"/>
                                         <include reference="Hqb-WS-JdX"/>
@@ -451,8 +447,7 @@
                                         <exclude reference="tkc-De-8pU"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="150" y="150" width="300" height="300"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="TGX-ul-l7b"/>
                                         <include reference="tNg-zx-NVS"/>
@@ -487,8 +482,7 @@
                                         <exclude reference="oEH-w8-mWN"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="180" y="284" width="240" height="117"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="AaH-gI-lK2"/>
                                         <include reference="Ako-JE-sZ4"/>
@@ -519,8 +513,7 @@
                                         <exclude reference="pXb-EZ-VSZ"/>
                                     </mask>
                                 </variation>
-                                <variation key="widthClass=compact" misplaced="YES">
-                                    <rect key="frame" x="251" y="483" width="98" height="49"/>
+                                <variation key="widthClass=compact">
                                     <mask key="constraints">
                                         <include reference="Bbn-8b-p5a"/>
                                         <include reference="pXb-EZ-VSZ"/>
@@ -996,45 +989,59 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points for conversion:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kv4-qx-mg4">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Points for conversion:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kv4-qx-mg4">
                                 <rect key="frame" x="20" y="464" width="172" height="25"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="474" width="172" height="25"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="674" width="172" height="25"/>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total points:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwV-VD-9aS">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Total points:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KwV-VD-9aS">
                                 <rect key="frame" x="20" y="435" width="97" height="25"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="445" width="97" height="25"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="645" width="97" height="25"/>
+                                </variation>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-Ym-r23">
-                                <rect key="frame" x="256" y="550" width="88" height="42"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
-                                <state key="normal" title="Convert">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="convertButton:" destination="mEt-Rk-615" eventType="touchUpInside" id="oHe-OW-34H"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Converted currency:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd0-3a-akg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Converted currency:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wd0-3a-akg">
                                 <rect key="frame" x="20" y="492" width="156" height="20"/>
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="20" y="502" width="156" height="18"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="20" y="702" width="156" height="20"/>
+                                </variation>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5000" minValue="0.0" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="L12-Xm-5vg">
+                            <slider opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5000" minValue="0.0" maxValue="10000" translatesAutoresizingMaskIntoConstraints="NO" id="L12-Xm-5vg">
                                 <rect key="frame" x="18" y="524" width="564" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="FUG-c2-7xr"/>
                                 </constraints>
                                 <color key="minimumTrackTintColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="18" y="532" width="364" height="31"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="18" y="734" width="764" height="31"/>
+                                </variation>
                                 <connections>
                                     <action selector="slider:" destination="mEt-Rk-615" eventType="valueChanged" id="ubs-zP-i7u"/>
                                 </connections>
                             </slider>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lumis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXv-92-QhL">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lumis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JXv-92-QhL">
                                 <rect key="frame" x="529" y="435" width="51" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="51" id="Gwk-KE-NUo"/>
@@ -1045,8 +1052,11 @@
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="529" y="437" width="51" height="25"/>
                                 </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="729" y="645" width="51" height="25"/>
+                                </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dla-3C-KUC">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dla-3C-KUC">
                                 <rect key="frame" x="510" y="490" width="11" height="24"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="24" id="Kl1-I5-zJJ"/>
@@ -1065,7 +1075,7 @@
                                     <rect key="frame" x="321" y="377" width="200" height="24"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Lumis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0i-j3-Vlx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Lumis" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="M0i-j3-Vlx">
                                 <rect key="frame" x="529" y="464" width="51" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="51" id="5MR-gf-yUI"/>
@@ -1076,6 +1086,9 @@
                                 <nil key="highlightedColor"/>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="529" y="466" width="51" height="25"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="729" y="674" width="51" height="25"/>
                                 </variation>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="1 Lumi equals" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dfX-Mm-Nec">
@@ -1150,7 +1163,7 @@
                                     <outlet property="delegate" destination="mEt-Rk-615" id="U4j-zF-scX"/>
                                 </connections>
                             </tableView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZI-B8-CB7">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fZI-B8-CB7">
                                 <rect key="frame" x="510" y="435" width="11" height="25"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="25" id="R9w-Mi-LBP"/>
@@ -1169,7 +1182,7 @@
                                     <rect key="frame" x="321" y="322" width="200" height="25"/>
                                 </variation>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfT-Oc-bY8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UfT-Oc-bY8">
                                 <rect key="frame" x="510" y="466" width="11" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="121" id="EjL-Qq-WxH"/>
@@ -1197,6 +1210,20 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cYn-Ym-r23" customClass="BButton">
+                                <rect key="frame" x="256" y="550" width="88" height="42"/>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="18"/>
+                                <inset key="contentEdgeInsets" minX="5" minY="5" maxX="5" maxY="5"/>
+                                <state key="normal" title="Convert">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" misplaced="YES">
+                                    <rect key="frame" x="163" y="567" width="74" height="28"/>
+                                </variation>
+                                <connections>
+                                    <action selector="convertButton:" destination="mEt-Rk-615" eventType="touchUpInside" id="oHe-OW-34H"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
@@ -1224,7 +1251,10 @@
                             <constraint firstItem="V9L-jC-wkD" firstAttribute="top" secondItem="dfX-Mm-Nec" secondAttribute="bottom" constant="2" id="Uy1-GY-oGH"/>
                             <constraint firstItem="dla-3C-KUC" firstAttribute="trailing" secondItem="UfT-Oc-bY8" secondAttribute="trailing" id="VQR-gw-BaR"/>
                             <constraint firstItem="KwV-VD-9aS" firstAttribute="top" secondItem="V9L-jC-wkD" secondAttribute="bottom" constant="8" id="WBh-Oc-SZF"/>
-                            <constraint firstItem="08G-6s-W39" firstAttribute="top" secondItem="cYn-Ym-r23" secondAttribute="bottom" constant="8" id="WZb-zJ-2fa"/>
+                            <constraint firstItem="08G-6s-W39" firstAttribute="top" secondItem="cYn-Ym-r23" secondAttribute="bottom" constant="8" id="WZb-zJ-2fa">
+                                <variation key="widthClass=compact" constant="5"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="1"/>
+                            </constraint>
                             <constraint firstItem="wd0-3a-akg" firstAttribute="leading" secondItem="kv4-qx-mg4" secondAttribute="leading" id="Wr5-d4-BQI"/>
                             <constraint firstItem="kv4-qx-mg4" firstAttribute="leading" secondItem="KwV-VD-9aS" secondAttribute="leading" id="XGF-rP-BC3"/>
                             <constraint firstItem="cYn-Ym-r23" firstAttribute="centerX" secondItem="L12-Xm-5vg" secondAttribute="centerX" id="Yd1-xR-7WZ"/>
@@ -1235,7 +1265,10 @@
                             <constraint firstItem="dfX-Mm-Nec" firstAttribute="trailing" secondItem="V9L-jC-wkD" secondAttribute="trailing" id="o6K-c7-zey"/>
                             <constraint firstItem="L12-Xm-5vg" firstAttribute="trailing" secondItem="V9L-jC-wkD" secondAttribute="trailing" id="suT-52-iCy"/>
                             <constraint firstItem="M0i-j3-Vlx" firstAttribute="leading" secondItem="UfT-Oc-bY8" secondAttribute="trailing" constant="8" id="ukm-p4-ZZw"/>
-                            <constraint firstItem="cYn-Ym-r23" firstAttribute="top" secondItem="L12-Xm-5vg" secondAttribute="bottom" constant="-4" id="x08-MO-2KU"/>
+                            <constraint firstItem="cYn-Ym-r23" firstAttribute="top" secondItem="L12-Xm-5vg" secondAttribute="bottom" constant="-4" id="x08-MO-2KU">
+                                <variation key="widthClass=compact" constant="5"/>
+                                <variation key="heightClass=regular-widthClass=regular" constant="1"/>
+                            </constraint>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -1252,6 +1285,7 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Exchange" image="exchange.png" id="b2j-M3-2rO"/>
                     <connections>
+                        <outlet property="convertButton" destination="cYn-Ym-r23" id="6Ag-xH-fgC"/>
                         <outlet property="pointsConversion" destination="UfT-Oc-bY8" id="LnA-8d-hRH"/>
                         <outlet property="pointsCurency" destination="dla-3C-KUC" id="Yjz-wR-hfn"/>
                         <outlet property="slider" destination="L12-Xm-5vg" id="RCI-L7-yzO"/>
@@ -1261,7 +1295,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Qz-pm-rps" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="999" y="973"/>
+            <point key="canvasLocation" x="999" y="972"/>
         </scene>
         <!--Sign In View Controller-->
         <scene sceneID="GSt-Dc-uGQ">

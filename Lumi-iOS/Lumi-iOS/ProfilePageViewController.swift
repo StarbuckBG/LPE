@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ProfilePageViewController: UIPageViewController {
+@objc class ProfilePageViewController: UIPageViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()

@@ -2,9 +2,11 @@ source 'https://github.com/CocoaPods/Specs.git'
 platform :ios, "8.0"
 use_frameworks!
 target 'Lumi-iOS' do
-pod "SAConfettiView"
-pod "BButton"
-pod 'SCLAlertView'
-pod 'Firebase'
-
+    pod "SAConfettiView"
+    pod "BButton"
+    pod 'SCLAlertView'
+    pod 'Firebase'
+    pod 'Firebase/Crash'
+    pod 'SCLAlertView-Objective-C'
+    
 end

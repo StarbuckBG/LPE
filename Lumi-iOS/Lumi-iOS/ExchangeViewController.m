@@ -9,8 +9,12 @@
 #import "ExchangeViewController.h"
 #import "DatabaseIntegration.h"
 #import "UIColor+Lumi.h"
+#import "BButton/BButton.h"
+#import "SCLAlertView_Objective_C/SCLAlertView.h"
+#import "SAConfettiView-Swift.h"
 
 @interface ExchangeViewController ()
+@property (weak, nonatomic) IBOutlet BButton *convertButton;
 
 @end
 
@@ -32,6 +36,11 @@ NSNumber * changeRate;
     changeRate = [NSNumber numberWithInteger:0];
     username.text = [[[DatabaseIntegration sharedInstance] userdata] objectForKey:@"username"];
     pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)(slider.value/10000 * pointsValue)];
+    
+    self.convertButton.buttonCornerRadius = @(4.0f);
+    [self.convertButton setType: BButtonTypePurple];
+    //[self.convertButton setStyle:BButtonStyleBootstrapV2];
+    [self.convertButton setColor:[UIColor LumiPinkColor]];
     
     
 }
@@ -89,18 +98,23 @@ NSNumber * changeRate;
     }
     
     
+    SCLAlertView * alertView = [[SCLAlertView alloc] init];
+    //alertView.view = [[SAConfettiView alloc]initWithFrame:alertView.view.frame];
+    [alertView showSuccess:self title:@"Yayyy" subTitle:[NSString stringWithFormat: @"You just converted %@ points", pointsConversion.text] closeButtonTitle:@"Ok" duration:0.0f];
     
-    NSString* string = [NSString stringWithFormat:@"You just converted %@ points", pointsConversion.text];
-    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Announcement"
-                                                                   message:string
-                                                            preferredStyle:UIAlertControllerStyleAlert];
-    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
-                                                            style:UIAlertActionStyleDefault
-                                                          handler:^(UIAlertAction * action) {
-                                                              NSLog(@"You pressed button OK");
-                                                          }];
-    [alert addAction:defaultAction];
-    [self presentViewController:alert animated:YES completion:nil];
+    
+    
+//    NSString* string = [NSString stringWithFormat:];
+//    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Announcement"
+//                                                                   message:string
+//                                                            preferredStyle:UIAlertControllerStyleAlert];
+//    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+//                                                            style:UIAlertActionStyleDefault
+//                                                          handler:^(UIAlertAction * action) {
+//                                                              NSLog(@"You pressed button OK");
+//                                                          }];
+//    [alert addAction:defaultAction];
+//    [self presentViewController:alert animated:YES completion:nil];
     slider.value = 0;
     pointsConversion.text = [NSString stringWithFormat:@"0"];
     pointsCurency.text = [NSString stringWithFormat:@"0"];
