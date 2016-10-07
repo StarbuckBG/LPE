@@ -27,6 +27,7 @@ class ProfileViewController: UIViewController {
     
     override func viewWillAppear(animated: Bool) {
         DatabaseIntegration.sharedInstance().updateUserData()
+        self.profileTableView.reloadData()
         self.navigationController!.topViewController!.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Logout",
                                                                                                                style:.Plain,
                                                                                                                target: self,

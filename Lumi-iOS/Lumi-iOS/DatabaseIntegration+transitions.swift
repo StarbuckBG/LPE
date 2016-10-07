@@ -32,10 +32,10 @@ extension DatabaseIntegration {
     {
         if timeOfPlayDictionary != nil
         {
-        return String(format:"%s:%s:%s",
-                      timeOfPlayDictionary["hours"] as! String,
-                      timeOfPlayDictionary["minutes"] as! String,
-                      timeOfPlayDictionary["seconds"] as! String)
+        return String(format:"%02d:%02d:%02d",
+                      Int(timeOfPlayDictionary["hours"] as! String)!,
+                      Int(timeOfPlayDictionary["minutes"] as! String)!,
+                      Int(timeOfPlayDictionary["seconds"] as! String)!)
         }
         return "Loading..."
     }

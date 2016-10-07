@@ -20,11 +20,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lumi-iOS/ProfileViewController.swift"
-            timestampString = "495302862.115363"
+            timestampString = "497525557.082608"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
+            startingLineNumber = "58"
+            endingLineNumber = "58"
             landmarkName = "logout(_:)"
             landmarkType = "5">
          </BreakpointContent>

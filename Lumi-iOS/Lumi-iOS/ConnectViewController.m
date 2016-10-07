@@ -72,7 +72,14 @@
 
 - (void) viewDidDisappear:(BOOL)animated
 {
-    [self switchToDisconnected];
+    for (CBPeripheral * aPeripheral in deviceList)
+    {
+        if([aPeripheral.name isEqualToString:nameOfDeviceToConnect])
+        {
+            [self.centralManager cancelPeripheralConnection:aPeripheral];
+            break;
+        }
+    }
 }
 
 - (void) incrementPoints: (NSInteger) value

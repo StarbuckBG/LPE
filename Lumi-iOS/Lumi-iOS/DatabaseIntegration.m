@@ -78,7 +78,7 @@
             {
                 self.userdata = [responseArray objectAtIndex:0];
                 [[NSNotificationCenter defaultCenter] postNotificationName:USERDATA_UPDATED object:self];
-                [self updateUserLogs];
+                [self updateAllData];
             }
         }
         else {

@@ -40,7 +40,6 @@
     
     self.centerBubbleView.innerColor = [BubbleStyleKit blueInner];
     self.centerBubbleView.outerColor = [BubbleStyleKit blueOuter];
-    self.centerBubbleView.text = @"Loading";
     
     self.bottomLeftBubbleView.innerColor = [BubbleStyleKit redInner];
     self.bottomLeftBubbleView.outerColor = [BubbleStyleKit redOuter];
@@ -64,10 +63,15 @@
         self.bottomRightBubbleView.alpha = 0;
         self.topRightBubbleView.alpha = 0;
     }
+    NSString * centerBubbleViewText = [database.userdata objectForKey:@"points_balance"];
+    if(centerBubbleViewText == nil) centerBubbleViewText = @"Loading";
+    self.centerBubbleView.text = centerBubbleViewText;
 }
 
 - (void) viewDidAppear:(BOOL)animated
 {
+    [self.centerBubbleView setNeedsDisplay];
+    
     if([[UIScreen mainScreen] bounds].size.width <= 320)
     {
         CGRect topLeftSmall = self.topLeftBubbleView.frame;
