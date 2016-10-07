@@ -11,6 +11,10 @@
 #import "LocalDataIntegration.h"
 #import "Reachability.h"
 #import "RDInternetData.h"
+#import "UIViewController+Alerts.h"
+
+@import FirebaseAuth;
+
 
 @interface LoginViewController ()
 {
@@ -98,8 +102,69 @@
     [self login];
 }
 -(void)login {
-    DatabaseIntegration *database = [DatabaseIntegration sharedInstance];
-    [database loginWithUsername:self.Username.text andPassword:self.Password.text];
+    
+    [self performSelectorOnMainThread:@selector(showSpinner:) withObject:nil waitUntilDone:YES];
+    [[DatabaseIntegration sharedInstance] checkEmailForUser:self.Username.text completion:^(NSString *email) {
+        if(email == nil)
+        {
+            [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
+            [self notSuccessefull];
+            return;
+        }
+        
+        [[FIRAuth auth] signInWithEmail:email
+                               password:self.Password.text
+                             completion:^(FIRUser *user, NSError *error) {
+                                 
+                                 if (error) {
+                                     [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
+                                     if(error.code == FIRAuthErrorCodeUserNotFound)
+                                     {
+                                         [self notSuccessefull];
+                                     }
+                                     else if(error.code == FIRAuthErrorCodeWrongPassword)
+                                     {
+                                         [self notSuccessefull];
+                                     }
+                                     
+                                     return;
+                                 }
+                                 DatabaseIntegration *database = [DatabaseIntegration sharedInstance];
+                                 [database loginWithUsername:self.Username.text andPassword:user.uid];
+                                 [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
+                             }];
+         }];
+    
+}
+- (IBAction)forgetYourPasswordTouched:(UIButton *)sender {
+    [self
+     showTextInputPromptWithMessage:@"Email:"
+     completionBlock:^(BOOL userPressedOK, NSString *_Nullable userInput) {
+         if (!userPressedOK || !userInput.length) {
+             return;
+         }
+         
+         [self showSpinner:^{
+             // [START password_reset]
+             [[FIRAuth auth]
+              sendPasswordResetWithEmail:userInput
+              completion:^(NSError *_Nullable error) {
+                  // [START_EXCLUDE]
+                  [self hideSpinner:^{
+                      if (error) {
+                          [self
+                           showMessagePrompt:error
+                           .localizedDescription];
+                          return;
+                      }
+                      
+                      [self showMessagePrompt:@"Check your email"];
+                  }];
+                  // [END_EXCLUDE]
+              }];
+             // [END password_reset]
+         }];
+     }];
 }
 
 -(void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
@@ -117,7 +182,7 @@
     } else if (textField == self.Password) {
         [self.Password resignFirstResponder];
         [self login];
-    }    
+    }
     return NO;
 }
 

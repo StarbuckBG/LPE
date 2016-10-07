@@ -30,12 +30,19 @@ extension DatabaseIntegration {
     
     func getHoursOfPlay() -> String?
     {
-        if timeOfPlayDictionary != nil
+        if (timeOfPlayDictionary != nil && timeOfPlayDictionary["hours"] != nil  && timeOfPlayDictionary["minutes"] != nil && timeOfPlayDictionary["seconds"] != nil)
         {
+            if let hours = timeOfPlayDictionary["hours"] as? String, let minutes = timeOfPlayDictionary["minutes"] as? String, let seconds = timeOfPlayDictionary["seconds"] as? String
+            {
         return String(format:"%02d:%02d:%02d",
-                      Int(timeOfPlayDictionary["hours"] as! String)!,
-                      Int(timeOfPlayDictionary["minutes"] as! String)!,
-                      Int(timeOfPlayDictionary["seconds"] as! String)!)
+                      Int(hours)!,
+                      Int(minutes)!,
+                      Int(seconds)!)
+            }
+            else
+            {
+                return "00:00:00"
+            }
         }
         return "Loading..."
     }
@@ -44,7 +51,12 @@ extension DatabaseIntegration {
     {
         if weekUserdata != nil
         {
-            return weekUserdata["points"] as? String
+            if let points = weekUserdata["points"] as? String
+            {
+                return points 
+            }
+           return "0"
+            
         }
         
         return "Loading..."

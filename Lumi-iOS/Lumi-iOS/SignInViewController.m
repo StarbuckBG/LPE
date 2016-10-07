@@ -10,6 +10,9 @@
 #import "DatabaseIntegration.h"
 #import "LocalDataIntegration.h"
 #import "RGTextField.h"
+#import "UIViewController+Alerts.h"
+
+@import FirebaseAuth;
 
 @interface SignInViewController ()
 
@@ -71,6 +74,7 @@
                                                           }];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
+    
 }
 
 -(void) userNameNotFree {
@@ -80,7 +84,6 @@
     UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
                                                             style:UIAlertActionStyleDefault
                                                           handler:^(UIAlertAction * action) {
-                                                              NSLog(@"You pressed button OK");
                                                           }];
     [alert addAction:defaultAction];
     [self presentViewController:alert animated:YES completion:nil];
@@ -88,6 +91,7 @@
 - (IBAction)cancelButtonToLogin:(id)sender {
     [self performSegueWithIdentifier:@"goToLogIn" sender:nil];
 }
+
 - (IBAction)registerButton:(UIButton *)sender {
     if([self.Password.text isEqualToString:self.PasswordAgain.text] == false)
     {
@@ -130,13 +134,73 @@
     }
     else
     {
-        DatabaseIntegration *database = [[DatabaseIntegration alloc]init];
-        [database registerUserWithUsername:self.Username.text andPassword:self.Password.text andEmail:self.Email.text];
-        [[NSUserDefaults standardUserDefaults] setObject:self.Username.text forKey:@"usernameToLoadAfterRegistration"];
-        [[NSUserDefaults standardUserDefaults] setObject:self.Password.text forKey:@"passwordToLoadAfterRegistration"];
-        [self performSegueWithIdentifier:@"goToLogIn" sender:nil];
+        DatabaseIntegration *database = [DatabaseIntegration sharedInstance];
+        [self performSelectorOnMainThread:@selector(showSpinner:) withObject:nil waitUntilDone:YES];
+        [database checkUsernameAvailable:self.Username.text completion:^(BOOL available) {
+            if(!available)
+            {
+                [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
+                dispatch_async(dispatch_get_main_queue(), ^{
+                [self userNameNotFree];
+                });
+            }
+            else
+            {
+                [[FIRAuth auth]
+                 createUserWithEmail:self.Email.text
+                 password:self.Password.text
+                 completion:^(FIRUser *_Nullable user,
+                              NSError *_Nullable error)
+                 {
+                     if(error)
+                     {
+                         [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
+                         if(error.code == FIRAuthErrorCodeEmailAlreadyInUse)
+                         {
+                             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Registration unsuccessful"
+                                                                                            message:@"Email is already registred"
+                                                                                     preferredStyle:UIAlertControllerStyleAlert];
+                             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                                     style:UIAlertActionStyleDefault
+                                                                                   handler:^(UIAlertAction * action) {
+                                                                                       NSLog(@"You pressed button OK");
+                                                                                   }];
+                             [alert addAction:defaultAction];
+                             [self presentViewController:alert animated:YES completion:nil];
+                             return;
+                         }
+                     }
+                     [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
+                     NSString * userToken = user.uid;
+                     [database registerUserWithUsername:self.Username.text andPassword:userToken andEmail:self.Email.text];
+                     [[NSUserDefaults standardUserDefaults] setObject:self.Username.text forKey:@"usernameToLoadAfterRegistration"];
+                     [[NSUserDefaults standardUserDefaults] setObject:self.Password.text forKey:@"passwordToLoadAfterRegistration"];
+                     [self performSegueWithIdentifier:@"goToLogIn" sender:nil];
+                     
+                 }];
+                
+            }
+        }];
+        
+        
+        
         
     }
     
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

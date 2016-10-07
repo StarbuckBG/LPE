@@ -44,6 +44,10 @@
 
 +(instancetype)sharedInstance;
 
+- (void) checkUsernameAvailable: (NSString *) username completion: (void(^) (BOOL available)) completionHandler;
+- (void) checkEmailForUser: (NSString *) username completion: (void(^) (NSString * email)) completionHandler;
+
+
 - (void) updateUserData;
 - (void) loginWithUsername: (NSString *) username andPassword: (NSString *) password;
 - (void) registerUserWithUsername: (NSString *) username andPassword: (NSString *) password andEmail: (NSString *) email;

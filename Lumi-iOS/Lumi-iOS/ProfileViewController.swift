@@ -81,7 +81,7 @@ extension ProfileViewController: UITableViewDataSource
             cell.detailTextLabel!.text = databaseIntegration.userdata.objectForKey("username") as? String
             break;
         case 1:
-            cell.textLabel!.text = "All points"
+            cell.textLabel!.text = "Current points"
             cell.detailTextLabel!.text = databaseIntegration.userdata.objectForKey("points_balance") as? String
             break;
         case 2:
@@ -91,7 +91,7 @@ extension ProfileViewController: UITableViewDataSource
         case 3:
             cell.textLabel!.text = "Position"
             let position = databaseIntegration.getUserPosition()
-            cell.detailTextLabel!.text =  position != 0 ? String("\(position)") : "Loading..."
+            cell.detailTextLabel!.text =  position != 0 ? String("\(position)") : "Not available"
             break;
         case 4:
             cell.textLabel!.text = "Hours of play"

@@ -16,7 +16,7 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
     override func viewDidLoad() {
         super.viewDidLoad()
         self.versionLabel.text = "Version \(UIApplication.appVersion()) (\(UIApplication.build()))"
-        self.navigationController?.navigationItem.backBarButtonItem?.title = ""
+        self.navigationController!.navigationBar.topItem!.title = "Back"
     }
     
     override func didReceiveMemoryWarning() {

@@ -11,6 +11,7 @@
 		105F40FC1D775C8200852EDC /* locationPin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F40FA1D775C8200852EDC /* locationPin@2x.png */; };
 		105F40FD1D775C8200852EDC /* locationPin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F40FB1D775C8200852EDC /* locationPin@3x.png */; };
 		106AB8151D6FECE900C03C35 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106AB8141D6FECE900C03C35 /* TabBarViewController.m */; };
+		1089D40D1DA8373D00591DFB /* UIViewController+Alerts.m in Sources */ = {isa = PBXBuildFile; fileRef = 1089D40C1DA8373D00591DFB /* UIViewController+Alerts.m */; };
 		10D4588C1DA15CE0000DC62A /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 10D4588B1DA15CE0000DC62A /* GoogleService-Info.plist */; };
 		10EACB4B1D85CF1400F9B24F /* InfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10EACB4A1D85CF1400F9B24F /* InfoViewController.swift */; };
 		10EACB4D1D85D09300F9B24F /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 10EACB4C1D85D09300F9B24F /* MessageUI.framework */; };
@@ -83,6 +84,8 @@
 		105F40FB1D775C8200852EDC /* locationPin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locationPin@3x.png"; sourceTree = "<group>"; };
 		106AB8131D6FECE900C03C35 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
 		106AB8141D6FECE900C03C35 /* TabBarViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TabBarViewController.m; sourceTree = "<group>"; };
+		1089D40B1DA8373D00591DFB /* UIViewController+Alerts.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+Alerts.h"; sourceTree = "<group>"; };
+		1089D40C1DA8373D00591DFB /* UIViewController+Alerts.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+Alerts.m"; sourceTree = "<group>"; };
 		10D4588B1DA15CE0000DC62A /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		10EACB4A1D85CF1400F9B24F /* InfoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InfoViewController.swift; path = ../InfoViewController.swift; sourceTree = "<group>"; };
 		10EACB4C1D85D09300F9B24F /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -381,6 +384,8 @@
 		D309DD511D5896A70064C70F /* Other Libralies */ = {
 			isa = PBXGroup;
 			children = (
+				1089D40B1DA8373D00591DFB /* UIViewController+Alerts.h */,
+				1089D40C1DA8373D00591DFB /* UIViewController+Alerts.m */,
 				D309DD531D5896CF0064C70F /* Reachability.m */,
 				D309DD521D5896CF0064C70F /* Reachability.h */,
 			);
@@ -565,6 +570,7 @@
 				10EACB4B1D85CF1400F9B24F /* InfoViewController.swift in Sources */,
 				D34F0C2F1D1796F4003EFA6E /* RGTextField.m in Sources */,
 				19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */,
+				1089D40D1DA8373D00591DFB /* UIViewController+Alerts.m in Sources */,
 				103BCA7D1DA5883B0070AB07 /* DatabaseIntegration+transitions.swift in Sources */,
 				D34F0C3D1D17996C003EFA6E /* AMPopTip+Animation.m in Sources */,
 				19292E8B1CEB8384007B5B05 /* main.m in Sources */,

@@ -93,6 +93,93 @@
     
 }
 
+- (void) checkUsernameAvailable: (NSString *) username completion: (void(^) (BOOL available)) completionHandler
+{
+    NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    /* Create session, and optionally set a NSURLSessionDelegate. */
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+    
+    /* Create the Request:
+     getUserData (GET https://rapiddevcrew.com/lumi_v2/getUserData/)
+     */
+    
+    NSURL* URL = [NSURL URLWithString:@"https://rapiddevcrew.com/lumi_v2/getUserData/"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"GET";
+    
+    // Headers
+    
+    [request addValue:[NSString stringWithFormat:@"{\"username\":\"%@\"}", username] forHTTPHeaderField:@"Data"];
+    
+    
+    __block NSMutableArray * responseArray = [[NSMutableArray alloc] init];
+    /* Start a new Task */
+    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            // Success
+            responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
+            if(responseArray.count == 0)
+            {
+                completionHandler(YES);
+            }
+            else
+            {
+
+                completionHandler(NO);
+            }
+        }
+        else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:CONNECTION_PROBLEMS object:self];
+        }
+    }];
+    [task resume];
+
+}
+
+- (void) checkEmailForUser: (NSString *) username completion: (void(^) (NSString * email)) completionHandler
+{
+    NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    /* Create session, and optionally set a NSURLSessionDelegate. */
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+    
+    /* Create the Request:
+     getUserData (GET https://rapiddevcrew.com/lumi_v2/getUserData/)
+     */
+    
+    NSURL* URL = [NSURL URLWithString:@"https://rapiddevcrew.com/lumi_v2/getUserData/"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"GET";
+    
+    // Headers
+    
+    [request addValue:[NSString stringWithFormat:@"{\"username\":\"%@\"}", username] forHTTPHeaderField:@"Data"];
+    
+    
+    __block NSMutableArray * responseArray = [[NSMutableArray alloc] init];
+    /* Start a new Task */
+    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            // Success
+            responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
+            if(responseArray.count == 0)
+            {
+                completionHandler(nil);
+            }
+            else
+            {
+                completionHandler([[responseArray objectAtIndex:0] objectForKey:@"email"]);
+            }
+        }
+        else {
+            [[NSNotificationCenter defaultCenter] postNotificationName:CONNECTION_PROBLEMS object:self];
+        }
+    }];
+    [task resume];
+    
+}
+
 - (void) loginWithUsername: (NSString *) username andPassword: (NSString *) password
 {
     LocalDataIntegration * data;
