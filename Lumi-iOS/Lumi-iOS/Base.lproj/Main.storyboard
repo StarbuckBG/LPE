@@ -649,11 +649,12 @@
             </objects>
             <point key="canvasLocation" x="-924" y="15"/>
         </scene>
-        <!--Playground energy-->
+        <!--Playground Energy-->
         <scene sceneID="yl2-sM-qoP">
             <objects>
                 <tabBarController id="49e-Tb-3d3" customClass="TabBarViewController" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" title="Playground energy" id="DMU-HO-blq">
+                    <navigationItem key="navigationItem" title="Playground Energy" id="DMU-HO-blq">
+                        <barButtonItem key="backBarButtonItem" title="Back" id="cRr-pa-Eb2"/>
                         <barButtonItem key="leftBarButtonItem" style="plain" systemItem="reply" id="I8k-yK-P1R"/>
                     </navigationItem>
                     <nil key="simulatedBottomBarMetrics"/>
@@ -899,7 +900,7 @@
                         <viewControllerLayoutGuide type="bottom" id="bek-xs-bSv"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="jDi-Vc-eqg">
-                        <rect key="frame" x="0.0" y="64" width="600" height="487"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="DBu-B5-Tph">
@@ -1763,9 +1764,9 @@ So lets play!</string>
         <image name="profile.png" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="VBW-jh-bbL"/>
-        <segue reference="CV7-kQ-L6t"/>
         <segue reference="vmO-O7-MdM"/>
+        <segue reference="kq6-kU-Bjm"/>
+        <segue reference="zNE-Zu-HVB"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" red="1" green="0.0" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
 </document>
