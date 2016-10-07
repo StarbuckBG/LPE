@@ -9,7 +9,7 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
     @IBOutlet weak var profileTableView: UITableView!
     
     override func viewDidLoad() {
@@ -19,7 +19,7 @@ class ProfileViewController: UIViewController {
                                                          name: USERDATA_UPDATED, object: nil)
         // Do any additional setup after loading the view.
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -28,9 +28,9 @@ class ProfileViewController: UIViewController {
     override func viewWillAppear(animated: Bool) {
         DatabaseIntegration.sharedInstance().updateUserData()
         self.navigationController!.topViewController!.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Logout",
-                                                                      style:.Plain,
-                                                                      target: self,
-                                                                      action: #selector(logout(_:)))
+                                                                                                               style:.Plain,
+                                                                                                               target: self,
+                                                                                                               action: #selector(logout(_:)))
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -56,17 +56,17 @@ class ProfileViewController: UIViewController {
             }
         }
     }
-
+    
     /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+     // Get the new view controller using segue.destinationViewController.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
 
 extension ProfileViewController: UITableViewDataSource
@@ -85,15 +85,16 @@ extension ProfileViewController: UITableViewDataSource
             break;
         case 2:
             cell.textLabel!.text = "Points from last week"
-            cell.detailTextLabel!.text = databaseIntegration.userdata.objectForKey("points_balance") as? String
+            cell.detailTextLabel!.text = databaseIntegration.getPointsForLastWeek()
             break;
         case 3:
             cell.textLabel!.text = "Position"
-            cell.detailTextLabel!.text = "2"
+            let position = databaseIntegration.getUserPosition()
+            cell.detailTextLabel!.text =  position != 0 ? String("\(position)") : "Loading..."
             break;
         case 4:
             cell.textLabel!.text = "Hours of play"
-            cell.detailTextLabel!.text = "4:12:08"
+            cell.detailTextLabel!.text = databaseIntegration.getHoursOfPlay()
             break;
         default:
             break;

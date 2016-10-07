@@ -28,13 +28,19 @@
 #define PLAYGROUNDS_DATA_UPDATED @"PlaygroundDataUpdatd"
 #define APPLICANCES_DATA_UPDATED @"AppliancesDataUpdated"
 
-
+#define CHART_UPDATED @"ChartUpdated"
+#define WEEKDATA_UPDATED @"WeekDataUpdated"
 
 @property (nonatomic, strong) __block NSMutableDictionary * userdata;
 @property (nonatomic, strong) __block NSMutableArray * logs;
 @property (nonatomic, strong) __block NSMutableArray * playgrounds;
 @property (nonatomic, strong) __block NSMutableArray * appliances;
 @property (nonatomic, strong) __block NSMutableArray * companies;
+
+@property (strong, nonatomic) __block NSMutableDictionary * weekUserdata;
+@property (strong, nonatomic) __block NSMutableArray * chart;
+@property (strong, nonatomic) __block NSMutableDictionary * timeOfPlayDictionary;
+
 
 +(instancetype)sharedInstance;
 
@@ -51,6 +57,9 @@
 - (void) updateCompaniesAndRates;
 - (void) updateAllData;
 
+- (void) updateWeekDataForUser: (NSString *) username;
+- (void) updateChart;
+- (void) updateTimeOfPlayForUser: (NSString *) username;
 
 
 

@@ -36,6 +36,9 @@
     [self updatePlaygrounds];
     [self updateCompaniesAndRates];
     [self updateUserLogs];
+    [self updateChart];
+    [self updateWeekDataForUser: [self.userdata valueForKey:@"id"]];
+    [self updateTimeOfPlayForUser:[self.userdata valueForKey:@"id"]];
 }
 
 - (void) updatePointsData
@@ -405,4 +408,108 @@
 
 }
 
+
+- (void) updateChart
+{
+    NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+    
+    /* Create the Request:
+     Get result for all users (GET https://rapiddevcrew.com/lumi_v2/getUserChart/)
+     */
+    
+    NSURL* URL = [NSURL URLWithString:@"https://rapiddevcrew.com/lumi_v2/getUserChart/"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"GET";
+    
+    /* Start a new Task */
+    __block NSMutableArray * responseArray = [[NSMutableArray alloc] init];
+    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            // Success
+             responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
+            self.chart = responseArray;
+            
+            [[NSNotificationCenter defaultCenter] postNotificationName:CHART_UPDATED object:nil];
+        }
+        else {
+            // Failure
+            [[NSNotificationCenter defaultCenter] postNotificationName:CONNECTION_PROBLEMS object:nil];
+        }
+    }];
+    [task resume];
+    [session finishTasksAndInvalidate];
+
+}
+
+- (void) updateWeekDataForUser: (NSString *) username
+{
+    NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    /* Create session, and optionally set a NSURLSessionDelegate. */
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+    
+    /* Create the Request:
+     Get logs for user for week (GET https://rapiddevcrew.com/lumi_v2/getUserChartForWeek/)
+     */
+    
+    NSURL* URL = [NSURL URLWithString:@"https://rapiddevcrew.com/lumi_v2/getUserChartForWeek/"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"GET";
+    
+    [request addValue:[NSString stringWithFormat:@"{\"user_id\":\"%@\"}", username] forHTTPHeaderField:@"Data"];
+    
+    /* Start a new Task */
+    __block NSMutableArray * responseArray = [[NSMutableArray alloc] init];
+    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            // Success
+            responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
+            self.weekUserdata = [responseArray objectAtIndex:0];
+            [[NSNotificationCenter defaultCenter] postNotificationName:WEEKDATA_UPDATED object:nil];
+        }
+        else {
+            // Failure
+            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+        }
+    }];
+    [task resume];
+    [session finishTasksAndInvalidate];
+}
+
+- (void) updateTimeOfPlayForUser: (NSString *) username
+{
+    NSURLSessionConfiguration* sessionConfig = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    /* Create session, and optionally set a NSURLSessionDelegate. */
+    NSURLSession* session = [NSURLSession sessionWithConfiguration:sessionConfig delegate:nil delegateQueue:nil];
+    
+    /* Create the Request:
+     Get logs for user for week (GET https://rapiddevcrew.com/lumi_v2/getTimeOfPlayForUser/)
+     */
+    
+    NSURL* URL = [NSURL URLWithString:@"https://rapiddevcrew.com/lumi_v2/getTimeOfPlayForUser/"];
+    NSMutableURLRequest* request = [NSMutableURLRequest requestWithURL:URL];
+    request.HTTPMethod = @"GET";
+    
+    [request addValue:[NSString stringWithFormat:@"{\"user_id\":\"%@\"}", username] forHTTPHeaderField:@"Data"];
+    
+    /* Start a new Task */
+    __block NSMutableArray * responseArray = [[NSMutableArray alloc] init];
+    NSURLSessionDataTask* task = [session dataTaskWithRequest:request completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error == nil) {
+            // Success
+            responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
+            self.timeOfPlayDictionary = [responseArray objectAtIndex:0];
+            [[NSNotificationCenter defaultCenter] postNotificationName:WEEKDATA_UPDATED object:nil];
+        }
+        else {
+            // Failure
+            NSLog(@"URL Session Task Failed: %@", [error localizedDescription]);
+        }
+    }];
+    [task resume];
+    [session finishTasksAndInvalidate];
+}
 @end

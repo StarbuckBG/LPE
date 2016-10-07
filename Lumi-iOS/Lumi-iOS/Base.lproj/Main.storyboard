@@ -91,8 +91,7 @@
                                         <include reference="xg1-nH-UOO"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="349" y="93" width="140" height="140"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="yLK-JG-3Nt"/>
                                     </mask>
@@ -132,8 +131,7 @@
                                         <include reference="wn9-4C-utR"/>
                                     </mask>
                                 </variation>
-                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
-                                    <rect key="frame" x="74" y="80" width="140" height="140"/>
+                                <variation key="heightClass=regular-widthClass=regular">
                                     <mask key="constraints">
                                         <include reference="Pzz-1y-lK7"/>
                                     </mask>
@@ -686,7 +684,7 @@
         <!--Profile-->
         <scene sceneID="nYW-95-v0B">
             <objects>
-                <pageViewController storyboardIdentifier="ProfilePageViewControler" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="AqL-ae-i7C" customClass="ProfilePageViewController" customModule="Lumi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <pageViewController storyboardIdentifier="ProfilePageViewControler" autoresizesArchivedViewToFullSize="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="AqL-ae-i7C" customClass="ProfilePageViewController" customModule="Playground_Energy" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profile.png" id="5PP-pH-3eT"/>
                 </pageViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X9k-6x-00S" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -696,7 +694,7 @@
         <!--Profile View Controller-->
         <scene sceneID="FMW-N3-fqZ">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7FZ-2g-Q8H" customClass="ProfileViewController" customModule="Lumi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="7FZ-2g-Q8H" customClass="ProfileViewController" customModule="Playground_Energy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="iVF-IA-RGw"/>
                         <viewControllerLayoutGuide type="bottom" id="yqL-S0-1yg"/>
@@ -841,7 +839,7 @@
         <!--Logs Table View Controller-->
         <scene sceneID="Vau-o6-h4I">
             <objects>
-                <tableViewController storyboardIdentifier="LogsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8H3-dM-Rb0" customClass="LogsTableViewController" customModule="Lumi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="LogsTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="8H3-dM-Rb0" customClass="LogsTableViewController" customModule="Playground_Energy" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tjb-qe-9PD">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1219,6 +1217,9 @@
                                 </state>
                                 <variation key="widthClass=compact" misplaced="YES">
                                     <rect key="frame" x="163" y="567" width="74" height="28"/>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular" misplaced="YES">
+                                    <rect key="frame" x="263" y="567" width="74" height="32"/>
                                 </variation>
                                 <connections>
                                     <action selector="convertButton:" destination="mEt-Rk-615" eventType="touchUpInside" id="oHe-OW-34H"/>
@@ -1651,7 +1652,7 @@
         <!--Terms Of Use View Controller-->
         <scene sceneID="zyV-Sb-1b3">
             <objects>
-                <viewController id="s90-H9-cnf" customClass="termsOfUseViewController" customModule="Lumi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="s90-H9-cnf" customClass="termsOfUseViewController" customModule="Playground_Energy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="yjw-eC-0ah"/>
                         <viewControllerLayoutGuide type="bottom" id="mqC-2u-PtG"/>
@@ -1684,7 +1685,7 @@
         <!--About-->
         <scene sceneID="o5g-Ew-iA5">
             <objects>
-                <viewController id="vEn-9a-MSJ" customClass="InfoViewController" customModule="Lumi_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="vEn-9a-MSJ" customClass="InfoViewController" customModule="Playground_Energy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qDE-cT-Po5"/>
                         <viewControllerLayoutGuide type="bottom" id="DVP-Oe-DbI"/>
@@ -1720,6 +1721,39 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="7UQ-Yf-Tep">
+                                <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="169" id="nJ1-f2-aRh"/>
+                                    <constraint firstAttribute="height" constant="86" id="zbF-Af-hcN">
+                                        <variation key="heightClass=regular-widthClass=regular" constant="137"/>
+                                    </constraint>
+                                </constraints>
+                                <string key="text">Playground Energy is dedicated one goal - the motivate kids to play more.
+We are doing it by transforming kids energy in to electricity and using it in order to entertain them. 
+This mobile app is helping kids to collect “LUMI” points when they play on our playground equipment, and to compete and cooperate with other kids in order to achieve surety goals.
+So lets play!</string>
+                                <fontDescription key="fontDescription" type="system" weight="light" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="nJ1-f2-aRh"/>
+                                        <exclude reference="zbF-Af-hcN"/>
+                                    </mask>
+                                </variation>
+                                <variation key="widthClass=compact">
+                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="12"/>
+                                    <mask key="constraints">
+                                        <include reference="nJ1-f2-aRh"/>
+                                    </mask>
+                                </variation>
+                                <variation key="heightClass=regular-widthClass=regular">
+                                    <mask key="constraints">
+                                        <include reference="zbF-Af-hcN"/>
+                                    </mask>
+                                </variation>
+                            </textView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kt8-pN-CnW">
                                 <rect key="frame" x="227" y="420" width="147" height="30"/>
                                 <constraints>
@@ -1736,14 +1770,63 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="Q4J-N5-zu0" firstAttribute="centerX" secondItem="pi7-2A-bpe" secondAttribute="centerX" id="2au-vC-P9z"/>
+                            <constraint firstItem="7UQ-Yf-Tep" firstAttribute="trailing" secondItem="pi7-2A-bpe" secondAttribute="trailingMargin" id="HS6-ho-NRQ"/>
                             <constraint firstItem="Q4J-N5-zu0" firstAttribute="top" secondItem="rpJ-Mp-g8g" secondAttribute="bottom" constant="8" id="Mag-r0-AEd"/>
+                            <constraint firstItem="7UQ-Yf-Tep" firstAttribute="top" secondItem="kt8-pN-CnW" secondAttribute="bottom" constant="17" id="Mre-cJ-zfA"/>
+                            <constraint firstItem="7UQ-Yf-Tep" firstAttribute="leading" secondItem="pi7-2A-bpe" secondAttribute="leadingMargin" id="OD5-BP-foG"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="7UQ-Yf-Tep" secondAttribute="trailing" constant="5" id="V8l-gQ-aV5">
+                                <variation key="heightClass=regular-widthClass=regular" constant="48"/>
+                            </constraint>
+                            <constraint firstItem="7UQ-Yf-Tep" firstAttribute="leading" secondItem="pi7-2A-bpe" secondAttribute="leadingMargin" constant="5" id="W8j-JU-yNi">
+                                <variation key="heightClass=regular-widthClass=regular" constant="49"/>
+                            </constraint>
                             <constraint firstItem="rpJ-Mp-g8g" firstAttribute="centerX" secondItem="pi7-2A-bpe" secondAttribute="centerX" id="YUR-Uh-Dpk"/>
                             <constraint firstItem="nDK-uQ-gEq" firstAttribute="centerX" secondItem="pi7-2A-bpe" secondAttribute="centerX" id="ax5-2A-V9e"/>
-                            <constraint firstItem="kt8-pN-CnW" firstAttribute="top" secondItem="Q4J-N5-zu0" secondAttribute="bottom" constant="29" id="eq5-xq-jjV"/>
+                            <constraint firstItem="kt8-pN-CnW" firstAttribute="top" secondItem="Q4J-N5-zu0" secondAttribute="bottom" constant="29" id="eq5-xq-jjV">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
                             <constraint firstItem="rpJ-Mp-g8g" firstAttribute="top" secondItem="nDK-uQ-gEq" secondAttribute="bottom" constant="8" id="kXH-em-vi6"/>
                             <constraint firstItem="kt8-pN-CnW" firstAttribute="centerX" secondItem="pi7-2A-bpe" secondAttribute="centerX" id="wU0-zW-6xi"/>
-                            <constraint firstItem="nDK-uQ-gEq" firstAttribute="top" secondItem="qDE-cT-Po5" secondAttribute="bottom" constant="80" id="zjn-dz-Ra0"/>
+                            <constraint firstItem="7UQ-Yf-Tep" firstAttribute="top" secondItem="kt8-pN-CnW" secondAttribute="bottom" constant="8" id="y6A-3J-LQZ">
+                                <variation key="widthClass=compact" constant="3"/>
+                            </constraint>
+                            <constraint firstItem="nDK-uQ-gEq" firstAttribute="top" secondItem="qDE-cT-Po5" secondAttribute="bottom" constant="80" id="zjn-dz-Ra0">
+                                <variation key="widthClass=compact" constant="8"/>
+                            </constraint>
                         </constraints>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="7UQ-Yf-Tep"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="HS6-ho-NRQ"/>
+                                <exclude reference="Mre-cJ-zfA"/>
+                                <exclude reference="OD5-BP-foG"/>
+                                <exclude reference="V8l-gQ-aV5"/>
+                                <exclude reference="W8j-JU-yNi"/>
+                                <exclude reference="y6A-3J-LQZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="7UQ-Yf-Tep"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="HS6-ho-NRQ"/>
+                                <include reference="OD5-BP-foG"/>
+                                <include reference="y6A-3J-LQZ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=regular">
+                            <mask key="subviews">
+                                <include reference="7UQ-Yf-Tep"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="Mre-cJ-zfA"/>
+                                <include reference="V8l-gQ-aV5"/>
+                                <include reference="W8j-JU-yNi"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="About" id="D7j-3c-MdU">
                         <barButtonItem key="rightBarButtonItem" title="Contact us" id="krX-15-si2">
@@ -1760,7 +1843,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0Rp-Aq-EKC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-862" y="-995"/>
+            <point key="canvasLocation" x="-862.5" y="-996"/>
         </scene>
     </scenes>
     <resources>

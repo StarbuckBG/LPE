@@ -29,8 +29,8 @@
 @property (weak, nonatomic) IBOutlet BubbleView *bubbleView;
 @property (weak, nonatomic) IBOutlet UITextView *connectionScreenInformationView;
 @property (weak, nonatomic) IBOutlet UIButton *finishButton;
-
-
+@property (strong, nonatomic) NSDate * startDateTime;
+@property (strong, nonatomic) NSDate * endDateTime;
 
 @end
 
@@ -119,6 +119,8 @@
     self.bubbleView.text = [NSString stringWithFormat:@"%ld", (long)currentPoints];
     [self.bubbleView setNeedsDisplay];
     
+    self.startDateTime = [NSDate date];
+    
     [UIView animateWithDuration:2.0f delay:0 options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          self.codeScannerView.alpha = 0;
@@ -140,6 +142,20 @@
 
 - (void) switchToDisconnected
 {
+    self.endDateTime = [NSDate date];
+    NSInteger pointsToPresent = currentPoints/pointsMultiplier;
+    
+    [[DatabaseIntegration sharedInstance] addToLogPoints:[NSString stringWithFormat:@"%d", pointsToPresent]
+                                           onApplianceId:@"1"
+                                           withIntensity:@"5"
+                                                fromTime:self.startDateTime
+                                                  toTime:self.endDateTime];
+    SCLAlertView * alertView = [[SCLAlertView alloc] init];
+    [alertView showSuccess:self title:@"Yayyy" subTitle:[NSString stringWithFormat:@"You have won %d Lumis", pointsToPresent] closeButtonTitle:@"Ok" duration:0.0f];
+    
+    currentPoints = 0;
+    
+    
     [UIView animateWithDuration:2.0f delay:0 options:UIViewAnimationOptionAllowUserInteraction
                      animations:^{
                          self.bubbleView.alpha = 0;
@@ -216,17 +232,6 @@
 - (void) centralManager:(CBCentralManager *)central didDisconnectPeripheral:(CBPeripheral *)peripheral error:(NSError *)error
 {
     [self switchToDisconnected];
-    NSInteger pointsToPresent = currentPoints/pointsMultiplier;
-    
-    [[DatabaseIntegration sharedInstance] addToLogPoints:[NSString stringWithFormat:@"%d", pointsToPresent]
-                                           onApplianceId:@"1"
-                                           withIntensity:@"5"
-                                                fromTime:[NSDate date]
-                                                  toTime:[NSDate date]];
-    SCLAlertView * alertView = [[SCLAlertView alloc] init];
-    [alertView showSuccess:self title:@"Yayyy" subTitle:[NSString stringWithFormat:@"You have won %d Lumis", pointsToPresent] closeButtonTitle:@"Ok" duration:0.0f];
-    
-    currentPoints = 0;
     peripheral.delegate = nil;
 }
 

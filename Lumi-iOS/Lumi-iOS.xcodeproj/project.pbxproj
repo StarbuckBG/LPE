@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		103BCA7D1DA5883B0070AB07 /* DatabaseIntegration+transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103BCA7C1DA5883B0070AB07 /* DatabaseIntegration+transitions.swift */; };
 		105F40FC1D775C8200852EDC /* locationPin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F40FA1D775C8200852EDC /* locationPin@2x.png */; };
 		105F40FD1D775C8200852EDC /* locationPin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F40FB1D775C8200852EDC /* locationPin@3x.png */; };
 		106AB8151D6FECE900C03C35 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106AB8141D6FECE900C03C35 /* TabBarViewController.m */; };
@@ -77,6 +78,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		103BCA7C1DA5883B0070AB07 /* DatabaseIntegration+transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatabaseIntegration+transitions.swift"; sourceTree = "<group>"; };
 		105F40FA1D775C8200852EDC /* locationPin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locationPin@2x.png"; sourceTree = "<group>"; };
 		105F40FB1D775C8200852EDC /* locationPin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locationPin@3x.png"; sourceTree = "<group>"; };
 		106AB8131D6FECE900C03C35 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -88,7 +90,7 @@
 		10EACB501D85F6CF00F9B24F /* UIApplication+RDAppVersion.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIApplication+RDAppVersion.h"; sourceTree = "<group>"; };
 		10EACB511D85F6CF00F9B24F /* UIApplication+RDAppVersion.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIApplication+RDAppVersion.m"; sourceTree = "<group>"; };
 		10EACB531D8682AB00F9B24F /* termsOfUseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = termsOfUseViewController.swift; sourceTree = "<group>"; };
-		19292E861CEB8384007B5B05 /* Lumi-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Lumi-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		19292E861CEB8384007B5B05 /* Playground Energy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Playground Energy.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		19292E8A1CEB8384007B5B05 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		19292E8C1CEB8384007B5B05 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		19292E8D1CEB8384007B5B05 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -217,7 +219,7 @@
 		19292E871CEB8384007B5B05 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				19292E861CEB8384007B5B05 /* Lumi-iOS.app */,
+				19292E861CEB8384007B5B05 /* Playground Energy.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -336,6 +338,7 @@
 				197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */,
 				19AC0C4E1D060429001AA2E1 /* LocalDataIntegration.h */,
 				19AC0C4F1D060429001AA2E1 /* LocalDataIntegration.m */,
+				103BCA7C1DA5883B0070AB07 /* DatabaseIntegration+transitions.swift */,
 			);
 			name = DatabaseLogic;
 			sourceTree = "<group>";
@@ -422,7 +425,7 @@
 			);
 			name = "Lumi-iOS";
 			productName = "Lumi-iOS";
-			productReference = 19292E861CEB8384007B5B05 /* Lumi-iOS.app */;
+			productReference = 19292E861CEB8384007B5B05 /* Playground Energy.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -562,6 +565,7 @@
 				10EACB4B1D85CF1400F9B24F /* InfoViewController.swift in Sources */,
 				D34F0C2F1D1796F4003EFA6E /* RGTextField.m in Sources */,
 				19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */,
+				103BCA7D1DA5883B0070AB07 /* DatabaseIntegration+transitions.swift in Sources */,
 				D34F0C3D1D17996C003EFA6E /* AMPopTip+Animation.m in Sources */,
 				19292E8B1CEB8384007B5B05 /* main.m in Sources */,
 				D34F0C3F1D17996C003EFA6E /* AMPopTip+Entrance.m in Sources */,
