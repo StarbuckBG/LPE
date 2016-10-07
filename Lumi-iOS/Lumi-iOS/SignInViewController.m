@@ -146,6 +146,7 @@
             }
             else
             {
+                [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
                 [[FIRAuth auth]
                  createUserWithEmail:self.Email.text
                  password:self.Password.text
@@ -154,7 +155,6 @@
                  {
                      if(error)
                      {
-                         [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
                          if(error.code == FIRAuthErrorCodeEmailAlreadyInUse)
                          {
                              UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Registration unsuccessful"
@@ -170,7 +170,6 @@
                              return;
                          }
                      }
-                     [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
                      NSString * userToken = user.uid;
                      [database registerUserWithUsername:self.Username.text andPassword:userToken andEmail:self.Email.text];
                      [[NSUserDefaults standardUserDefaults] setObject:self.Username.text forKey:@"usernameToLoadAfterRegistration"];
