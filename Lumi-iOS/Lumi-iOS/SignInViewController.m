@@ -59,7 +59,10 @@
         [data setPassword:self.Password.text];
         [data setRememberPassword:self.rememberMeSwitch.on];
         
-        [self.navigationController popViewControllerAnimated:YES];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self performSegueWithIdentifier:@"goToLogIn" sender:nil];
+        });
+
     });
 }
 
@@ -139,43 +142,45 @@
         [database checkUsernameAvailable:self.Username.text completion:^(BOOL available) {
             if(!available)
             {
-                [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
-                dispatch_async(dispatch_get_main_queue(), ^{
-                [self userNameNotFree];
-                });
+
+                [self hideSpinner:^{
+                    dispatch_async(dispatch_get_main_queue(), ^{
+                        [self userNameNotFree];
+                    });
+                }];
             }
             else
             {
-                [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
+                
                 [[FIRAuth auth]
                  createUserWithEmail:self.Email.text
                  password:self.Password.text
                  completion:^(FIRUser *_Nullable user,
                               NSError *_Nullable error)
                  {
-                     if(error)
-                     {
-                         if(error.code == FIRAuthErrorCodeEmailAlreadyInUse)
+                     [self hideSpinner:^{
+                         if(error)
                          {
-                             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Registration unsuccessful"
-                                                                                            message:@"Email is already registred"
-                                                                                     preferredStyle:UIAlertControllerStyleAlert];
-                             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
-                                                                                     style:UIAlertActionStyleDefault
-                                                                                   handler:^(UIAlertAction * action) {
-                                                                                       NSLog(@"You pressed button OK");
-                                                                                   }];
-                             [alert addAction:defaultAction];
-                             [self presentViewController:alert animated:YES completion:nil];
-                             return;
+                             if(error.code == FIRAuthErrorCodeEmailAlreadyInUse)
+                             {
+                                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Registration unsuccessful"
+                                                                                                message:@"Email is already registred"
+                                                                                         preferredStyle:UIAlertControllerStyleAlert];
+                                 UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK"
+                                                                                         style:UIAlertActionStyleDefault
+                                                                                       handler:^(UIAlertAction * action) {
+                                                                                           NSLog(@"You pressed button OK");
+                                                                                       }];
+                                 [alert addAction:defaultAction];
+                                 [self presentViewController:alert animated:YES completion:nil];
+                                 return;
+                             }
                          }
-                     }
-                     NSString * userToken = user.uid;
-                     [database registerUserWithUsername:self.Username.text andPassword:userToken andEmail:self.Email.text];
-                     [[NSUserDefaults standardUserDefaults] setObject:self.Username.text forKey:@"usernameToLoadAfterRegistration"];
-                     [[NSUserDefaults standardUserDefaults] setObject:self.Password.text forKey:@"passwordToLoadAfterRegistration"];
-                     [self performSegueWithIdentifier:@"goToLogIn" sender:nil];
-                     
+                         NSString * userToken = user.uid;
+                         [database registerUserWithUsername:self.Username.text andPassword:userToken andEmail:self.Email.text];
+                         [[NSUserDefaults standardUserDefaults] setObject:self.Username.text forKey:@"usernameToLoadAfterRegistration"];
+                         [[NSUserDefaults standardUserDefaults] setObject:self.Password.text forKey:@"passwordToLoadAfterRegistration"];
+                        }];
                  }];
                 
             }

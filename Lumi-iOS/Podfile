@@ -5,7 +5,7 @@ target 'Lumi-iOS' do
     pod "SAConfettiView"
     pod "BButton"
     pod 'SCLAlertView'
-    pod 'Firebase'
+#    pod 'Firebase'
     pod 'Firebase/Crash'
     pod 'Firebase/Auth'
     pod 'SCLAlertView-Objective-C'
