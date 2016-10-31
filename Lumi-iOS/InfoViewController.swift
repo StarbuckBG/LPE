@@ -23,6 +23,10 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         // Dispose of any resources that can be recreated.
     }
     
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
     /*
      // MARK: - Navigation

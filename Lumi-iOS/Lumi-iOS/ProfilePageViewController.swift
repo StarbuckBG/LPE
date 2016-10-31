@@ -29,6 +29,10 @@ import UIKit
     }
     
 
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     /*
     // MARK: - Navigation
 

@@ -74,6 +74,12 @@
         [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
     });
 }
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 #warning will there be cancel button.
 - (IBAction)cancelButtonToHomeScreen:(id)sender {
 //    [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];

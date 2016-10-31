@@ -37,6 +37,12 @@ bool showCurrentLocationOnLoad = YES;
     [self startLocationManager];
 
 }
+
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void)startLocationManager
 {
     self.locationManager = [[CLLocationManager alloc] init];

@@ -25,6 +25,11 @@ class ProfileViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     override func viewWillAppear(animated: Bool) {
         DatabaseIntegration.sharedInstance().updateUserData()
         self.profileTableView.reloadData()

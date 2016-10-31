@@ -82,6 +82,11 @@
     }
 }
 
+- (void)dealloc
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self];
+}
+
 - (void) incrementPoints: (NSInteger) value
 {
     currentPoints += value;

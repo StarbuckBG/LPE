@@ -24,6 +24,11 @@ class LogsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

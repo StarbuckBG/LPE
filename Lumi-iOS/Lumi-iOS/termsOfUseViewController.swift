@@ -26,6 +26,10 @@ class termsOfUseViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    deinit
+    {
+        NSNotificationCenter.defaultCenter().removeObserver(self)
+    }
     
     /*
      // MARK: - Navigation
