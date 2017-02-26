@@ -29,12 +29,14 @@
 	<key>IS_APPINVITE_ENABLED</key>
 	<false/>
 	<key>IS_GCM_ENABLED</key>
-	<true/>
+	<false/>
 	<key>IS_SIGNIN_ENABLED</key>
 	<true/>
 	<key>GOOGLE_APP_ID</key>
 	<string>1:407315141017:ios:c2ff638da8220455</string>
 	<key>DATABASE_URL</key>
 	<string>https://playground-energy.firebaseio.com</string>
+	<key>TRACKING_ID</key>
+	<string>UA-85432288-2</string>
 </dict>
 </plist>

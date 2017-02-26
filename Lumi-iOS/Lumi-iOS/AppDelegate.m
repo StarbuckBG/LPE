@@ -6,11 +6,24 @@
 //  Copyright © 2016 Rapid Development Crew. All rights reserved.
 //
 
+@import Firebase;
+@import FirebaseAnalytics;
+
 #import "AppDelegate.h"
 #import "UIColor+Lumi.h"
 #import "Firebase.h"
+#import <Google/Analytics.h>
+
+
+/** Google Analytics configuration constants **/
+static NSString *const kGaPropertyId = @"UA-85432288-1"; // Placeholder property ID.
+static NSString *const kTrackingPreferenceKey = @"allowTracking";
+
+
+
 
 @interface AppDelegate ()
+@property (strong, nonatomic) id<GAITracker> tracker;
 
 @end
 
@@ -23,8 +36,13 @@
     pageControl.pageIndicatorTintColor = [UIColor grayColor];
     pageControl.currentPageIndicatorTintColor = [UIColor LumiPinkColor];
     pageControl.backgroundColor = [UIColor whiteColor];
-    [FIRApp configure];
+    
+    
+    
     [self setUpRechability];
+    
+    // Configure tracker from GoogleService-Info.plist.
+    [FIRApp configure];
     
     return YES;
 }
@@ -83,7 +101,9 @@
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
-    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.ю[GAI sharedInstance].optOut =
+    [GAI sharedInstance].optOut =
+    ![[NSUserDefaults standardUserDefaults] boolForKey:kTrackingPreferenceKey];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

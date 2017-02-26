@@ -19,8 +19,8 @@ extension DatabaseIntegration {
         
         for index:Int in 0..<DatabaseIntegration.sharedInstance().chart.count
         {
-            let anEntry = DatabaseIntegration.sharedInstance().chart[index];
-            if(anEntry["user_id"] as? String == DatabaseIntegration.sharedInstance().userdata["id"] as? String)
+            let anEntry = DatabaseIntegration.sharedInstance().chart[index] as! [String:Any];
+            if((anEntry["user_id"] as! String) == DatabaseIntegration.sharedInstance().userdata["id"] as! String)
             {
                 return index + 1;
             }

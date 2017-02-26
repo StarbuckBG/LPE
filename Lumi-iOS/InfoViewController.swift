@@ -25,7 +25,7 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
     
     deinit
     {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     /*
@@ -37,7 +37,7 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
      // Pass the selected object to the new view controller.
      }
      */
-    @IBAction func contactUsButtonTapped(sender: UIBarButtonItem) {
+    @IBAction func contactUsButtonTapped(_ sender: UIBarButtonItem) {
         let emailTitle = "Lumi iOS User Feedback"
         let messageBody = "Please input your feedback"
         let toRecepients = ["support@playgroundenergy.com"]
@@ -47,15 +47,15 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         mailComposerViewControler.setToRecipients(toRecepients)
         mailComposerViewControler.mailComposeDelegate = self
         
-        self.presentViewController(mailComposerViewControler, animated: true) {
+        self.present(mailComposerViewControler, animated: true) {
             // do nothing
         }
         
     }
     
     
-    func mailComposeController(controller: MFMailComposeViewController, didFinishWithResult result: MFMailComposeResult, error: NSError?) {
-        self.dismissViewControllerAnimated(true) { 
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        self.dismiss(animated: true) { 
             //do nothing
         }
     }

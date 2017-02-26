@@ -9,6 +9,8 @@
 #import "HomeViewController.h"
 #import "BubbleView.h"
 #import "BubbleStyleKit.h"
+#import <Google/Analytics.h>
+
 @interface HomeViewController ()
 {
     DatabaseIntegration * database;
@@ -145,6 +147,10 @@
         ;
     }];
     
+    [[GAI sharedInstance].defaultTracker set:kGAIScreenName
+                                       value:@"Home Screen"];
+    [[GAI sharedInstance].defaultTracker
+     send:[[GAIDictionaryBuilder createScreenView] build]];
     
 }
 

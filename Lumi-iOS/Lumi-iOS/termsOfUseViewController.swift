@@ -13,9 +13,9 @@ class termsOfUseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let path = NSBundle.mainBundle().pathForResource("lumi-privacy", ofType: "pdf")
-        let targetURL = NSURL.fileURLWithPath(path!)
-        let request = NSURLRequest.init(URL: targetURL)
+        let path = Bundle.main.path(forResource: "lumi-privacy", ofType: "pdf")
+        let targetURL = URL(fileURLWithPath: path!)
+        let request = URLRequest.init(url: targetURL)
         termsOfUseWebView.loadRequest(request)
         
         // Do any additional setup after loading the view.
@@ -28,7 +28,7 @@ class termsOfUseViewController: UIViewController {
     
     deinit
     {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     /*

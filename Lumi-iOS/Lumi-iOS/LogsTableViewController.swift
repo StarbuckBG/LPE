@@ -11,11 +11,11 @@ import UIKit
 class LogsTableViewController: UITableViewController {
     @IBOutlet weak var logTableView: UITableView!
 
-    private let databaseIntegration: DatabaseIntegration = DatabaseIntegration.sharedInstance();
+    fileprivate let databaseIntegration: DatabaseIntegration = DatabaseIntegration.sharedInstance();
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(logsUpdatedNotificationHandler), name: LOGS_UPDATED, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(logsUpdatedNotificationHandler), name: NSNotification.Name(rawValue: LOGS_UPDATED), object: nil)
         
     }
 
@@ -26,30 +26,30 @@ class LogsTableViewController: UITableViewController {
 
     deinit
     {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
         return (DatabaseIntegration.sharedInstance().logs != nil) ? 1 : 0
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return databaseIntegration.logs.count
     }
 
     
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("logsTableViewControllerCell", forIndexPath: indexPath)
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "logsTableViewControllerCell", for: indexPath)
 
-        cell.textLabel!.text = databaseIntegration.logs.objectAtIndex(indexPath.row).valueForKey("points") as! String + " points"
-        cell.detailTextLabel!.text = databaseIntegration.logs.objectAtIndex(indexPath.row).valueForKey("start_time") as? String
+        cell.textLabel!.text = (databaseIntegration.logs.object(at: indexPath.row) as AnyObject).value(forKey: "points") as! String + " points"
+        cell.detailTextLabel!.text = (databaseIntegration.logs.object(at: indexPath.row) as AnyObject).value(forKey: "start_time") as? String
         
         return cell
     }
     
-    func logsUpdatedNotificationHandler(aNotification:NSNotification)
+    func logsUpdatedNotificationHandler(_ aNotification:Notification)
     {
         self.logTableView.reloadData()
     }

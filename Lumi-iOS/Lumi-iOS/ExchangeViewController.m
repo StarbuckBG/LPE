@@ -11,7 +11,6 @@
 #import "UIColor+Lumi.h"
 #import "BButton/BButton.h"
 #import "SCLAlertView_Objective_C/SCLAlertView.h"
-#import "SAConfettiView-Swift.h"
 
 @interface ExchangeViewController ()
 @property (weak, nonatomic) IBOutlet BButton *convertButton;
@@ -44,11 +43,11 @@ NSString * currentCompanyId;
 - (void) viewWillAppear:(BOOL)animated
 {
     pointsValue = [[[[DatabaseIntegration sharedInstance] userdata] objectForKey:@"points_balance"] integerValue];
-    totalPoints.text =  [NSString stringWithFormat:@"%ld", pointsValue];
+    totalPoints.text =  [NSString stringWithFormat:@"%ld", (long)pointsValue];
     interactions = [[DatabaseIntegration alloc] init];
     changeRate = [NSNumber numberWithInteger:0];
     username.text = [[[DatabaseIntegration sharedInstance] userdata] objectForKey:@"username"];
-    pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)(slider.value/10000 * pointsValue)];
+    pointsConversion.text = [NSString stringWithFormat:@"%ld", (long)(slider.value/10000 * pointsValue)];
 }
 
 - (void) viewDidAppear:(BOOL)animated
@@ -79,12 +78,12 @@ NSString * currentCompanyId;
     long pointsCurrencyValue = floor((double)slider.value/10000 * pointsValue / [changeRate floatValue]);
     if([changeRate floatValue] == 0)
     {
-        pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)((double)slider.value/10000 * pointsValue)];
+        pointsConversion.text = [NSString stringWithFormat:@"%ld", (long)((double)slider.value/10000 * pointsValue)];
     }
     else
     {
         pointsCurency.text = [NSString stringWithFormat:@"%ld",(long)pointsCurrencyValue];
-        pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)(pointsCurrencyValue * [changeRate floatValue])];
+        pointsConversion.text = [NSString stringWithFormat:@"%ld", (long)(pointsCurrencyValue * [changeRate floatValue])];
     }
 }
 - (IBAction)convertButton:(id)sender
@@ -124,7 +123,7 @@ NSString * currentCompanyId;
     slider.value = 0;
     pointsConversion.text = [NSString stringWithFormat:@"0"];
     pointsCurency.text = [NSString stringWithFormat:@"0"];
-    totalPoints.text = [NSString stringWithFormat:@"%ld", pointAll];
+    totalPoints.text = [NSString stringWithFormat:@"%ld", (long)pointAll];
     
     
 }
@@ -172,7 +171,7 @@ NSString * currentCompanyId;
     long pointsCurrencyValue = floor((double)slider.value/10000 * pointsValue / [changeRate floatValue]);
     currentCompanyId = [[[[DatabaseIntegration sharedInstance] companies] objectAtIndex:indexPath.row] valueForKey: @"id"];
     pointsCurency.text = [NSString stringWithFormat:@"%ld",(long)pointsCurrencyValue];
-    pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)(pointsCurrencyValue * [changeRate floatValue])];
+    pointsConversion.text = [NSString stringWithFormat:@"%ld", (long)(pointsCurrencyValue * [changeRate floatValue])];
 }
 
 /*
@@ -187,8 +186,8 @@ NSString * currentCompanyId;
 
 - (void) dataUpdatedNotificationHandler: (NSNotification*) aNotification
 {
-    totalPoints.text =  [NSString stringWithFormat:@"%ld", pointsValue];
-    pointsConversion.text = [NSString stringWithFormat:@"%ld", (NSInteger)slider.value];
+    totalPoints.text =  [NSString stringWithFormat:@"%ld", (long)pointsValue];
+    pointsConversion.text = [NSString stringWithFormat:@"%ld", (long)slider.value];
     [self.tableView reloadData];
 }
 

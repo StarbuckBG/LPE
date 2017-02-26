@@ -13,7 +13,6 @@
 #import "DatabaseIntegration.h"
 #import "BButton/BButton.h"
 #import "SCLAlertView_Objective_C/SCLAlertView.h"
-#import "SAConfettiView-Swift.h"
 
 #define pointsMultiplier 25
 
@@ -250,7 +249,7 @@
 
 - (void)centralManager:(CBCentralManager *)central didDiscoverPeripheral:(CBPeripheral *)peripheral advertisementData:(NSDictionary<NSString *,id> *)advertisementData RSSI:(NSNumber *)RSSI
 {
-    NSLog(@"%@", peripheral.name);
+    //NSLog(@"%@", peripheral.name);
     [deviceList addObject:peripheral];
     if(nameOfDeviceToConnect != nil)
     {

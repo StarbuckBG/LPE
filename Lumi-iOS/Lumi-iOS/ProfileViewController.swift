@@ -14,9 +14,9 @@ class ProfileViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        NSNotificationCenter.defaultCenter().addObserver(self,
+        NotificationCenter.default.addObserver(self,
                                                          selector: #selector(userDataUpdatedNotificationHandler),
-                                                         name: USERDATA_UPDATED, object: nil)
+                                                         name: NSNotification.Name(rawValue: USERDATA_UPDATED), object: nil)
         // Do any additional setup after loading the view.
     }
     
@@ -27,36 +27,36 @@ class ProfileViewController: UIViewController {
     
     deinit
     {
-        NSNotificationCenter.defaultCenter().removeObserver(self)
+        NotificationCenter.default.removeObserver(self)
     }
     
-    override func viewWillAppear(animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         DatabaseIntegration.sharedInstance().updateUserData()
         self.profileTableView.reloadData()
         self.navigationController!.topViewController!.navigationItem.rightBarButtonItem = UIBarButtonItem.init(title: "Logout",
-                                                                                                               style:.Plain,
+                                                                                                               style:.plain,
                                                                                                                target: self,
                                                                                                                action: #selector(logout(_:)))
     }
     
-    override func viewDidDisappear(animated: Bool) {
+    override func viewDidDisappear(_ animated: Bool) {
         self.navigationController!.topViewController!.navigationItem.rightBarButtonItem = nil;
     }
     
     func userDataUpdatedNotificationHandler()
     {
-        dispatch_async(dispatch_get_main_queue())
+        DispatchQueue.main.async
         {
             // reload the UI on main thread
             self.profileTableView.reloadData()
         }
     }
     
-    func logout(sender: UIBarButtonItem)
+    func logout(_ sender: UIBarButtonItem)
     {
-        if let loginViewController = storyboard?.instantiateViewControllerWithIdentifier("loginViewController") where storyboard != nil
+        if let loginViewController = storyboard?.instantiateViewController(withIdentifier: "loginViewController"), storyboard != nil
         {
-            self.presentViewController(loginViewController,animated: true) {
+            self.present(loginViewController,animated: true) {
                 //erase stored data on logout
                 LocalDataIntegration.sharedInstance().logout()
             }
@@ -77,30 +77,30 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDataSource
 {
-    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = UITableViewCell.init(style: UITableViewCellStyle.Value1, reuseIdentifier: "profileInfoCell")
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = UITableViewCell.init(style: UITableViewCellStyle.value1, reuseIdentifier: "profileInfoCell")
         let databaseIntegration = DatabaseIntegration.sharedInstance();
         switch indexPath.row {
         case 0:
             cell.textLabel!.text = "Username"
-            cell.detailTextLabel!.text = databaseIntegration.userdata.objectForKey("username") as? String
+            cell.detailTextLabel!.text = databaseIntegration?.userdata.object(forKey: "username") as? String
             break;
         case 1:
             cell.textLabel!.text = "Current points"
-            cell.detailTextLabel!.text = databaseIntegration.userdata.objectForKey("points_balance") as? String
+            cell.detailTextLabel!.text = databaseIntegration?.userdata.object(forKey: "points_balance") as? String
             break;
         case 2:
             cell.textLabel!.text = "Points from last week"
-            cell.detailTextLabel!.text = databaseIntegration.getPointsForLastWeek()
+            cell.detailTextLabel!.text = databaseIntegration?.getPointsForLastWeek()
             break;
         case 3:
             cell.textLabel!.text = "Position"
-            let position = databaseIntegration.getUserPosition()
-            cell.detailTextLabel!.text =  position != 0 ? String("\(position)") : "Not available"
+            let position = databaseIntegration?.getUserPosition()
+            cell.detailTextLabel!.text =  position != 0 ? "\(position)" : "Not available"
             break;
         case 4:
             cell.textLabel!.text = "Hours of play"
-            cell.detailTextLabel!.text = databaseIntegration.getHoursOfPlay()
+            cell.detailTextLabel!.text = databaseIntegration?.getHoursOfPlay()
             break;
         default:
             break;
@@ -111,11 +111,11 @@ extension ProfileViewController: UITableViewDataSource
 
 extension ProfileViewController: UITableViewDelegate
 {
-    func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    func numberOfSections(in tableView: UITableView) -> Int {
         return 1;
     }
     
-    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5;
     }
 }
