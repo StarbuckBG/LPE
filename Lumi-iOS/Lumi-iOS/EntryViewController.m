@@ -28,13 +28,13 @@
     data = [LocalDataIntegration sharedInstance];
     
     if ([data autoLogin]) {
-        dispatch_async(dispatch_get_main_queue(), ^{
+//        dispatch_async(dispatch_get_main_queue(), ^{
             [self performSegueWithIdentifier:@"entryToHome" sender:nil];
-        });
+//        });
     } else {
-        dispatch_async(dispatch_get_main_queue(), ^{
+//        dispatch_async(dispatch_get_main_queue(), ^{
             [self performSegueWithIdentifier:@"entryToLogin" sender:nil];
-        });
+//        });
     }
 }
 

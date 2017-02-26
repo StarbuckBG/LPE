@@ -3,7 +3,7 @@ platform :ios, "8.0"
 use_frameworks!
 target 'Lumi-iOS' do
 #    pod "SAConfettiView"
-    pod "BButton"
+    pod 'BButton'
 #    pod 'SCLAlertView'
 #    pod 'Firebase'
     pod 'Firebase/Crash'

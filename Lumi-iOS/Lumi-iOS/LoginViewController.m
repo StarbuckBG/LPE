@@ -66,12 +66,15 @@
 
 -(void) successfull {
     dispatch_async(dispatch_get_main_queue(), ^{
-    [data setUsername:self.Username.text];
-    [data setPassword:self.Password.text];
-    [data setAutoLogin:self.rememberMeSwitch.on];
-    [data syncData];
-    
-        [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
+        [self hideSpinner:^{
+            [data setUsername:self.Username.text];
+            [data setPassword:self.Password.text];
+            [data setAutoLogin:self.rememberMeSwitch.on];
+            [data syncData];
+            
+            [self performSegueWithIdentifier:@"goToHomeScreenSegue" sender:nil];
+        }];
+        
     });
 }
 
@@ -135,9 +138,9 @@
                                      
                                      return;
                                  }
+                                 
                                  DatabaseIntegration *database = [DatabaseIntegration sharedInstance];
                                  [database loginWithUsername:self.Username.text andPassword:user.uid];
-                                 [self performSelectorOnMainThread:@selector(hideSpinner:) withObject:nil waitUntilDone:YES];
                              }];
          }];
     

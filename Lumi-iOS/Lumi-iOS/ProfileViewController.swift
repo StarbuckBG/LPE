@@ -96,7 +96,7 @@ extension ProfileViewController: UITableViewDataSource
         case 3:
             cell.textLabel!.text = "Position"
             let position = databaseIntegration?.getUserPosition()
-            cell.detailTextLabel!.text =  position != 0 ? "\(position)" : "Not available"
+            cell.detailTextLabel!.text =  position != 0 ? "\(position!)" : "Not available"
             break;
         case 4:
             cell.textLabel!.text = "Hours of play"
