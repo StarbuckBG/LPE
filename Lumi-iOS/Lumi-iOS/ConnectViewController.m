@@ -156,13 +156,13 @@
     self.endDateTime = [NSDate date];
     NSInteger pointsToPresent = currentPoints/pointsMultiplier;
     
-    [[DatabaseIntegration sharedInstance] addToLogPoints:[NSString stringWithFormat:@"%d", pointsToPresent]
+    [[DatabaseIntegration sharedInstance] addToLogPoints:[NSString stringWithFormat:@"%ld", (long)pointsToPresent]
                                            onApplianceId:@"1"
                                            withIntensity:@"5"
                                                 fromTime:self.startDateTime
                                                   toTime:self.endDateTime];
     SCLAlertView * alertView = [[SCLAlertView alloc] init];
-    [alertView showSuccess:self title:@"Yayyy" subTitle:[NSString stringWithFormat:@"You have won %d Lumis", pointsToPresent] closeButtonTitle:@"Ok" duration:0.0f];
+    [alertView showSuccess:self title:@"Yayyy" subTitle:[NSString stringWithFormat:@"You have won %ld Lumis", (long)pointsToPresent] closeButtonTitle:@"Ok" duration:0.0f];
     
     currentPoints = 0;
     

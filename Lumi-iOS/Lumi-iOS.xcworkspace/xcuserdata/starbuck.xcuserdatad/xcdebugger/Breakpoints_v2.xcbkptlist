@@ -25,13 +25,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lumi-iOS/LoginViewController.m"
-            timestampString = "509839571.097312"
+            filePath = "Lumi-iOS/DatabaseIntegration.m"
+            timestampString = "509840675.849647"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "128"
-            endingLineNumber = "128"
-            landmarkName = "-login"
+            startingLineNumber = "317"
+            endingLineNumber = "317"
+            landmarkName = "-updatePlaygrounds"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

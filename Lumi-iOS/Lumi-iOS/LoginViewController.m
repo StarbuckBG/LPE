@@ -154,11 +154,9 @@
          }
          
          [self showSpinner:^{
-             // [START password_reset]
              [[FIRAuth auth]
               sendPasswordResetWithEmail:userInput
               completion:^(NSError *_Nullable error) {
-                  // [START_EXCLUDE]
                   [self hideSpinner:^{
                       if (error) {
                           [self
@@ -169,9 +167,8 @@
                       
                       [self showMessagePrompt:@"Check your email"];
                   }];
-                  // [END_EXCLUDE]
+                  
               }];
-             // [END password_reset]
          }];
      }];
 }
