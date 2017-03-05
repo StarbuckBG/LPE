@@ -8,6 +8,7 @@
 
 #import "DatabaseIntegration.h"
 #import "LocalDataIntegration.h"
+#import "Playground_energy-Swift.h"
 
 @implementation DatabaseIntegration
 
@@ -315,6 +316,13 @@
             responseArray = [NSJSONSerialization JSONObjectWithData:data options:NSJSONReadingMutableContainers error: &error];
             self.playgrounds = responseArray;
             [[NSNotificationCenter defaultCenter] postNotificationName:PLAYGROUNDS_DATA_UPDATED object:self];
+            for(NSDictionary * item in responseArray){
+                [self loadAppliancesFor:item[@"id"]
+                             completion:^(NSError * _Nullable error, NSDictionary * _Nullable dictionaryData) {
+                                 if(!self.appliances) self.appliances = [[NSMutableDictionary alloc] init];
+                                 [self.appliances setObject:dictionaryData forKey:dictionaryData[@"qrcode"]];
+                }];
+            }
         }
         else {
             // Failure

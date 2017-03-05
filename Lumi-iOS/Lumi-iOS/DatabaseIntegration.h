@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "LocalDataIntegration.h"
 
+
 @interface DatabaseIntegration : NSObject
 
 #define CONNECTION_PROBLEMS @"connectionProblems"
@@ -34,7 +35,7 @@
 @property (nonatomic, strong) __block NSMutableDictionary * userdata;
 @property (nonatomic, strong) __block NSMutableArray * logs;
 @property (nonatomic, strong) __block NSMutableArray * playgrounds;
-@property (nonatomic, strong) __block NSMutableArray * appliances;
+@property (nonatomic, strong) __block NSMutableDictionary * appliances;
 @property (nonatomic, strong) __block NSMutableArray * companies;
 
 @property (strong, nonatomic) __block NSMutableDictionary * weekUserdata;
@@ -53,11 +54,9 @@
 - (void) registerUserWithUsername: (NSString *) username andPassword: (NSString *) password andEmail: (NSString *) email;
 - (void) registerUserWithFacebookId: (NSString *) facebookId andPassword: (NSString *) password andUsername: (NSString *) username;
 - (void) updatePlaygrounds;
-- (void) updateAppliances;
-- (void) updateAppliancesForPlaygroundId: (NSString *) playgroundId;
 - (void) addToLogPoints: (NSString *) points onApplianceId: (NSString *) applicanceId withIntensity: (NSString *) intensity fromTime: (NSDate *) startTime toTime: (NSDate *) endTime;
 - (void) addTranfer: (NSString *) points toCompanyId: (NSString *) companyId;
-- (void) getLogs;
+//- (void) getLogs;
 - (void) updateCompaniesAndRates;
 - (void) updateAllData;
 

@@ -156,8 +156,21 @@
     self.endDateTime = [NSDate date];
     NSInteger pointsToPresent = currentPoints/pointsMultiplier;
     
+    NSDictionary * applianceDict = [[[DatabaseIntegration sharedInstance] appliances] objectForKey:nameOfDeviceToConnect];
+    NSString * applianceId = applianceDict != nil ? applianceDict[@"id"] : @"1";
+    
+    NSString * playgroundName;
+    
+    for (NSDictionary * dict in [[DatabaseIntegration sharedInstance] playgrounds])
+    {
+        if ([(NSString *)dict[@"id"] isEqualToString:applianceDict[@"playground_id"]]){
+            playgroundName = dict[@"name"];
+        }
+    }
+    
+    
     [[DatabaseIntegration sharedInstance] addToLogPoints:[NSString stringWithFormat:@"%ld", (long)pointsToPresent]
-                                           onApplianceId:@"1"
+                                           onApplianceId:applianceId
                                            withIntensity:@"5"
                                                 fromTime:self.startDateTime
                                                   toTime:self.endDateTime];

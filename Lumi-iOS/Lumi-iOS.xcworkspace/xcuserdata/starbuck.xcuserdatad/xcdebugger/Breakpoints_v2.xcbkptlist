@@ -6,16 +6,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Lumi-iOS/DatabaseIntegration.m"
-            timestampString = "499079298.806465"
+            filePath = "Lumi-iOS/DatabaseIntegration+Swift.swift"
+            timestampString = "510394485.668213"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "456"
-            endingLineNumber = "456"
-            landmarkName = "-addTranfer:toCompanyId:"
+            startingLineNumber = "39"
+            endingLineNumber = "39"
+            landmarkName = "loadAppliances(for:completion:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Lumi-iOS/DatabaseIntegration.m"
-            timestampString = "509840675.849647"
+            timestampString = "510395175.988377"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "317"
-            endingLineNumber = "317"
+            startingLineNumber = "323"
+            endingLineNumber = "323"
             landmarkName = "-updatePlaygrounds"
             landmarkType = "7">
          </BreakpointContent>

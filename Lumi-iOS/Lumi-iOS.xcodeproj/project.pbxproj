@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		103BCA7D1DA5883B0070AB07 /* DatabaseIntegration+transitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 103BCA7C1DA5883B0070AB07 /* DatabaseIntegration+transitions.swift */; };
+		10416EE31E6B30B4001C0CE6 /* DatabaseIntegration+Swift.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10416EE21E6B30B4001C0CE6 /* DatabaseIntegration+Swift.swift */; };
 		105F40FC1D775C8200852EDC /* locationPin@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F40FA1D775C8200852EDC /* locationPin@2x.png */; };
 		105F40FD1D775C8200852EDC /* locationPin@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 105F40FB1D775C8200852EDC /* locationPin@3x.png */; };
 		106AB8151D6FECE900C03C35 /* TabBarViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 106AB8141D6FECE900C03C35 /* TabBarViewController.m */; };
@@ -80,6 +81,7 @@
 
 /* Begin PBXFileReference section */
 		103BCA7C1DA5883B0070AB07 /* DatabaseIntegration+transitions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatabaseIntegration+transitions.swift"; sourceTree = "<group>"; };
+		10416EE21E6B30B4001C0CE6 /* DatabaseIntegration+Swift.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "DatabaseIntegration+Swift.swift"; sourceTree = "<group>"; };
 		105F40FA1D775C8200852EDC /* locationPin@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locationPin@2x.png"; sourceTree = "<group>"; };
 		105F40FB1D775C8200852EDC /* locationPin@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "locationPin@3x.png"; sourceTree = "<group>"; };
 		106AB8131D6FECE900C03C35 /* TabBarViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TabBarViewController.h; sourceTree = "<group>"; };
@@ -341,6 +343,7 @@
 			children = (
 				197C9E3E1D04AAD00017D46A /* DatabaseIntegration.h */,
 				197C9E3F1D04AAD00017D46A /* DatabaseIntegration.m */,
+				10416EE21E6B30B4001C0CE6 /* DatabaseIntegration+Swift.swift */,
 				19AC0C4E1D060429001AA2E1 /* LocalDataIntegration.h */,
 				19AC0C4F1D060429001AA2E1 /* LocalDataIntegration.m */,
 				103BCA7C1DA5883B0070AB07 /* DatabaseIntegration+transitions.swift */,
@@ -575,6 +578,7 @@
 				197C9E401D04AAD00017D46A /* DatabaseIntegration.m in Sources */,
 				D3B4237D1D05374700014B66 /* ImageShareViewController.m in Sources */,
 				10EACB541D8682AB00F9B24F /* termsOfUseViewController.swift in Sources */,
+				10416EE31E6B30B4001C0CE6 /* DatabaseIntegration+Swift.swift in Sources */,
 				10EACB4B1D85CF1400F9B24F /* InfoViewController.swift in Sources */,
 				D34F0C2F1D1796F4003EFA6E /* RGTextField.m in Sources */,
 				19292EDA1CEB8B69007B5B05 /* ExchangeViewController.m in Sources */,
