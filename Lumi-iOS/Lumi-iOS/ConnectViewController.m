@@ -159,6 +159,7 @@
     NSDictionary * applianceDict = [[[DatabaseIntegration sharedInstance] appliances] objectForKey:nameOfDeviceToConnect];
     NSString * applianceId = applianceDict != nil ? applianceDict[@"id"] : @"1";
     
+#pragma mark - For Vicho
     NSString * playgroundName;
     
     for (NSDictionary * dict in [[DatabaseIntegration sharedInstance] playgrounds])
