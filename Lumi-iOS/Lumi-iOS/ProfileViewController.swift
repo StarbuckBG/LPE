@@ -77,6 +77,12 @@ class ProfileViewController: UIViewController {
 
 extension ProfileViewController: UITableViewDataSource
 {
+    
+    override func viewDidAppear(_ animated: Bool) {
+        Analytics.profileScreenOpened()
+    }
+    
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell.init(style: UITableViewCellStyle.value1, reuseIdentifier: "profileInfoCell")
         let databaseIntegration = DatabaseIntegration.sharedInstance();

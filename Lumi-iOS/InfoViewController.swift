@@ -18,6 +18,11 @@ class InfoViewController: UIViewController, MFMailComposeViewControllerDelegate 
         self.versionLabel.text = "Version \(UIApplication.appVersion()) (\(UIApplication.build()))"
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.infoScreenOpened()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

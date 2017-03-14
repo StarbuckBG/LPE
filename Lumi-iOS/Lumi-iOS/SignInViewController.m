@@ -11,6 +11,7 @@
 #import "LocalDataIntegration.h"
 #import "RGTextField.h"
 #import "UIViewController+Alerts.h"
+#import "Playground_Energy-Swift.h"
 
 @import FirebaseAuth;
 
@@ -38,6 +39,11 @@
                                              selector:@selector(userNameNotFree)
                                                  name:REGISTRATION_USERNAME_NOT_AVAILABLE
                                                object:nil];
+}
+
+- (void)viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [Analytics registerScreenOpened];
 }
 
 - (void)dealloc
@@ -101,6 +107,9 @@
 }
 
 - (IBAction)registerButton:(UIButton *)sender {
+    
+    [Analytics registerActionInitiated];
+    
     if([self.Password.text isEqualToString:self.PasswordAgain.text] == false)
     {
         UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Registration unsuccessful"

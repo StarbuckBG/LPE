@@ -9,7 +9,7 @@
 #import "HomeViewController.h"
 #import "BubbleView.h"
 #import "BubbleStyleKit.h"
-#import <Google/Analytics.h>
+#import "Playground_Energy-Swift.h"
 
 @interface HomeViewController ()
 {
@@ -72,6 +72,7 @@
 
 - (void) viewDidAppear:(BOOL)animated
 {
+    [Analytics homeScreenOpened];
     [self.centerBubbleView setNeedsDisplay];
     
     if([[UIScreen mainScreen] bounds].size.width <= 320)
@@ -146,12 +147,6 @@
     } completion:^(BOOL finished) {
         ;
     }];
-    
-    [[GAI sharedInstance].defaultTracker set:kGAIScreenName
-                                       value:@"Home Screen"];
-    [[GAI sharedInstance].defaultTracker
-     send:[[GAIDictionaryBuilder createScreenView] build]];
-    
 }
 
 - (void)dealloc
@@ -177,22 +172,27 @@
 
 - (IBAction)topLeftTapGestureRegonized:(UITapGestureRecognizer *)sender {
     self.tabBarController.selectedIndex = 1;
+    [Analytics connectBalloonTapped];
 }
 
 - (IBAction)topRightTapGestureRecognized:(UITapGestureRecognizer *)sender {
     //self.tabBarController.selectedIndex = 2;
     [self alertControllerForCameraGallery];
+    [Analytics shareBalloonTapped];
 }
 
 - (IBAction)bottomRightTapGestureRecognized:(UITapGestureRecognizer *)sender {
     self.tabBarController.selectedIndex = 3;
+    [Analytics exchangeBalloonTapped];
 }
 
 - (IBAction)bottomLeftTapGestureRecognized:(UITapGestureRecognizer *)sender {
     self.tabBarController.selectedIndex = 4;
+    [Analytics mapBalloonTapped];
 }
 - (IBAction)centerTapGestureRecognized:(UITapGestureRecognizer *)sender {
     self.tabBarController.selectedIndex = 2;
+    [Analytics connectBalloonTapped];
 }
 
 - (void) userDataUpdatedNotificationHandler: (NSNotification *) notification

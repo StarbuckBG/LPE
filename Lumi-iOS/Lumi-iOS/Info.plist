@@ -28,7 +28,21 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>35</string>
+	<string>36</string>
+	<key>Fabric</key>
+	<dict>
+		<key>APIKey</key>
+		<string>7c43bfad1529fb8bb39019d893fca6d91d210e17</string>
+		<key>Kits</key>
+		<array>
+			<dict>
+				<key>KitInfo</key>
+				<dict/>
+				<key>KitName</key>
+				<string>Crashlytics</string>
+			</dict>
+		</array>
+	</dict>
 	<key>FacebookAppID</key>
 	<string>323363241371779</string>
 	<key>FacebookDisplayName</key>
@@ -49,6 +63,8 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<false/>
 	</dict>
+	<key>NSBluetoothPeripheralUsageDescription</key>
+	<string>You should enable the bluetooth in order to connect to Lumi.</string>
 	<key>NSCameraUsageDescription</key>
 	<string>Camera will be used to capture and share pictures</string>
 	<key>NSLocationAlwaysUsageDescription</key>
@@ -90,7 +106,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSBluetoothPeripheralUsageDescription</key>
-	<string>You should enable the bluetooth in order to connect to Lumi.</string>
 </dict>
 </plist>

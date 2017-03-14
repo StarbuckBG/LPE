@@ -12,6 +12,7 @@
 #import "Reachability.h"
 #import "RDInternetData.h"
 #import "UIViewController+Alerts.h"
+#import "Playground_Energy-Swift.h"
 
 @import FirebaseAuth;
 
@@ -54,6 +55,12 @@
     [[NSUserDefaults standardUserDefaults] setObject:nil forKey:@"passwordToLoadAfterRegistration"];
     }
 }
+
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [Analytics logInScreenOpened];
+}
+
 - (void)networkChange {
     RDInternetData* internetData = [RDInternetData sharedInstance];
     NSLog(@"network change: %d", internetData.hasInternet);
@@ -105,6 +112,7 @@
 
 - (IBAction)registerButton:(id)sender {
     [self performSegueWithIdentifier:@"registerSegue" sender:nil];
+    [Analytics registerButtonTapped];
 }
 
 - (IBAction)LoginButton:(UIButton *)sender {
@@ -146,6 +154,7 @@
     
 }
 - (IBAction)forgetYourPasswordTouched:(UIButton *)sender {
+    [Analytics forgottenPasswordTapped];
     [self
      showTextInputPromptWithMessage:@"Email:"
      completionBlock:^(BOOL userPressedOK, NSString *_Nullable userInput) {

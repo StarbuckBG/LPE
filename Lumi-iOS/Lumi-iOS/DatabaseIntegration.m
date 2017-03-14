@@ -320,7 +320,7 @@
                 [self loadAppliancesFor:item[@"id"]
                              completion:^(NSError * _Nullable error, NSDictionary * _Nullable dictionaryData) {
                                  if(!self.appliances) self.appliances = [[NSMutableDictionary alloc] init];
-                                 [self.appliances setObject:dictionaryData forKey:dictionaryData[@"qrcode"]];
+                                 if(dictionaryData) [self.appliances setObject:dictionaryData forKey:dictionaryData[@"qrcode"]];
                 }];
             }
         }

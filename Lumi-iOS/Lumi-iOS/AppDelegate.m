@@ -13,6 +13,9 @@
 #import "UIColor+Lumi.h"
 #import "Firebase.h"
 #import <Google/Analytics.h>
+#import <Fabric/Fabric.h>
+#import <Crashlytics/Crashlytics.h>
+
 
 
 /** Google Analytics configuration constants **/
@@ -38,7 +41,7 @@ static NSString *const kTrackingPreferenceKey = @"allowTracking";
     pageControl.backgroundColor = [UIColor whiteColor];
     
     
-    
+    [Fabric with:@[[Crashlytics class]]];
     [self setUpRechability];
     
     // Configure tracker from GoogleService-Info.plist.

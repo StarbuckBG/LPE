@@ -18,6 +18,11 @@ class LogsTableViewController: UITableViewController {
         NotificationCenter.default.addObserver(self, selector: #selector(logsUpdatedNotificationHandler), name: NSNotification.Name(rawValue: LOGS_UPDATED), object: nil)
         
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        Analytics.logScreenOpened()
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

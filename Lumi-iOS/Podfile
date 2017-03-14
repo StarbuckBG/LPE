@@ -8,7 +8,13 @@ target 'Lumi-iOS' do
 #    pod 'Firebase'
     pod 'Firebase/Crash'
     pod 'Firebase/Auth'
+    pod 'Firebase/Storage'
+    pod 'Firebase/Database'
     pod 'SCLAlertView-Objective-C'
     pod 'Google/Analytics'
+    pod 'Fabric'
+    pod 'Crashlytics'
+    
+    
     
 end

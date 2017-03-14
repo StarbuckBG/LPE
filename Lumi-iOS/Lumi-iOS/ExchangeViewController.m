@@ -11,6 +11,7 @@
 #import "UIColor+Lumi.h"
 #import "BButton/BButton.h"
 #import "SCLAlertView_Objective_C/SCLAlertView.h"
+#import "Playground_Energy-Swift.h"
 
 @interface ExchangeViewController ()
 @property (weak, nonatomic) IBOutlet BButton *convertButton;
@@ -52,7 +53,9 @@ NSString * currentCompanyId;
 
 - (void) viewDidAppear:(BOOL)animated
 {
+    [super viewDidAppear:animated];
     [self setSliderImageViewOnThumb];
+    [Analytics exchangeScreenOpened];
 }
 
 - (void) setSliderImageViewOnThumb
@@ -116,6 +119,8 @@ NSString * currentCompanyId;
     
     [[DatabaseIntegration sharedInstance] addTranfer:pointsConversion.text  toCompanyId:currentCompanyId];
     
+    [Analytics pointsExchangedWithPoints:pointsConversion.text destination:currentCompanyId];
+    
     SCLAlertView * alertView = [[SCLAlertView alloc] init];
     //alertView.view = [[SAConfettiView alloc]initWithFrame:alertView.view.frame];
     [alertView showSuccess:self title:@"Yayyy" subTitle:[NSString stringWithFormat: @"You just converted %@ points", pointsConversion.text] closeButtonTitle:@"Ok" duration:0.0f];
@@ -170,6 +175,7 @@ NSString * currentCompanyId;
     
     long pointsCurrencyValue = floor((double)slider.value/10000 * pointsValue / [changeRate floatValue]);
     currentCompanyId = [[[[DatabaseIntegration sharedInstance] companies] objectAtIndex:indexPath.row] valueForKey: @"id"];
+    [Analytics exchangeDestinationSelectedWithDestination:currentCompanyId];
     pointsCurency.text = [NSString stringWithFormat:@"%ld",(long)pointsCurrencyValue];
     pointsConversion.text = [NSString stringWithFormat:@"%ld", (long)(pointsCurrencyValue * [changeRate floatValue])];
 }

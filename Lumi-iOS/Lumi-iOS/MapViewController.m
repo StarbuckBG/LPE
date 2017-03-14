@@ -8,7 +8,7 @@
 
 #import "MapViewController.h"
 #import "DatabaseIntegration.h"
-
+#import "Playground_Energy-Swift.h"
 @interface MapViewController ()
 {
     DatabaseIntegration * database;
@@ -36,6 +36,11 @@ bool showCurrentLocationOnLoad = YES;
     [database updatePlaygrounds];
     [self startLocationManager];
 
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [Analytics mapScreenOpened];
 }
 
 - (void)dealloc
@@ -139,6 +144,8 @@ bool showCurrentLocationOnLoad = YES;
 
 - (void)mapView:(MKMapView *)mapView annotationView:(MKAnnotationView *)view calloutAccessoryControlTapped:(UIControl *)control
 {
+    [Analytics playgroundInfoSelectedWithPlaygroundName:view.annotation.title];
+    
    /*
     // navigation to point
     

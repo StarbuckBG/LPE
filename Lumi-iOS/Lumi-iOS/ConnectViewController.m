@@ -13,6 +13,7 @@
 #import "DatabaseIntegration.h"
 #import "BButton/BButton.h"
 #import "SCLAlertView_Objective_C/SCLAlertView.h"
+#import "Playground_Energy-Swift.h"
 
 #define pointsMultiplier 25
 
@@ -67,6 +68,11 @@
         ;
     }];
     
+}
+
+- (void) viewDidAppear:(BOOL)animated{
+    [super viewDidAppear:animated];
+    [Analytics connectScreenOpened];
 }
 
 - (void) viewDidDisappear:(BOOL)animated
@@ -158,6 +164,7 @@
     
     NSDictionary * applianceDict = [[[DatabaseIntegration sharedInstance] appliances] objectForKey:nameOfDeviceToConnect];
     NSString * applianceId = applianceDict != nil ? applianceDict[@"id"] : @"1";
+    [Analytics deviceDisconnectedWithDeviceName:nameOfDeviceToConnect points:(float) pointsToPresent secondsOfPlay:self.endDateTime.timeIntervalSince1970 - self.startDateTime.timeIntervalSince1970];
     
 #pragma mark - For Vicho
     NSString * playgroundName;
@@ -218,6 +225,7 @@
     NSLog(@"%@",codeData);
     nameOfDeviceToConnect = codeData;
     [self connectToDeviceWithName:nameOfDeviceToConnect];
+    [Analytics qrCodeScannedWithCode:codeData];
 }
 
 
@@ -250,7 +258,7 @@
     peripheral.delegate = self;
     [peripheral discoverServices:nil];
     [self switchToConnected];
-    
+    [Analytics deviceConnectedWithDeviceName:peripheral.name];
     
 }
 
