@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<configuration>
+
+    <service uuid="1800">
+      <description>Generic Access Profile</description>
+
+      <characteristic uuid="2a00">
+        <properties read="true" const="true" />
+        <value>Lumi Connect</value>
+      </characteristic>
+
+      <characteristic uuid="2a01">
+        <properties read="true" const="true" />
+        <value type="hex">0832</value>
+      </characteristic>
+	  
+    </service>
+
+    <service uuid="180A" >
+	
+        <characteristic uuid="2A29">
+            <properties read="true" const="true" />
+            <value>Club ICT</value>
+        </characteristic>
+		
+        <characteristic uuid="2A24">
+            <properties read="true" const="true" />
+            <value>LUMI CONNECT</value>
+        </characteristic>
+		
+		<characteristic uuid="2A25" id="xgatt_dis_2a25" >
+			<properties read="true" />
+            <value type="hex" length="6" />
+        </characteristic>	
+		
+		<characteristic uuid="2a27">
+        <properties read="true" const="true" />
+        <value>0001</value>
+      </characteristic>
+	  
+	  <characteristic uuid="2a26">
+        <properties read="true" const="true" />
+        <value>0004</value>
+      </characteristic>
+	  
+	  
+		
+    </service>
+
+    <service uuid="180f" advertise="true">
+	
+       <description>Lumi connect data</description>
+
+      <characteristic uuid="2a19" id="xgatt_bts_2a19">
+          <properties notify="true" read="true" />
+          <value length="1" />
+      </characteristic>
+	  
+    </service>
+</configuration>
